@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>OriKids | Mon panier</title>
+      <title>OriKids | Nos produits</title>
       <!-- Font awesome -->
       <link href="css/font-awesome.css" rel="stylesheet">
       <!-- Bootstrap -->
@@ -32,7 +32,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
-   <body>
+   <!-- !Important notice -->
+   <!-- Only for product page body tag have to added .productPage class -->
+   <body class="productPage">
       <!-- wpf loader Two -->
       <div id="wpf-loader-two">
          <div class="wpf-loader-two-inner">
@@ -51,9 +53,6 @@
                <div class="row">
                   <div class="col-md-12">
                      <div class="aa-header-top-area">
-                        <!-- start header top left -->
-                        <div class="aa-header-top-left">
-                        </div>
                         <!-- / header top left -->
                         <div class="aa-header-top-right">
                            <ul class="aa-head-top-nav-right">
@@ -80,7 +79,7 @@
                            <!-- Text based logo -->
                            <a href="index.html">
                               <span class="fa fa-shopping-cart"></span>
-                              <p>OriKids<span>Une filiale d'Orinoco</span></p>
+                              <p>OriKids</strong> <span>Une filiale d'Orinoco</span></p>
                            </a>
                            <!-- img based logo -->
                            <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
@@ -98,7 +97,7 @@
                                  <li>
                                     <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2a.jpg" alt="img"></a>
                                     <div class="aa-cartbox-info">
-                                       <h4><a href="#">Doucou copain</a></h4>
+                                       <h4><a href="#">Doudou copain</a></h4>
                                        <p>1 x 15.90€</p>
                                     </div>
                                     <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
@@ -120,10 +119,10 @@
                                     </span>
                                  </li>
                               </ul>
-                              <a class="aa-cartbox-checkout aa-primary-btn" href="#">Passer la commande</a>
+                              <a class="aa-cartbox-checkout aa-primary-btn" href="#">Mon panier</a>
                            </div>
                         </div>
-                        <!-- / cart box -->
+                        <!-- / cart box -->             
                      </div>
                   </div>
                </div>
@@ -150,7 +149,7 @@
                      <!-- Left nav -->
                      <ul class="nav navbar-nav">
                         <li><a href="index.html">Accueil</a></li>
-                        <li class="hidden-xs"><a href="product.html">Nos produits</a></li>
+                        <li><a href="product.html">Nos produits</a></li>
                         <li><a href="checkout.html">Mon panier</a></li>
                      </ul>
                   </div>
@@ -167,166 +166,182 @@
          <div class="aa-catg-head-banner-area">
             <div class="container">
                <div class="aa-catg-head-banner-content">
-                  <h2>Mon panier</h2>
+                  <h2>Nos produits</h2>
                   <ol class="breadcrumb">
                      <li><a href="index.html">Accueil</a></li>
-                     <li><a href="product.html">Nos produits</a></li>
-                     <li class="active">Mon panier</li>
+                     <li class="active">Nos produits</li>
+                     <li><a href="checkout.html">Mon panier</a></li>
                   </ol>
                </div>
             </div>
          </div>
       </section>
       <!-- / catg header banner section -->
-      <!-- Cart view section -->
-      <section id="checkout">
+      <!-- product category -->
+      <section id="aa-product-category">
          <div class="container">
             <div class="row">
-               <div class="col-md-12">
-                  <div class="checkout-area">
-                     <form action="">
-                        <div class="row">
-                           <div class="col-md-8">
-                              <div class="checkout-left">
-                                 <div class="panel-group" id="accordion">
-                                    <!-- Coupon section -->
-                                    <div class="panel panel-default aa-checkout-coupon">
-                                       <div class="panel-heading">
-                                          <h4 class="panel-title">
-                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                             Avez-vous un coupon?
-                                             </a>
-                                          </h4>
-                                       </div>
-                                       <div id="collapseOne" class="panel-collapse collapse in">
-                                          <div class="panel-body">
-                                             <input type="text" placeholder="Code Coupon" class="aa-coupon-code">
-                                             <input type="submit" value="Utilisez votre coupon" class="aa-browse-btn">
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <!-- Shipping Address -->
-                                    <div class="panel panel-default aa-checkout-billaddress">
-                                       <div class="panel-heading">
-                                          <h4 class="panel-title">
-                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                             Adresse de livraison
-                                             </a>
-                                          </h4>
-                                       </div>
-                                       <div id="collapseFour" class="panel-collapse collapse">
-                                          <div class="panel-body">
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" placeholder="Prénom*">
+               <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
+                  <div class="aa-product-catg-content">
+                     <div class="aa-product-catg-body">
+                        <ul class="aa-product-catg">
+                           <!-- start single product item -->
+                           <li>
+                              <figure>
+                                 <a class="aa-product-img" href="#"><img src="img/women/girl-1a.png" alt="polo shirt img"></a>
+                                 <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
+                                 <figcaption>
+                                    <h4 class="aa-product-title"><a href="#">Peluche ours marron</a></h4>
+                                    <span class="aa-product-price">12.90€</span>
+                                    <p class="aa-product-descrip">Il est gros, il est mou et il est doux.</p>
+                                 </figcaption>
+                              </figure>
+                              <div class="aa-product-hvr-content">
+                                 <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                              </div>
+                           </li>
+                           <!-- start single product item -->
+                           <li>
+                              <figure>
+                                 <a class="aa-product-img" href="#"><img src="img/women/girl-4a.png" alt="polo shirt img"></a>
+                                 <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
+                                 <figcaption>
+                                    <h4 class="aa-product-title"><a href="#">Doudou chou</a></h4>
+                                    <span class="aa-product-price">13.90€</span><span class="aa-product-price"></span>
+                                    <p class="aa-product-descrip">Vous pouvez tout oublié ; vos clés de voiture, votre code PIN ou votre portable, mais n'oubliez jamais le doudou de bébé!</p>
+                                 </figcaption>
+                              </figure>
+                              <div class="aa-product-hvr-content">
+                                 <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                              </div>
+                           </li>
+                           <!-- start single product item -->
+                           <li>
+                              <figure>
+                                 <a class="aa-product-img" href="#"><img src="img/women/girl-3a.png" alt="polo shirt img"></a>
+                                 <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
+                                 <figcaption>
+                                    <h4 class="aa-product-title"><a href="#">Doudou copain</a></h4>
+                                    <span class="aa-product-price">15.90€</span>
+                                    <p class="aa-product-descrip">Ce joli doudou fait un superbe cadeau de naissance ! En sa compagnie bébé se sentira rassuré et entouré de douceur.</p>
+                                 </figcaption>
+                              </figure>
+                              <div class="aa-product-hvr-content">
+                                 <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                              </div>
+                           </li>
+                           <!-- start single product item -->
+                           <li>
+                              <figure>
+                                 <a class="aa-product-img" href="#"><img src="img/women/girl-2a.png" alt="polo shirt img"></a>
+                                 <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Ajouter  au panier</a>
+                                 <figcaption>
+                                    <h4 class="aa-product-title"><a href="#">Gros ours miel</a></h4>
+                                    <span class="aa-product-price">17.50€</span><span class="aa-product-price"></span>
+                                    <p class="aa-product-descrip">Un nounours géant, le plus adorable que vous n'ayez jamais vu, pour d'énorme câlins.</p>
+                                 </figcaption>
+                              </figure>
+                              <div class="aa-product-hvr-content">
+                                 <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                              </div>
+                           </li>
+                        </ul>
+                        <!-- quick view modal -->                  
+                        <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                           <div class="modal-dialog">
+                              <div class="modal-content">
+                                 <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <div class="row">
+                                       <!-- Modal view slider -->
+                                       <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="aa-product-view-slider">
+                                             <div class="simpleLens-gallery-container" id="demo-1">
+                                                <div class="simpleLens-container">
+                                                   <div class="simpleLens-big-image-container">
+                                                      <a class="simpleLens-lens-image" data-lens-image="img/view-slider/large/polo-shirt-1a.png">
+                                                      <img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image">
+                                                      </a>
                                                    </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" placeholder="Nom*">
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="email" placeholder="email *">
-                                                   </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="tel" placeholder="Téléphone*">
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-md-12">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <select>
-                                                         <option value="0">Sélectionnez votre pays</option>
-                                                         <option value="1">France</option>
-                                                         <option value="2">UK</option>
-                                                         <option value="3">USA</option>
-                                                      </select>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" placeholder="Adresse*">
-                                                   </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" placeholder="Ville*">
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" placeholder="Code postal*">
-                                                   </div>
-                                                </div>
+                                                
                                              </div>
                                           </div>
                                        </div>
+                                       <!-- Modal view content -->
+                                       <div class="col-md-6 col-sm-6 col-xs-12">
+                                          <div class="aa-product-view-content">
+                                             <h3>Peluche ours marron</h3>
+                                             <div class="aa-price-block">
+                                                <span class="aa-product-view-price">12.90€</span>
+                                                <p class="aa-product-avilability">Disponible : <span>En stock</span></p>
+                                             </div>
+                                             <p>Des yeux rieurs et tout ronds, un nez tout doux et un joli sourire, cet adorable ours en peluche fera le bonheur de toute la famille !</p>
+                                             <h4>Taille</h4>
+                                             <div class="aa-prod-view-size">
+                                                <a href="#">S</a>
+                                                <a href="#">M</a>
+                                                <a href="#">L</a>
+                                                <a href="#">XL</a>
+                                             </div>
+                                             <div class="aa-prod-quantity">
+                                                <form action="">
+                                                   <select name="" id="">
+                                                      <option value="0" selected="1">1</option>
+                                                      <option value="1">2</option>
+                                                      <option value="2">3</option>
+                                                      <option value="3">4</option>
+                                                      <option value="4">5</option>
+                                                      <option value="5">6</option>
+                                                   </select>
+                                                </form>
+                                                <p class="aa-prod-category">
+                                                   Categorie: <a href="#">Peluches</a>
+                                                </p>
+                                             </div>
+                                             <div class="aa-prod-view-bottom">
+                                                <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
+                                                <a href="#" class="aa-add-to-cart-btn">Voir détails</a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       
                                     </div>
                                  </div>
                               </div>
+                              <!-- /.modal-content -->
                            </div>
-                           <div class="col-md-4">
-                              <div class="checkout-right">
-                                 <h4>Récapitulatif de la commande</h4>
-                                 <div class="aa-order-summary-area">
-                                    <table class="table table-responsive">
-                                       <thead>
-                                          <tr>
-                                             <th>Article</th>
-                                             <th>Total</th>
-                                          </tr>
-                                       </thead>
-                                       <tbody>
-                                          <tr>
-                                             <td>Peluche ours marron <strong> x  1</strong></td>
-                                             <td>12.90€</td>
-                                          </tr>
-                                          <tr>
-                                             <td>Doudou copain <strong> x  1</strong></td>
-                                             <td>15.90€</td>
-                                          </tr>
-                                          <tr>
-                                             <td>Doudou miel <strong> x  1</strong></td>
-                                             <td>13.90€</td>
-                                          </tr>
-                                       </tbody>
-                                       <tfoot>
-                                          <tr>
-                                             <th>Total</th>
-                                             <td>42.70€</td>
-                                          </tr>
-                                       </tfoot>
-                                    </table>
-                                 </div>
-                                 <h4>Mode de paiement</h4>
-                                 <div class="aa-payment-method">                    
-                                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Paiement à la livraison </label>
-                                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked> Via Paypal </label>
-                                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" alt="Marque d'acceptation PayPal">    
-                                    <input type="submit" value="Passer la commande" class="aa-browse-btn">                
-                                 </div>
-                              </div>
-                           </div>
+                           <!-- /.modal-dialog -->
                         </div>
-                     </form>
+                        <!-- / quick view modal -->   
+                     </div>
                   </div>
+               </div>
+               <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
+                  <aside class="aa-sidebar">
+                     <!-- single sidebar -->
+                     <div class="aa-sidebar-widget">
+                        <h3>Categorie</h3>
+                        <ul class="aa-catg-nav">
+                           <li><a href="#">Peluches</a></li>
+                           <li><a href="">Doudous</a></li>
+                        </ul>
+                     </div>
+                     <!-- single sidebar -->
+                     <div class="aa-sidebar-widget">
+                        <h3>Coloris</h3>
+                        <div class="aa-color-tag">
+                           <a class="aa-color-pink" href="#"></a>
+                           <a class="aa-color-black" href="#"></a>
+                           <a class="aa-color-white" href="#"></a>
+                        </div>
+                     </div>
+                  </aside>
                </div>
             </div>
          </div>
       </section>
-      <!-- / Cart view section -->
+      <!-- / product category -->
       <!-- footer -->  
       <footer id="aa-footer">
          <!-- footer bottom -->
@@ -377,17 +392,17 @@
             <div class="modal-content">
                <div class="modal-body">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4>Login or Register</h4>
+                  <h4>Connexion ou Inscription</h4>
                   <form class="aa-login-form" action="">
-                     <label for="">Nom d'utilisateur ou adresse e-mail<span>*</span></label>
-                     <input type="text" placeholder="Nom d'utilisateur ou email">
+                     <label for="">Nom d'utilisateur ou adresse mail<span>*</span></label>
+                     <input type="text" placeholder="Username or email">
                      <label for="">Mot de passe<span>*</span></label>
-                     <input type="password" placeholder="Mot de passe">
+                     <input type="password" placeholder="Password">
                      <button class="aa-browse-btn" type="submit">Connexion</button>
                      <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Se souvenir de moi </label>
-                     <p class="aa-lost-password"><a href="#">Mot de passe oublié ?</a></p>
+                     <p class="aa-lost-password"><a href="#">Mot de passe oublié?</a></p>
                      <div class="aa-register-now">
-                        Vous n'avez pas de compte ?<a href="account.html">S'inscrire maintenant !</a>
+                        Vous n'avez pas de compte?<a href="account.html">S'inscrire maintenant!</a>
                      </div>
                   </form>
                </div>

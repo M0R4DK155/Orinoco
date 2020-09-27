@@ -400,6 +400,7 @@ html,
     transform: translate3d(0, 0, 0);
     opacity: 1;
     width: 100%;
+    object-fit: contain;
   }
 
   .seq .seq-out {
