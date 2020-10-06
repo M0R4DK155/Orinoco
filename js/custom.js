@@ -1,30 +1,3 @@
-/** 
-  * Template Name: Daily Shop
-  * Version: 1.0  
-  * Template Scripts
-  * Author: MarkUps
-  * Author URI: http://www.markups.io/
-
-  Custom JS
-  
-
-  1. CARTBOX
-  2. TOOLTIP
-  3. PRODUCT VIEW SLIDER 
-  4. POPULAR PRODUCT SLIDER (SLICK SLIDER) 
-  5. FEATURED PRODUCT SLIDER (SLICK SLIDER)
-  6. LATEST PRODUCT SLIDER (SLICK SLIDER) 
-  7. TESTIMONIAL SLIDER (SLICK SLIDER)
-  8. CLIENT BRAND SLIDER (SLICK SLIDER)
-  9. PRICE SLIDER  (noUiSlider SLIDER)
-  10. SCROLL TOP BUTTON
-  11. PRELOADER
-  12. GRID AND LIST LAYOUT CHANGER 
-  13. RELATED ITEM SLIDER (SLICK SLIDER)
-
-  
-**/
-
 jQuery(function($){
 
 
