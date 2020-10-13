@@ -1,5 +1,6 @@
 var orinoco = {
-  dataManager : new DataManager("http://localhost:3000/api/teddies/")
+  components : {},
+  dataManager: new DataManager("http://localhost:3000/api/teddies/")
 };
 
 new Cart(document.querySelector(".aa-header-bottom-area"));

@@ -5,6 +5,9 @@ class ProductList{
 
   showProducts(list){
     console.log(list)
-    //boucle
+    const target = document.querySelector("ul.aa-product-catg");
+    for(let i=0, size=list.length; i < size; i++){
+      new Product(list[i], target, "orinoco");
+    }
   }
 }
