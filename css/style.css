@@ -1103,7 +1103,7 @@ img {
   height: 380px;
   text-align: center;
   margin: 0 0 20px 55px;
-  width: 20.5%;
+  width: 35%;
   position: relative;
   overflow: hidden;
 }
@@ -2088,7 +2088,7 @@ img {
 #checkout .checkout-area {
   display: inline;
   float: left;
-  padding: 50px 0;
+  padding: 158px 0;
   width: 100%;
 }
 #checkout .checkout-area .checkout-left {
@@ -2554,6 +2554,10 @@ img {
     margin-left: -45px;
   }
 
+  #checkout .checkout-area {
+    padding: 265px 0px;
+  }
+
   .aa-product-catg li {
     margin: 0 0 20px 45px;
     width: 20.5%;
@@ -2623,8 +2627,8 @@ img {
   }
 
   .aa-product-catg li {
-    margin: 0 0 20px 20px;
-    width: 30.5%;
+    margin: 0 0 161px 20px;
+    width: 60%;
   }
 
   .slick-prev {
@@ -2714,7 +2718,7 @@ img {
     background-color: #fff;
   }
 
-  #aa-product .aa-product-area {
+    #aa-product .aa-product-area {
     padding: 0 15px;
   }
 

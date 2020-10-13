@@ -25,19 +25,16 @@
       <!-- Google Font -->
       <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
       <script src="js/composants/cart.js"></script>
+      <script src="js/datamanager.js"></script>
+      <script src="js/pages/order.js"></script>
       <script src="js/pages/page.js" defer></script>
    </head>
    <!-- !Important notice -->
    <!-- Only for product page body tag have to added .productPage class -->
    <body class="productPage">
-      <!-- wpf loader Two -->
-      <div id="wpf-loader-two">
-         <div class="wpf-loader-two-inner">
-            <span>Orinoco</span>
-         </div>
-      </div>
-      <!-- / wpf loader Two -->       
+      
       <!-- SCROLL TOP BUTTON -->
       <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
       <!-- END SCROLL TOP BUTTON -->
@@ -115,23 +112,6 @@
          </div>
       </section>
       <!-- / menu -->  
-      <!-- catg header banner section -->
-      <section id="aa-catg-head-banner">
-         <img src="img/fashion/fashion-header-teddie.jpg" alt="fashion img">
-         <div class="aa-catg-head-banner-area">
-            <div class="container">
-               <div class="aa-catg-head-banner-content">
-                  <h2>Nos produits</h2>
-                  <ol class="breadcrumb">
-                     <li><a href="index.html">Accueil</a></li>
-                     <li class="active">Nos produits</li>
-                     <li><a href="checkout.html">Mon panier</a></li>
-                  </ol>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- / catg header banner section -->
       <!-- product category -->
       <section id="aa-product">
          <div class="container">
@@ -149,67 +129,11 @@
                                     <!-- start single product item -->                      
                                     <li>
                                        <figure>
-                                          <a class="aa-product-img" href="#"><img src="img/man/teddy_1.png" alt="teddy_1 img"></a>
+                                          <a class="aa-product-img" href="#"><img src="http://localhost:3000/images/teddy_1.jpg" alt="teddy_1 img"></a>
                                           <a class="aa-add-card-btn" href="checkout.html"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
                                           <figcaption>
-                                             <h4 class="aa-product-title"><a href="#">Peluche ours marron</a></h4>
-                                             <span class="aa-product-price">12.90€</span>
-                                          </figcaption>
-                                       </figure>
-                                       <div class="aa-product-hvr-content">
-                                          <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                                       </div>
-                                    </li>
-                                    <!-- start single product item -->
-                                    <li>
-                                       <figure>
-                                          <a class="aa-product-img" href="#"><img src="img/man/teddy_4.png" alt="teddy_4 img"></a>
-                                          <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
-                                          <figcaption>
-                                             <h4 class="aa-product-title"><a href="#">Doudou chou</a></h4>
-                                             <span class="aa-product-price">13.90€</span>
-                                          </figcaption>
-                                       </figure>
-                                       <div class="aa-product-hvr-content">
-                                          <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                                       </div>
-                                    </li>
-                                    <!-- start single product item -->
-                                    <li>
-                                       <figure>
-                                          <a class="aa-product-img" href="#"><img src="img/man/teddy_3.png" alt="teddy_3 img"></a>
-                                          <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
-                                          <figcaption>
-                                             <h4 class="aa-product-title"><a href="#">Doudou copain</a></h4>
-                                             <span class="aa-product-price">15.90€</span>
-                                          </figcaption>
-                                       </figure>
-                                       <div class="aa-product-hvr-content">
-                                          <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                                       </div>
-                                    </li>
-                                    <!-- start single product item -->
-                                    <li>
-                                       <figure>
-                                          <a class="aa-product-img" href="#"><img src="img/man/teddy_2.png" alt="teddy_2 img"></a>
-                                          <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
-                                          <figcaption>
-                                             <h4 class="aa-product-title"><a href="#">Gros ours miel</a></h4>
-                                             <span class="aa-product-price">17.50€</span>
-                                          </figcaption>
-                                       </figure>
-                                       <div class="aa-product-hvr-content">
-                                          <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                                       </div>
-                                    </li>
-                                    <!-- start single product item -->
-                                    <li>
-                                       <figure>
-                                          <a class="aa-product-img" href="#"><img src="img/man/teddy_5.png" alt="teddy_5 img"></a>
-                                          <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Ajouter au panier</a>
-                                          <figcaption>
-                                             <h4 class="aa-product-title"><a href="#">Peluche ourson</a></h4>
-                                             <span class="aa-product-price">14.50€</span>
+                                             <h4 class="aa-product-title"><a href="#">Norbert</a></h4>
+                                             <span class="aa-product-price">2900</span>
                                           </figcaption>
                                        </figure>
                                        <div class="aa-product-hvr-content">
@@ -243,18 +167,17 @@
                                           <!-- Modal view content -->
                                           <div class="col-md-6 col-sm-6 col-xs-12">
                                              <div class="aa-product-view-content">
-                                                <h3>Peluche ours marron</h3>
+                                                <h3>Norbert</h3>
                                                 <div class="aa-price-block">
-                                                   <span class="aa-product-view-price">12.90€</span>
-                                                   <p class="aa-product-avilability">Disponible: <span>En stock</span></p>
+                                                   <span class="aa-product-view-price">2900</span>
                                                 </div>
-                                                <p>Des yeux rieurs et tout ronds, un nez tout doux, un jolib sourire, cet adorable ours en peluche fera le bonheur de toute la famille !</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                                 <h4>Couleur</h4>
                                                 <div class="aa-prod-view-color">
                                                    <form action="post">
                                                       <select name="colors" id="color-select">
-                                                         <option value="0" selected="1">Brown</option>
-                                                         <option value="1">Tan</option>
+                                                         <option value="0" selected="1">Tan</option>
+                                                         <option value="1">Chocolate</option>
                                                          <option value="2">Black</option>
                                                          <option value="3">White</option>
                                                       </select>

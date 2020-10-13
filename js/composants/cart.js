@@ -1,8 +1,8 @@
 class Cart{
     constructor(domTarget){
-        this.DOM = document.createElement("div");
+        this.DOM = document.createElement("div"); //Création d'un nouvel élément "div"
         this.DOM.className = "aa-cartbox";
-        domTarget.appendChild(this.DOM);
+        domTarget.appendChild(this.DOM); //Déplacer un élément d'un endroit vers un autre
         this.products = [];
         this.render();
         orinoco.cart = this;
