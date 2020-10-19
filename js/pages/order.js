@@ -1,5 +1,3 @@
-class Order{
-  constructor(){
-    
-  }
+class Order {
+  constructor() {}
 }

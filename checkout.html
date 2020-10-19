@@ -1,351 +1,411 @@
 <!DOCTYPE html>
 <html lang="fr">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>OriKids | Mon panier</title>
-      <!-- Font awesome -->
-      <link href="css/font-awesome.css" rel="stylesheet">
-      <!-- Bootstrap -->
-      <link href="css/bootstrap.css" rel="stylesheet">
-      <!-- SmartMenus jQuery Bootstrap Addon CSS -->
-      <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
-      <!-- Product view slider -->
-      <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css">
-      <!-- slick slider -->
-      <link rel="stylesheet" type="text/css" href="css/slick.css">
-      <!-- price picker slider -->
-      <link rel="stylesheet" type="text/css" href="css/nouislider.css">
-      <!-- Theme color -->
-      <link id="switcher" href="css/theme-color/default-theme.css" rel="stylesheet">
-      <!-- Top Slider CSS -->
-      <link href="css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
-      <!-- Main style sheet -->
-      <link href="css/style.css" rel="stylesheet">
-      <!-- Google Font -->
-      <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-      <script src="js/composants/cart.js"></script>
-      <script src="js/pages/page.js" defer></script>
-   </head>
-   <body>
-      <!-- wpf loader Two -->
-      <div id="wpf-loader-two">
-         <div class="wpf-loader-two-inner">
-            <span>Orinoco</span>
-         </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OriKids | Mon panier</title>
+    <!-- Font awesome -->
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
+    <!-- Product view slider -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css" />
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <!-- price picker slider -->
+    <link rel="stylesheet" type="text/css" href="css/nouislider.css" />
+    <!-- Theme color -->
+    <link
+      id="switcher"
+      href="css/theme-color/default-theme.css"
+      rel="stylesheet"
+    />
+    <!-- Top Slider CSS -->
+    <link
+      href="css/sequence-theme.modern-slide-in.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <!-- Main style sheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="js/composants/cart.js"></script>
+    <script src="js/composants/product.js"></script>
+    <script src="js/datamanager.js"></script>
+    <script src="js/pages/order.js"></script>
+    <script src="js/pages/page.js" defer></script>
+  </head>
+
+  <body>
+    <!-- wpf loader Two -->
+    <div id="wpf-loader-two">
+      <div class="wpf-loader-two-inner">
+        <span>Orinoco</span>
       </div>
-      <!-- / wpf loader Two -->       
-      <!-- SCROLL TOP BUTTON -->
-      <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
-      <!-- END SCROLL TOP BUTTON -->
-      <!-- Start header section -->
-      <header id="aa-header">
-         <!-- start header top  -->
-         <div class="aa-header-top">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="aa-header-top-area">
-                        <!-- start header top left -->
-                        <div class="aa-header-top-left">
-                        </div>
-                        <!-- / header top left -->
-                        <div class="aa-header-top-right">
-                           <ul class="aa-head-top-nav-right">
-                              <li class="hidden-xs"><a href="index.html">Accueil</a></li>
-                              <li class="hidden-xs"><a href="product.html">Nos produits</a></li>
-                              <li class="hidden-xs"><a href="checkout.html">Mon panier</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+    </div>
+    <!-- / wpf loader Two -->
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- Start header section -->
+    <header id="aa-header">
+      <!-- start header top  -->
+      <div class="aa-header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="aa-header-top-area">
+                <!-- start header top left -->
+                <div class="aa-header-top-left"></div>
+                <!-- / header top left -->
+                <div class="aa-header-top-right">
+                  <ul class="aa-head-top-nav-right">
+                    <li class="hidden-xs"><a href="index.html">Accueil</a></li>
+                    <li class="hidden-xs">
+                      <a href="product.html">Nos produits</a>
+                    </li>
+                    <li class="hidden-xs">
+                      <a href="checkout.html">Mon panier</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-         </div>
-         <!-- / header top  -->
-         <!-- start header bottom  -->
-         <div class="aa-header-bottom">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="aa-header-bottom-area">
-                        <!-- logo  -->
-                        <div class="aa-logo">
-                           <!-- Text based logo -->
-                           <a href="index.html">
-                           <img src ="img/Logo_Orinoco.png" alt="Logo_Orinoco">
-                           </a>
-                           <!-- img based logo -->
-                           <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
-                        </div>
-                        <!-- / logo  -->
-                     </div>
-                  </div>
-               </div>
+          </div>
+        </div>
+      </div>
+      <!-- / header top  -->
+      <!-- start header bottom  -->
+      <div class="aa-header-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="aa-header-bottom-area">
+                <!-- logo  -->
+                <div class="aa-logo">
+                  <!-- Text based logo -->
+                  <a href="index.html">
+                    <img src="img/Logo_Orinoco.png" alt="Logo_Orinoco" />
+                  </a>
+                  <!-- img based logo -->
+                  <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
+                </div>
+                <!-- / logo  -->
+              </div>
             </div>
-         </div>
-         <!-- / header bottom  -->
-      </header>
-      <!-- / header section -->
-      <!-- menu -->
-      <section id="menu">
-         <div class="container">
-            <div class="menu-area">
-               <!-- Navbar -->
-               <div class="navbar navbar-default" role="navigation">
-                  <div class="navbar-header">
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                     <span class="sr-only">Toggle navigation</span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     </button>          
+          </div>
+        </div>
+      </div>
+      <!-- / header bottom  -->
+    </header>
+    <!-- / header section -->
+    <!-- menu -->
+    <section id="menu">
+      <div class="container">
+        <div class="menu-area">
+          <!-- Navbar -->
+          <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target=".navbar-collapse"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="navbar-collapse collapse">
+              <!-- Left nav -->
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="product.html">Nos produits</a></li>
+                <li><a href="checkout.html">Mon panier</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / menu -->
+    <!-- catg header banner section -->
+    <section id="aa-catg-head-banner">
+      <img src="img/fashion/fashion-header-teddie.jpg" alt="fashion img" />
+      <div class="aa-catg-head-banner-area">
+        <div class="container">
+          <div class="aa-catg-head-banner-content">
+            <h2>Mon panier</h2>
+            <ol class="breadcrumb">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="product.html">Nos produits</a></li>
+              <li class="active">Mon panier</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / catg header banner section -->
+    <!-- Cart view section -->
+    <section id="checkout">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="checkout-area">
+              <form action="checkout" method="POST" id="checkout">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="checkout-left">
+                      <div class="panel-group" id="accordion">
+                        <!-- Shipping Address -->
+                        <div
+                          class="panel panel-default aa-checkout-billaddress"
+                        >
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a
+                                data-toggle="collapse"
+                                data-parent="#accordion"
+                                href="#collapseFour"
+                              >
+                                <strong>Adresse de livraison</strong
+                                ><small
+                                  ><em> (Cliquez pour dérouler)</em></small
+                                >
+                              </a>
+                            </h4>
+                          </div>
+                          <div
+                            id="collapseFour"
+                            class="panel-collapse collapse"
+                          >
+                            <div class="panel-body">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="aa-checkout-single-bill">
+                                    <input
+                                      type="text"
+                                      name="firstname"
+                                      id="firstname"
+                                      required
+                                      placeholder="Prénom*"
+                                    />
+                                    <small
+                                      id="emailHelp"
+                                      class="form-text text-muted"
+                                      ><em>*Champs obligatoires</em></small
+                                    >
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="aa-checkout-single-bill">
+                                    <input
+                                      type="text"
+                                      name="lastname"
+                                      id="lastname"
+                                      required
+                                      placeholder="Nom*"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="aa-checkout-single-bill">
+                                    <input
+                                      type="email"
+                                      name="email"
+                                      id="email"
+                                      required
+                                      placeholder="email *"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="aa-checkout-single-bill">
+                                    <input
+                                      type="text"
+                                      name="adress"
+                                      id="adress"
+                                      required
+                                      placeholder="Adresse*"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="aa-checkout-single-bill">
+                                    <input
+                                      type="text"
+                                      name="city"
+                                      id="city"
+                                      required
+                                      placeholder="Ville*"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="aa-checkout-single-bill">
+                                    <input
+                                      type="text"
+                                      placeholder="Code postal*"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <input
+                                type="submit"
+                                name="submit"
+                                id="submit"
+                                value="Passer la commande"
+                                class="aa-browse-btn btn-block"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="navbar-collapse collapse">
-                     <!-- Left nav -->
-                     <ul class="nav navbar-nav">
+                  <div class="col-md-6">
+                    <div class="checkout-right">
+                      <h4><strong>Récapitulatif de la commande</strong></h4>
+                      <div class="aa-order-summary-area">
+                        <table class="table table-responsive">
+                          <thead>
+                            <tr>
+                              <th scope="col">Article</th>
+                              <th scope="col">Quantité</th>
+                              <th scope="col">Couleur</th>
+                              <th scope="col">Total</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><strong>nomArticle</strong></td>
+                              <td>qtyArticle</td>
+                              <td>color</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td><strong>nomArticle</strong></td>
+                              <td>qtyArticle</td>
+                              <td>color</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td><strong>nomArticle</strong></td>
+                              <td>qtyArticle</td>
+                              <td>color</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <th>Total panier</th>
+                              <td>totalArticle</td>
+                              <td colspan="2">€</td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / Cart view section -->
+    <!-- footer -->
+    <footer id="aa-footer">
+      <div class="aa-footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="aa-footer-top-area">
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <div class="aa-footer-widget">
+                      <h3>Menu principal</h3>
+                      <ul class="aa-footer-nav">
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="product.html">Nos produits</a></li>
                         <li><a href="checkout.html">Mon panier</a></li>
-                     </ul>
+                      </ul>
+                    </div>
                   </div>
-                  <!--/.nav-collapse -->
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- / menu -->  
-      <!-- catg header banner section -->
-      <section id="aa-catg-head-banner">
-         <img src="img/fashion/fashion-header-teddie.jpg" alt="fashion img">
-         <div class="aa-catg-head-banner-area">
-            <div class="container">
-               <div class="aa-catg-head-banner-content">
-                  <h2>Mon panier</h2>
-                  <ol class="breadcrumb">
-                     <li><a href="index.html">Accueil</a></li>
-                     <li><a href="product.html">Nos produits</a></li>
-                     <li class="active">Mon panier</li>
-                  </ol>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- / catg header banner section -->
-      <!-- Cart view section -->
-      <section id="checkout">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="checkout-area">
-                     <form action="checkout">
-                        <div class="row">
-                           <div class="col-md-8">
-                              <div class="checkout-left">
-                                 <div class="panel-group" id="accordion">
-                                    <!-- Coupon section -->
-                                    <div class="panel panel-default aa-checkout-coupon">
-                                       <div class="panel-heading">
-                                          <h4 class="panel-title">
-                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                             Avez-vous un coupon?
-                                             </a>
-                                          </h4>
-                                       </div>
-                                       <div id="collapseOne" class="panel-collapse collapse in">
-                                          <div class="panel-body">
-                                             <input type="text" placeholder="Code Coupon" class="aa-coupon-code">
-                                             <input type="submit" value="Utilisez votre coupon" class="aa-browse-btn">
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <!-- Shipping Address -->
-                                    <div class="panel panel-default aa-checkout-billaddress">
-                                       <div class="panel-heading">
-                                          <h4 class="panel-title">
-                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                             Adresse de livraison
-                                             </a>
-                                          </h4>
-                                       </div>
-                                       <div id="collapseFour" class="panel-collapse collapse">
-                                          <div class="panel-body">
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" name="firstname" id="signup-firstname" required placeholder="Prénom*">
-                                                   </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" name="lastname" id="signup-lastname" required placeholder="Nom*">
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="email" name="email" id="signup-email" required placeholder="email *">
-                                                   </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="tel" name="phone" id="signup-phone" pattern="[0-9 \+\-\.]+" placeholder="Téléphone*">
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-md-12">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <select>
-                                                         <option value="0">Sélectionnez votre pays</option>
-                                                         <option value="1">France</option>
-                                                         <option value="2">UK</option>
-                                                         <option value="3">USA</option>
-                                                      </select>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" name="adress" id="signup-adress" required placeholder="Adresse*">
-                                                   </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" name="city" id="signup-city" required placeholder="Ville*">
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col-md-6">
-                                                   <div class="aa-checkout-single-bill">
-                                                      <input type="text" placeholder="Code postal*">
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-4">
-                              <div class="checkout-right">
-                                 <h4>Récapitulatif de la commande</h4>
-                                 <div class="aa-order-summary-area">
-                                    <table class="table table-responsive">
-                                       <thead>
-                                          <tr>
-                                             <th>Article</th>
-                                             <th>Total</th>
-                                          </tr>
-                                       </thead>
-                                       <tbody>
-                                          <tr>
-                                             <td>Peluche ours marron <strong> x  1</strong></td>
-                                             <td>12.90€</td>
-                                          </tr>
-                                          <tr>
-                                             <td>Doudou copain <strong> x  1</strong></td>
-                                             <td>15.90€</td>
-                                          </tr>
-                                          <tr>
-                                             <td>Doudou miel <strong> x  1</strong></td>
-                                             <td>13.90€</td>
-                                          </tr>
-                                       </tbody>
-                                       <tfoot>
-                                          <tr>
-                                             <th>Total</th>
-                                             <td>42.70€</td>
-                                          </tr>
-                                       </tfoot>
-                                    </table>
-                                 </div>
-                                 <h4>Mode de paiement</h4>
-                                 <div class="aa-payment-method">                    
-                                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Paiement à la livraison </label>
-                                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked> Via Paypal </label>
-                                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" alt="Marque d'acceptation PayPal">    
-                                    <input type="submit" value="Passer la commande" class="aa-browse-btn">                
-                                 </div>
-                              </div>
-                           </div>
+                  <div class="col-md-3 col-sm-6">
+                    <div class="aa-footer-widget">
+                      <div class="aa-footer-widget">
+                        <h3>Contactez-nous</h3>
+                        <address>
+                          <p>Avenue des Champs-Élysées<br />75008 Paris</p>
+                          <p><span class="fa fa-phone"></span>08.08.08.08.08</p>
+                          <p>
+                            <span class="fa fa-envelope"></span
+                            >contact@orinoco.com
+                          </p>
+                        </address>
+                        <div class="aa-footer-social">
+                          <a href="www.facebook.com"
+                            ><span class="fa fa-facebook"></span
+                          ></a>
+                          <a href="www.twitter.com"
+                            ><span class="fa fa-twitter"></span
+                          ></a>
+                          <a href="www.youtube.com"
+                            ><span class="fa fa-youtube"></span
+                          ></a>
                         </div>
-                     </form>
+                      </div>
+                    </div>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
-         </div>
-      </section>
-      <!-- / Cart view section -->
-      <!-- footer -->  
-      <footer id="aa-footer">
-         <!-- footer bottom -->
-         <div class="aa-footer-top">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="aa-footer-top-area">
-                        <div class="row">
-                           <div class="col-md-3 col-sm-6">
-                              <div class="aa-footer-widget">
-                                 <h3>Menu principal</h3>
-                                 <ul class="aa-footer-nav">
-                                    <li><a href="index.html">Accueil</a></li>
-                                    <li><a href="product.html">Nos produits</a></li>
-                                    <li><a href="checkout.html">Mon panier</a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6">
-                              <div class="aa-footer-widget">
-                                 <div class="aa-footer-widget">
-                                    <h3>Contactez-nous</h3>
-                                    <address>
-                                       <p> Avenue des Champs-Élysées<br>75008 Paris</p>
-                                       <p><span class="fa fa-phone"></span>08.08.08.08.08</p>
-                                       <p><span class="fa fa-envelope"></span>contact@orinoco.com</p>
-                                    </address>
-                                    <div class="aa-footer-social">
-                                       <a href="www.facebook.com"><span class="fa fa-facebook"></span></a>
-                                       <a href="www.twitter.com"><span class="fa fa-twitter"></span></a>
-                                       <a href="www.youtube.com"><span class="fa fa-youtube"></span></a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-      <!-- / footer -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- / footer -->
 
-      <!-- jQuery library -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/bootstrap.js"></script>  
-      <!-- SmartMenus jQuery plugin -->
-      <script src="js/jquery.smartmenus.js"></script>
-      <!-- SmartMenus jQuery Bootstrap Addon -->
-      <script src="js/jquery.smartmenus.bootstrap.js"></script>  
-      <!-- To Slider JS -->
-      <script src="js/sequence.js"></script>
-      <script src="js/sequence-theme.modern-slide-in.js"></script>  
-      <!-- Product view slider -->
-      <script src="js/jquery.simpleGallery.js"></script>
-      <script src="js/jquery.simpleLens.js"></script>
-      <!-- slick slider -->
-      <script src="js/slick.js"></script>
-      <!-- Price picker slider -->
-      <script src="js/nouislider.js"></script>
-      <!-- Custom js -->
-      <script src="js/custom.js"></script> 
-   </body>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/vendor/bootstrap.js"></script>
+    <!-- SmartMenus jQuery plugin -->
+    <script src="js/vendor/jquery.smartmenus.js"></script>
+    <!-- SmartMenus jQuery Bootstrap Addon -->
+    <script src="js/vendor/jquery.smartmenus.bootstrap.js"></script>
+    <!-- Product view slider -->
+    <script src="js/vendor/jquery.simpleGallery.js"></script>
+    <script src="js/vendor/jquery.simpleLens.js"></script>
+    <!-- slick slider -->
+    <script src="js/vendor/slick.js"></script>
+    <!-- Price picker slider -->
+    <script src="js/vendor/nouislider.js"></script>
+    <!-- Custom js -->
+    <script src="js/vendor/custom.js"></script>
+  </body>
 </html>
