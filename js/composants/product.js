@@ -1,33 +1,48 @@
 class Product {
-  constructor(props, domTarget, container) {
-    for (const [key, value] of Object.entries(props)) {
-      this[key] = value;
-    }
-    this.showDetails = false;
-    this.DOM = document.createElement('li');
-    domTarget.appendChild(this.DOM);
-    window[container].components['product' + this._id] = this;
-    this.container = container;
-    this.render();
-  }
+   constructor(props, domTarget, container) {
+      for (const [key, value] of Object.entries(props)) {
+         this[key] = value;
+      }
+      this.showDetails = false;
+      this.DOM = document.createElement('li');
+      domTarget.appendChild(this.DOM);
+      window[container].components['product' + this._id] = this;
+      this.container = container;
+      this.render();
+      console.log(orinoco);
+   }
 
-  resumeTemplate() {
-    return `
-    <figure>
+   resumeTemplate() {
+      return `
+      <figure>
         <a class="aa-product-img" href="#"><img src="${
-          this.imageUrl
+           this.imageUrl
         }" alt="teddy_img"></a>
+<<<<<<< Updated upstream
         <a class="aa-add-card-btn" onclick="${this.container}.components.product${this._id}.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
+=======
+        <a class="aa-add-card-btn" onclick="${
+           this.container
+        }.components.product${
+         this._id
+      }.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
+>>>>>>> Stashed changes
         <figcaption>
            <h4 class="aa-product-title"><a href="#">${this.name}</a></h4>
            <span class="aa-product-price">${this.price / 100}€</span>
         </figcaption>
+<<<<<<< Updated upstream
     </figure>
     <div class="aa-product-hvr-content">
+=======
+      </figure>
+      <div class="aa-product-hvr-content">
+>>>>>>> Stashed changes
 
 
 
         <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${
+<<<<<<< Updated upstream
           this.container
         }.components.product${
       this._id
@@ -35,29 +50,68 @@ class Product {
 
 
     </div>
+=======
+           this.container
+        }.components.product${
+         this._id
+      }.changeView()"><span class="fa fa-search"></span></a> -->
+
+
+      </div>
+>>>>>>> Stashed changes
         `;
-  }
+   }
 
-  render() {
-    this.DOM.innerHTML = this.showDetails
-      ? this.detailedTemplate()
-      : this.resumeTemplate();
-  }
+   render() {
+      this.DOM.innerHTML = this.showDetails
+         ? this.detailedTemplate()
+         : this.resumeTemplate();
+   }
 
+<<<<<<< Updated upstream
   changeView() {
     this.showDetails = !this.showDetails;
     if (this.showDetails) changePage("product"+this._id);
     this.render();
   }
+=======
+   changeView() {
+      this.showDetails = !this.showDetails;
+      if (this.showDetails) changePage('product' + this._id);
+      this.render();
+   }
+>>>>>>> Stashed changes
 
-  detailedTemplate() {
-    return '-----';
-  }
+   detailedTemplate() {
+      return `
+    <figure>
+        <a class="aa-product-img" href="#"><img src="${
+           this.imageUrl
+        }" alt="teddy_img"></a>
+        <a class="aa-add-card-btn" onclick="${
+           this.container
+        }.components.product${
+         this._id
+      }.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
+        <figcaption>
+           <h4 class="aa-product-title"><a href="#">${this.name}</a></h4>
+           <span class="aa-product-price">${this.price / 100}€</span>
+        </figcaption>
+    </figure>
+    <div class="aa-product-hvr-content">
+    <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${
+       this.container
+    }.components.product${
+         this._id
+      }.changeView()"><span class="fa fa-search"></span></a> -->
+  </div>
+        `;
+   }
 
-  die() {
-    this.DOM.parentNode.removeChild(this.DOM);
-    delete window[this.container].components[['product' + this._id]];
-  }
+   die() {
+      this.DOM.parentNode.removeChild(this.DOM);
+      delete window[this.container].components[['product' + this._id]];
+   }
 }
 
 /*

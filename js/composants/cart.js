@@ -1,16 +1,16 @@
-// Création de l'icone mon panier
+// Création du panier
 class Cart {
-  constructor(domTarget) {
-    this.DOM = document.createElement('div'); //Création d'un nouvel élément "div" dans le DOM. L'opérateur this fait référence à Cart
-    this.DOM.className = 'aa-cartbox';
-    domTarget.appendChild(this.DOM); //Déplacer un élément d'un endroit vers un autre
-    this.products = [];
-    this.render();
-    orinoco.cart = this;
-  }
-  // Rendu de l'icone
-  render() {
-    this.DOM.innerHTML = `
+    constructor(domTarget) {
+        this.DOM = document.createElement('div'); //Création d'un nouvel élément "div" dans le DOM. L'opérateur this fait référence à Cart
+        this.DOM.className = 'aa-cartbox';
+        domTarget.appendChild(this.DOM); //Déplacer un élément d'un endroit vers un autre
+        this.products = [];
+        this.render();
+        orinoco.cart = this;
+    }
+    // Rendu de l'icone
+    render() {
+        this.DOM.innerHTML = `
     <a class="aa-cart-link" href="#">
         <span class="fa fa-shopping-basket"></span>
         <span class="aa-cart-title">MON PANIER</span>
@@ -20,14 +20,14 @@ class Cart {
         <ul>
           ${this.templateProduits()}
         </ul>
-        <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Passer la commande</a>
+        <a class="aa-cartbox-checkout aa-primary-btn" href="order.html">Passer la commande</a>
       </div>`;
-  }
+    }
 
-  templateProduits() {
-    let content = '';
-    for (let i = 0, size = this.products.length; i < size; i++) {
-      content += `
+    templateProduits() {
+        let content = '';
+        for (let i = 0, size = this.products.length; i < size; i++) {
+            content += `
       <li>
         <a class="aa-cartbox-img" href="#"><img src="${this.products[i].imgURL}" alt="img"></a>
         <div class="aa-cartbox-info">
@@ -37,12 +37,12 @@ class Cart {
             <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
         </li>
             `;
+        }
+        return content;
     }
-    return content;
-  }
 
-  add(product) {
-    this.products.push(product);
-    this.render();
-  }
+    add(product) {
+        this.products.push(product);
+        this.render();
+    }
 }

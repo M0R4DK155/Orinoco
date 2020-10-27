@@ -1,351 +1,381 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OriKids | Nos produits</title>
-    <!-- Font awesome -->
-    <link href="css/font-awesome.css" rel="stylesheet" />
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
-    <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
-    <!-- Product view slider -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css" />
-    <!-- slick slider -->
-    <link rel="stylesheet" type="text/css" href="css/slick.css" />
-    <!-- price picker slider -->
-    <link rel="stylesheet" type="text/css" href="css/nouislider.css" />
-    <!-- Theme color -->
-    <link
-      id="switcher"
-      href="css/theme-color/default-theme.css"
-      rel="stylesheet"
-    />
-    <!-- Top Slider CSS -->
-    <link
-      href="css/sequence-theme.modern-slide-in.css"
-      rel="stylesheet"
-      media="all"
-    />
-    <!-- Main style sheet -->
-    <link href="css/style.css" rel="stylesheet" />
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway"
-      rel="stylesheet"
-      type="text/css"
-    />
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>OriKids | Nos produits</title>
+      <!-- Font awesome -->
+      <link href="css/font-awesome.css" rel="stylesheet" />
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.css" rel="stylesheet" />
+      <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+      <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
+      <!-- Product view slider -->
+      <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css" />
+      <!-- slick slider -->
+      <link rel="stylesheet" type="text/css" href="css/slick.css" />
+      <!-- price picker slider -->
+      <link rel="stylesheet" type="text/css" href="css/nouislider.css" />
+      <!-- Theme color -->
+      <link
+         id="switcher"
+         href="css/theme-color/default-theme.css"
+         rel="stylesheet"
+      />
+      <!-- Top Slider CSS -->
+      <link
+         href="css/sequence-theme.modern-slide-in.css"
+         rel="stylesheet"
+         media="all"
+      />
+      <!-- Main style sheet -->
+      <link href="css/style.css" rel="stylesheet" />
+      <!-- Google Font -->
+      <link
+         href="https://fonts.googleapis.com/css?family=Lato"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <link
+         href="https://fonts.googleapis.com/css?family=Raleway"
+         rel="stylesheet"
+         type="text/css"
+      />
 
-    <script src="js/composants/cart.js"></script>
-    <script src="js/composants/product.js"></script>
-    <script src="js/datamanager.js"></script>
-    <script src="js/pages/order.js"></script>
-    <script src="js/pages/page.js" defer></script>
-  </head>
-  <!-- !Important notice -->
-  <!-- Only for product page body tag have to added .productPage class -->
-  <body class="productPage">
-    <!-- SCROLL TOP BUTTON -->
-    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
-    <!-- END SCROLL TOP BUTTON -->
-    <!-- Start header section -->
-    <header id="aa-header">
-      <!-- start header top  -->
-      <div class="aa-header-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="aa-header-top-area">
-                <!-- / header top left -->
-                <div class="aa-header-top-right">
-                  <ul class="aa-head-top-nav-right">
-                    <li class="hidden-xs"><a href="index.html">Accueil</a></li>
-                    <li class="hidden-xs">
-                      <a href="product.html">Nos produits</a>
-                    </li>
-                    <li class="hidden-xs">
-                      <a href="checkout.html">Mon panier</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- / header top  -->
-      <!-- start header bottom  -->
-      <div class="aa-header-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="aa-header-bottom-area">
-                <!-- logo  -->
-                <div class="aa-logo">
-                  <!-- Text based logo -->
-                  <a href="index.html">
-                    <img src="img/Logo_Orinoco.png" alt="Logo_Orinoco" />
-                  </a>
-                  <!-- img based logo -->
-                  <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
-                </div>
-                <!-- / logo  -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- / header bottom  -->
-    </header>
-    <!-- / header section -->
-    <!-- menu -->
-    <section id="menu">
-      <div class="container">
-        <div class="menu-area">
-          <!-- Navbar -->
-          <div class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-              <button
-                type="button"
-                class="navbar-toggle"
-                data-toggle="collapse"
-                data-target=".navbar-collapse"
-              >
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-            <div class="navbar-collapse collapse">
-              <!-- Left nav -->
-              <ul class="nav navbar-nav">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="product.html">Nos produits</a></li>
-                <li><a href="checkout.html">Mon panier</a></li>
-              </ul>
-            </div>
-            <!--/.nav-collapse -->
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- / menu -->
-    <h2>FICHE PRODUIT</h2>
-    <!-- product category -->
-    <section id="aa-product">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="aa-product-area">
-                <div class="aa-product-inner">
-                  <!-- start prduct navigation -->
-                  <!-- Tab panes -->
-                  <div class="tab-content">
-                    <!-- Start men product category -->
-                    <div class="tab-pane fade in active" id="men">
-                      <ul class="aa-product-catg">
-                        <!-- start single product item -->
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="#"
-                              ><img
-                                src="http://localhost:3000/images/teddy_1.jpg"
-                                alt="teddy_1 img"
-                            /></a>
-                            <a class="aa-add-card-btn" href="checkout.html"
-                              ><span class="fa fa-shopping-cart"></span>Ajouter
-                              au panier</a
-                            >
-                            <figcaption>
-                              <h4 class="aa-product-title">
-                                <a href="#">Norbert</a>
-                              </h4>
-                              <span class="aa-product-price">2900</span>
-                            </figcaption>
-                          </figure>
-                          <div class="aa-product-hvr-content">
-                            <a
-                              href="#"
-                              data-toggle2="tooltip"
-                              data-placement="top"
-                              title="Zoom"
-                              data-toggle="modal"
-                              data-target="#quick-view-modal"
-                              ><span class="fa fa-search"></span
-                            ></a>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- quick view modal -->
-                  <div
-                    class="modal fade"
-                    id="quick-view-modal"
-                    tabindex="-1"
-                    role="dialog"
-                    aria-label="myModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-hidden="true"
-                          >
-                            &times;
-                          </button>
-                          <div class="row">
-                            <!-- Modal view slider -->
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <img
-                                src="img/view-slider/medium/teddy_1.png"
-                                class="simpleLens-big-image"
-                                alt="teddy_1"
-                              />
-                            </div>
-                            <!-- Modal view content -->
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <div class="aa-product-view-content">
-                                <h3>Norbert</h3>
-                                <div class="aa-price-block">
-                                  <span class="aa-product-view-price"
-                                    >2900</span
-                                  >
-                                </div>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipisicing elit, sed do eiusmod tempor
-                                  incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <h4>Couleur</h4>
-                                <div class="aa-prod-view-color">
-                                  <form action="post">
-                                    <select name="colors" id="color-select">
-                                      <option value="0">Tan</option>
-                                      <option value="1">Chocolate</option>
-                                      <option value="2">Black</option>
-                                      <option value="3">White</option>
-                                    </select>
-                                  </form>
-                                </div>
-                                <h4>Quantité</h4>
-                                <div class="aa-prod-quantity">
-                                  <input
-                                    type="number"
-                                    min="1"
-                                    max="10"
-                                    value="1"
-                                    name="product_qty"
-                                    id="quantity"
-                                    class="form-control"
-                                    placeholder="Quantité"
-                                    aria-label="Quantité"
-                                    aria-describedby="quantity"
-                                  />
-                                </div>
-                                <div class="aa-prod-view-bottom">
-                                  <a
-                                    href="checkout.html"
-                                    class="aa-add-to-cart-btn"
-                                    >Ajouter au panier</a
-                                  >
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+      <script src="js/composants/cart.js"></script>
+      <script src="js/composants/product.js"></script>
+      <script src="js/datamanager.js"></script>
+      <script src="js/pages/order.js"></script>
+      <script src="js/pages/page.js" defer></script>
+   </head>
+
+   <body class="productPage">
+      <!-- SCROLL TOP BUTTON -->
+      <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+      <!-- END SCROLL TOP BUTTON -->
+      <!-- Start header section -->
+      <header id="aa-header">
+         <!-- start header top  -->
+         <div class="aa-header-top">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="aa-header-top-area">
+                        <!-- / header top left -->
+                        <div class="aa-header-top-right">
+                           <ul class="aa-head-top-nav-right">
+                              <li class="hidden-xs">
+                                 <a href="index.html">Accueil</a>
+                              </li>
+                              <li class="hidden-xs">
+                                 <a href="product.html">Nos produits</a>
+                              </li>
+                              <li class="hidden-xs">
+                                 <a href="order.html">Mon panier</a>
+                              </li>
+                           </ul>
                         </div>
-                      </div>
-                      <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
+                     </div>
                   </div>
-                  <!-- / quick view modal -->
-                </div>
-              </div>
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- / product category -->
-    <!-- footer -->
-    <footer id="aa-footer">
-      <!-- footer bottom -->
-      <div class="aa-footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="aa-footer-top-area">
-                <div class="row">
-                  <div class="col-md-3 col-sm-6">
-                    <div class="aa-footer-widget">
-                      <h3>Menu principal</h3>
-                      <ul class="aa-footer-nav">
+         </div>
+         <!-- / header top  -->
+         <!-- start header bottom  -->
+         <div class="aa-header-bottom">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="aa-header-bottom-area">
+                        <div class="aa-logo">
+                           <a href="index.html">
+                              <img
+                                 src="img/Logo_Orinoco.png"
+                                 alt="Logo_Orinoco"
+                              />
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- / header bottom  -->
+      </header>
+      <!-- / header section -->
+      <!-- menu -->
+      <section id="menu">
+         <div class="container">
+            <div class="menu-area">
+               <!-- Navbar -->
+               <div class="navbar navbar-default" role="navigation">
+                  <div class="navbar-header">
+                     <button
+                        type="button"
+                        class="navbar-toggle"
+                        data-toggle="collapse"
+                        data-target=".navbar-collapse"
+                     >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                     </button>
+                  </div>
+                  <div class="navbar-collapse collapse">
+                     <!-- Left nav -->
+                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="product.html">Nos produits</a></li>
-                        <li><a href="checkout.html">Mon panier</a></li>
-                      </ul>
-                    </div>
+                        <li><a href="order.html">Mon panier</a></li>
+                     </ul>
                   </div>
-                  <div class="col-md-3 col-sm-6">
-                    <div class="aa-footer-widget">
-                      <div class="aa-footer-widget">
-                        <h3>Contactez-nous</h3>
-                        <address>
-                          <p>Avenue des Champs-Élysées<br />75008 Paris</p>
-                          <p><span class="fa fa-phone"></span>08.08.08.08.08</p>
-                          <p>
-                            <span class="fa fa-envelope"></span
-                            >contact@orinoco.com
-                          </p>
-                        </address>
-                        <div class="aa-footer-social">
-                          <a href="www.facebook.com"
-                            ><span class="fa fa-facebook"></span
-                          ></a>
-                          <a href="www.twitter.com"
-                            ><span class="fa fa-twitter"></span
-                          ></a>
-                          <a href="www.youtube.com"
-                            ><span class="fa fa-youtube"></span
-                          ></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  <!--/.nav-collapse -->
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- / footer -->
+         </div>
+      </section>
+      <!-- / menu -->
+      <h2>FICHE PRODUIT</h2>
+      <!-- product category -->
+      <section id="aa-product">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="row">
+                     <div class="aa-product-area">
+                        <div class="aa-product-inner">
+                           <!-- start product navigation -->
+                           <ul class="aa-product-catg">
+                              <!-- start single product item -->
+                              <li>
+                                 <figure>
+                                    <a class="aa-product-img" href="#"
+                                       ><img
+                                          src="http://localhost:3000/images/teddy_1.jpg"
+                                          alt="teddy_1 img"
+                                    /></a>
+                                    <a class="aa-add-card-btn" href="order.html"
+                                       ><span class="fa fa-shopping-cart"></span
+                                       >Ajouter au panier</a
+                                    >
+                                    <figcaption>
+                                       <h4 class="aa-product-title">
+                                          <a href="#">Norbert</a>
+                                       </h4>
+                                       <span class="aa-product-price"
+                                          >2900</span
+                                       >
+                                    </figcaption>
+                                 </figure>
+                                 <div class="aa-product-hvr-content">
+                                    <a
+                                       href="#"
+                                       data-toggle2="tooltip"
+                                       data-placement="top"
+                                       title="Zoom"
+                                       data-toggle="modal"
+                                       data-target="#quick-view-modal"
+                                       ><span class="fa fa-search"></span
+                                    ></a>
+                                 </div>
+                              </li>
+                           </ul>
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/vendor/bootstrap.js"></script>
-    <!-- SmartMenus jQuery plugin -->
-    <script src="js/vendor/jquery.smartmenus.js"></script>
-    <!-- SmartMenus jQuery Bootstrap Addon -->
-    <script src="js/vendor/jquery.smartmenus.bootstrap.js"></script>
-    <!-- Product view slider -->
-    <script src="js/vendor/jquery.simpleGallery.js"></script>
-    <script src="js/vendor/jquery.simpleLens.js"></script>
-    <!-- slick slider -->
-    <script src="js/vendor/slick.js"></script>
-  </body>
+                           <!-- quick view modal -->
+                           <div
+                              class="modal fade"
+                              id="quick-view-modal"
+                              tabindex="-1"
+                              role="dialog"
+                              aria-label="myModalLabel"
+                              aria-hidden="true"
+                           >
+                              <div class="modal-dialog">
+                                 <div class="modal-content">
+                                    <div class="modal-body">
+                                       <button
+                                          type="button"
+                                          class="close"
+                                          data-dismiss="modal"
+                                          aria-hidden="true"
+                                       >
+                                          &times;
+                                       </button>
+                                       <div class="row">
+                                          <!-- Modal view slider -->
+                                          <div
+                                             class="col-md-6 col-sm-6 col-xs-12"
+                                          >
+                                             <img
+                                                src="img/view-slider/medium/teddy_1.png"
+                                                class="simpleLens-big-image"
+                                                alt="teddy_1"
+                                             />
+                                          </div>
+                                          <!-- Modal view content -->
+                                          <div
+                                             class="col-md-6 col-sm-6 col-xs-12"
+                                          >
+                                             <div
+                                                class="aa-product-view-content"
+                                             >
+                                                <h3>Norbert</h3>
+                                                <div class="aa-price-block">
+                                                   <span
+                                                      class="aa-product-view-price"
+                                                      >2900</span
+                                                   >
+                                                </div>
+                                                <p>
+                                                   Lorem ipsum dolor sit amet,
+                                                   consectetur adipisicing elit,
+                                                   sed do eiusmod tempor
+                                                   incididunt ut labore et
+                                                   dolore magna aliqua.
+                                                </p>
+                                                <h4>Couleur</h4>
+                                                <div class="aa-prod-view-color">
+                                                   <form action="post">
+                                                      <select
+                                                         name="colors"
+                                                         id="color-select"
+                                                      >
+                                                         <option value="0">
+                                                            Tan
+                                                         </option>
+                                                         <option value="1">
+                                                            Chocolate
+                                                         </option>
+                                                         <option value="2">
+                                                            Black
+                                                         </option>
+                                                         <option value="3">
+                                                            White
+                                                         </option>
+                                                      </select>
+                                                   </form>
+                                                </div>
+                                                <h4>Quantité</h4>
+                                                <div class="aa-prod-quantity">
+                                                   <input
+                                                      type="number"
+                                                      min="1"
+                                                      max="10"
+                                                      value="1"
+                                                      name="product_qty"
+                                                      id="quantity"
+                                                      class="form-control"
+                                                      placeholder="Quantité"
+                                                      aria-label="Quantité"
+                                                      aria-describedby="quantity"
+                                                   />
+                                                </div>
+                                                <div
+                                                   class="aa-prod-view-bottom"
+                                                >
+                                                   <a
+                                                      href="order.html"
+                                                      class="aa-add-to-cart-btn"
+                                                      >Ajouter au panier</a
+                                                   >
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- /.modal-content -->
+                              </div>
+                              <!-- /.modal-dialog -->
+                           </div>
+                           <!-- / quick view modal -->
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- / product category -->
+      <!-- footer -->
+      <footer id="aa-footer">
+         <!-- footer bottom -->
+         <div class="aa-footer-top">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="aa-footer-top-area">
+                        <div class="row">
+                           <div class="col-md-3 col-sm-6">
+                              <div class="aa-footer-widget">
+                                 <h3>Menu principal</h3>
+                                 <ul class="aa-footer-nav">
+                                    <li>
+                                       <a href="index.html">Accueil</a>
+                                    </li>
+                                    <li>
+                                       <a href="product.html">Nos produits</a>
+                                    </li>
+                                    <li>
+                                       <a href="order.html">Mon panier</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6">
+                              <div class="aa-footer-widget">
+                                 <div class="aa-footer-widget">
+                                    <h3>Contactez-nous</h3>
+                                    <address>
+                                       <p>
+                                          Avenue des Champs-Élysées<br />75008
+                                          Paris
+                                       </p>
+                                       <p>
+                                          <span class="fa fa-phone"></span
+                                          >08.08.08.08.08
+                                       </p>
+                                       <p>
+                                          <span class="fa fa-envelope"></span
+                                          >contact@orinoco.com
+                                       </p>
+                                    </address>
+                                    <div class="aa-footer-social">
+                                       <a href="www.facebook.com"
+                                          ><span class="fa fa-facebook"></span
+                                       ></a>
+                                       <a href="www.twitter.com"
+                                          ><span class="fa fa-twitter"></span
+                                       ></a>
+                                       <a href="www.youtube.com"
+                                          ><span class="fa fa-youtube"></span
+                                       ></a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- / footer -->
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/vendor/bootstrap.js"></script>
+      <!-- SmartMenus jQuery plugin -->
+      <script src="js/vendor/jquery.smartmenus.js"></script>
+      <!-- SmartMenus jQuery Bootstrap Addon -->
+      <script src="js/vendor/jquery.smartmenus.bootstrap.js"></script>
+      <!-- Product view slider -->
+      <script src="js/vendor/jquery.simpleGallery.js"></script>
+      <script src="js/vendor/jquery.simpleLens.js"></script>
+      <!-- slick slider -->
+      <script src="js/vendor/slick.js"></script>
+   </body>
 </html>
