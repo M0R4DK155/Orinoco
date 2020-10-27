@@ -51,7 +51,23 @@ class Product {
   }
 
   detailedTemplate() {
-    return '-----';
+    return `
+        <figure>
+        <img src="${this.imageUrl}" alt="${this.name}">
+        <figcaption>
+          <h4 class="aa-product-title">${this.name}</h4>
+          <span class="aa-product-price">${this.price / 100}€</span>
+        </figcaption>
+    </figure>
+    <div class="_aa-product-hvr-content">
+    
+    <select>
+      <option>a faire</option>
+    </select>
+    <button>ajouter au panier</button>
+
+    </div>       
+    `;
   }
 
   die() {
