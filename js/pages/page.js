@@ -1,15 +1,17 @@
+//Page routeur par défaut
 var orinoco = {
    components: {},
    dataManager: new DataManager('http://localhost:3000/api/teddies/'),
 };
 
+// Affichage de l'icone mon panier sur le header
 new Cart(document.querySelector('.aa-header-bottom-area'));
 changePage(window.location.search.slice(1));
 
 /**
  * change la page à afficher
  *
- * @param   {string}  askedPage  le contenu de la barre d'adresseaprès le point d'intérgotation ou les informations de page
+ * @param   {string}  askedPage  le contenu de la barre d'adresse après le point d'interogation ou les informations de page
  *
  * @return  {void}         appelle la page à afficher
  */

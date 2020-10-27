@@ -1041,6 +1041,7 @@ img {
    height: 285px;
 }
 .aa-product-catg li figure .aa-product-img {
+   cursor: default;
    background-color: #f9f9fb;
    border: 1px solid #000000;
    display: block;
@@ -1081,7 +1082,10 @@ img {
    margin-bottom: 5px;
 }
 .aa-product-catg li .aa-product-title a {
+   font-weight: bold;
+   cursor: default;
    color: #333;
+   cursor: default;
    -webkit-transition: all 0.5s;
    -moz-transition: all 0.5s;
    -ms-transition: all 0.5s;

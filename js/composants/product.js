@@ -9,17 +9,13 @@ class Product {
       window[container].components['product' + this._id] = this;
       this.container = container;
       this.render();
-      console.log(orinoco);
    }
 
    resumeTemplate() {
       return `
       <figure>
-        <a class="aa-product-img" href="#"><img src="${this.imageUrl
-         }" alt="teddy_img"></a>
-        <a class="aa-add-card-btn" onclick="${this.container
-         }.components.product${this._id
-         }.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
+        <a class="aa-product-img" href="#"><img src="${this.imageUrl}" alt="teddy_img"></a>
+        <a class="aa-add-card-btn" onclick="${this.container}.components.product${this._id}.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
         <figcaption>
            <h4 class="aa-product-title"><a href="#">${this.name}</a></h4>
            <span class="aa-product-price">${this.price / 100}€</span>
@@ -27,12 +23,7 @@ class Product {
     </figure>
     <div class="aa-product-hvr-content">
 
-
-
-        <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container
-         }.components.product${this._id
-         }.changeView()"><span class="fa fa-search"></span></a> -->
-
+      <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container}.components.product${this._id}.changeView()"><span class="fa fa-search"></span></a> -->
 
     </div>
         `;
@@ -52,22 +43,17 @@ class Product {
 
    detailedTemplate() {
       return `
-    <figure>
-        <a class="aa-product-img" href="#"><img src="${this.imageUrl
-         }" alt="teddy_img"></a>
-        <a class="aa-add-card-btn" onclick="${this.container
-         }.components.product${this._id
-         }.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
+      <figure>
+        <a class="aa-product-img" href="#"><img src="${this.imageUrl}" alt="teddy_img"></a>
+        <a class="aa-add-card-btn" onclick="${this.container}.components.product${this._id}.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
         <figcaption>
            <h4 class="aa-product-title"><a href="#">${this.name}</a></h4>
            <span class="aa-product-price">${this.price / 100}€</span>
         </figcaption>
-    </figure>
-    <div class="aa-product-hvr-content">
-    <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container
-         }.components.product${this._id
-         }.changeView()"><span class="fa fa-search"></span></a> -->
-  </div>
+      </figure>
+      <div class="aa-product-hvr-content">
+         <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container}.components.product${this._id}.changeView()"><span class="fa fa-search"></span></a> -->
+      </div>
         `;
    }
 
