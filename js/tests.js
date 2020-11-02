@@ -1,4 +1,4 @@
-////////Template
+////////Template affichage du produit
 <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
       <div class="aa-product-view-content">
@@ -25,3 +25,6 @@
       </div>
    </div>
 </div >;
+
+////////// FORMULAIRE
+////////// Ecouter la modification de l'email

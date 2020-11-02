@@ -1,4 +1,6 @@
 //Création de la page panier
 class Order {
-    constructor() {}
+    constructor(domTarget) {
+        
+    }
 }

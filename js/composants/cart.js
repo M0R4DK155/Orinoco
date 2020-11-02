@@ -2,12 +2,13 @@
 class Cart {
   constructor(domTarget) {
     this.DOM = document.createElement('div'); //Création d'un nouvel élément "div" dans le DOM. L'opérateur this fait référence à Cart
-    this.DOM.className = 'aa-cartbox';
+    this.DOM.className = 'aa-cartbox'; //Zone d'affichage du panier
     domTarget.appendChild(this.DOM); //Déplacer un élément d'un endroit vers un autre
-    this.products = [];
+    this.products = []; //Liste de(s) produit(s) dans le panier
     this.render();
     orinoco.cart = this;
   }
+
   // Rendu de l'icone
   render() {
     this.DOM.innerHTML = `
@@ -23,7 +24,7 @@ class Cart {
         <a class="aa-cartbox-checkout aa-primary-btn" href="order.html">Passer la commande</a>
       </div>`;
   }
-
+  //Affichage de l'icone dans la page
   templateProduits() {
     let content = '';
     for (let i = 0, size = this.products.length; i < size; i++) {

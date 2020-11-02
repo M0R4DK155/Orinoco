@@ -1,16 +1,19 @@
+///Composant réutilisable sur des projets futurs
+//Affichage du produit
 class Product {
    constructor(props, domTarget, container) {
       for (const [key, value] of Object.entries(props)) {
          this[key] = value;
       }
       this.showDetails = false;
-      this.DOM = document.createElement('li');
-      domTarget.appendChild(this.DOM);
-      window[container].components['product' + this._id] = this;
+      this.DOM = document.createElement('li'); //Représentation de notre élément dans le DOM
+      domTarget.appendChild(this.DOM); //S'ajoute un enfant 'li'
+      window[container].components['product' + this._id] = this; //Récupération du product à partir de son id
       this.container = container;
       this.render();
    }
 
+   //Récupération du modèle HTML
    resumeTemplate() {
       return `
       <figure>
@@ -20,12 +23,12 @@ class Product {
            <h4 class="aa-product-title"><a href="#">${this.name}</a></h4>
            <span class="aa-product-price">${this.price / 100}€</span>
         </figcaption>
-    </figure>
-    <div class="aa-product-hvr-content">
+      </figure>
+      <div class="aa-product-hvr-content">
 
-      <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container}.components.product${this._id}.changeView()"><span class="fa fa-search"></span></a> -->
+         <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container}.components.product${this._id}.changeView()"><span class="fa fa-search"></span></a> -->
 
-    </div>
+      </div>
         `;
    }
 
@@ -41,24 +44,34 @@ class Product {
       this.render();
    }
 
+   //Vue détaillée du produit "cliqué"
    detailedTemplate() {
       return `
       <figure>
-        <a class="aa-product-img" href="#"><img src="${this.imageUrl}" alt="teddy_img"></a>
-        <a class="aa-add-card-btn" onclick="${this.container}.components.product${this._id}.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
+        <img src="${this.imageUrl}" alt="${this.name}">
         <figcaption>
-           <h4 class="aa-product-title"><a href="#">${this.name}</a></h4>
+           <h4 class="aa-product-title">${this.name}</h4>
            <span class="aa-product-price">${this.price / 100}€</span>
         </figcaption>
       </figure>
-      <div class="aa-product-hvr-content">
-         <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container}.components.product${this._id}.changeView()"><span class="fa fa-search"></span></a> -->
+      <div class="_aa-product-hvr-content">
+
+      <select>
+         <option>à faire</option>
+      </select>
+      <button>
+         Ajouter au panier
+      </button>
+      <button>
+         Supprimer du panier
+      </button>
       </div>
         `;
    }
 
+   //Propriété qui permet la "disparition" des produits "non cliqués"
    die() {
-      this.DOM.parentNode.removeChild(this.DOM);
+      this.DOM.parentNode.removeChild(this.DOM); //On récupère le parent de notre élément 'li' du DOM, le parent va enlever l'enfant (this.DOM), permet de "s'auto-enlever" en quelque sorte.
       delete window[this.container].components[['product' + this._id]];
    }
 }

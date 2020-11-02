@@ -1,3 +1,4 @@
+//Affichage dynamique du produit séléctionné
 class ProductPage {
   constructor(idProduct) {
     console.log("--->", idProduct);
