@@ -6,7 +6,6 @@ class Cart {
     domTarget.appendChild(this.DOM); //Déplacer un élément d'un endroit vers un autre
     this.products = []; //Liste de(s) produit(s) dans le panier
     this.render();
-    orinoco.cart = this;
   }
 
   // Rendu de l'icone

@@ -35,7 +35,8 @@
    <script src="js/pages/order.js"></script>
    <script src="js/pages/productList.js"></script>
    <script src="js/pages/productPage.js"></script>
-   <script src="js/pages/page.js" defer></script>
+   <script src="js/pages/pageManager.js"></script>
+   <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -62,8 +63,7 @@
                      <!-- / header top left -->
                      <div class="aa-header-top-right">
                         <ul class="aa-head-top-nav-right">
-                           <li class="hidden-xs"><a href="index.html">Accueil</a></li>
-                           <li class="hidden-xs" onclick="changePage('list')">Nos produits</li>
+                           <li class="hidden-xs" onclick="orinoco.pageManager.definePage({'page':'list'})">Nos produits</li>
                            <li class="hidden-xs"><a href="order.html">Mon panier</a></li>
                         </ul>
                      </div>
@@ -111,8 +111,7 @@
                <div class="navbar-collapse collapse">
                   <!-- Left nav -->
                   <ul class="nav navbar-nav">
-                     <li><a href="index.html">Accueil</a></li>
-                     <li onclick="changePage('list')">Nos produits</li>
+                    <li class="hidden-xs" onclick="orinoco.pageManager.definePage({'page':'list'})">Nos produits</li>
                      <li><a href="order.html">Mon panier</a></li>
                   </ul>
                </div>

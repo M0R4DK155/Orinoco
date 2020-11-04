@@ -1,11 +1,11 @@
 ///Composant réutilisable sur des projets futurs
 //Affichage du produit
 class Product {
-   constructor(props, domTarget, container) {
+   constructor(props, domTarget, container, showDetails=false) {
       for (const [key, value] of Object.entries(props)) {
          this[key] = value;
       }
-      this.showDetails = false;
+      this.showDetails = showDetails;
       this.DOM = document.createElement('li'); //Représentation de notre élément dans le DOM
       domTarget.appendChild(this.DOM); //S'ajoute un enfant 'li'
       window[container].components['product' + this._id] = this; //Récupération du product à partir de son id
@@ -40,7 +40,7 @@ class Product {
 
    changeView() {
       this.showDetails = !this.showDetails;
-      if (this.showDetails) changePage('product' + this._id);
+      if (this.showDetails) new ProductPage(this._id);
       this.render();
    }
 
