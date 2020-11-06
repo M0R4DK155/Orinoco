@@ -18,8 +18,8 @@ class ProductPage {
 
   removeOtherProducts(idProduct){
     this.changePage(orinoco.dataManager.products[idProduct].name, idProduct)
-    for (const [key, value] of Object.entries(orinoco.components)) {
-      if (key !== "product"+idProduct) orinoco.components[key].die();
+    for (const [key, value] of Object.entries(orinoco.products)) {
+      if (key !== "product"+idProduct) orinoco.products[key].die();
     }
   }
 

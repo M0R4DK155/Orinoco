@@ -1,10 +1,14 @@
 // Création de l'icone mon panier sur le header
-class Cart {
+class Panier {
   constructor(domTarget) {
     this.DOM = document.createElement('div'); //Création d'un nouvel élément "div" dans le DOM. L'opérateur this fait référence à Cart
     this.DOM.className = 'aa-cartbox'; //Zone d'affichage du panier
     domTarget.appendChild(this.DOM); //Déplacer un élément d'un endroit vers un autre
-    this.products = []; //Liste de(s) produit(s) dans le panier
+
+    //récupère la liste de(s) produit(s) dans le panier
+    this.products = orinoco.dataManager.getLocalData("panier",true);
+    if (this.products === null) this.products = []; 
+
     this.render();
   }
 
@@ -29,12 +33,12 @@ class Cart {
     for (let i = 0, size = this.products.length; i < size; i++) {
       content += `
       <li>
-        <a class="aa-cartbox-img" href="#"><img src="${this.products[i].imgURL}" alt="img"></a>
+        <a class="aa-cartbox-img" href="#"><img src="${this.products[i].imageUrl}" alt="img"></a>
         <div class="aa-cartbox-info">
-          <h4><a href="#">${this.name}</a></h4>
-            <p>${this.price / 100}€</p>
+          <h4><a href="#">${this.products[i].name}</a></h4>
+            <p>${this.products[i].price}€</p>
         </div>
-            <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+            <div class="aa-remove-product" onclick="orinoco.panier.remove('${this.products[i].id}')"><span class="fa fa-times"></span></div>
         </li>
             `;
     }
@@ -43,6 +47,29 @@ class Cart {
 
   add(product) {
     this.products.push(product);
+    this.updatePanier();
+  }
+
+  remove(productIdToRemove){
+    let nouveauPanier = [];
+    let removed = false;
+    for (let i=0, size=this.products.length; i <size; i++){
+      if(removed) {
+        nouveauPanier.push(this.products[i]);
+        continue;
+      }
+      if (this.products[i].id !== productIdToRemove) {
+        nouveauPanier.push(this.products[i]);
+        continue;        
+      }
+      removed = true;
+    }
+    this.products = nouveauPanier;
+    this.updatePanier();
+  }
+
+  updatePanier(){    
+    orinoco.dataManager.setLocalData("panier", this.products);
     this.render();
   }
 }

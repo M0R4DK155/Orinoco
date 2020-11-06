@@ -8,7 +8,7 @@ class Product {
       this.showDetails = showDetails;
       this.DOM = document.createElement('li'); //Représentation de notre élément dans le DOM
       domTarget.appendChild(this.DOM); //S'ajoute un enfant 'li'
-      window[container].components['product' + this._id] = this; //Récupération du product à partir de son id
+      window[container].products['product' + this._id] = this; //Récupération du product à partir de son id
       this.container = container;
       this.render();
    }
@@ -18,7 +18,7 @@ class Product {
       return `
       <figure>
         <a class="aa-product-img" href="#"><img src="${this.imageUrl}" alt="teddy_img"></a>
-        <a class="aa-add-card-btn" onclick="${this.container}.components.product${this._id}.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
+        <a class="aa-add-card-btn" onclick="${this.container}.products.product${this._id}.changeView()" ><span class="fa fa-search"></span>Voir produit</a>
         <figcaption>
            <h4 class="aa-product-title"><a href="#">${this.name}</a></h4>
            <span class="aa-product-price">${this.price / 100}€</span>
@@ -26,7 +26,7 @@ class Product {
       </figure>
       <div class="aa-product-hvr-content">
 
-         <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container}.components.product${this._id}.changeView()"><span class="fa fa-search"></span></a> -->
+         <!-- <a href="#" data-toggle2="tooltip" data-placement="top" title="Zoom" data-toggle="modal" onclick="${this.container}.products.product${this._id}.changeView()"><span class="fa fa-search"></span></a> -->
 
       </div>
         `;
@@ -59,11 +59,8 @@ class Product {
       <select>
          <option>à faire</option>
       </select>
-      <button>
+      <button onclick="orinoco.products.product${this._id}.addToCart()">
          Ajouter au panier
-      </button>
-      <button>
-         Supprimer du panier
       </button>
       </div>
         `;
@@ -72,7 +69,16 @@ class Product {
    //Propriété qui permet la "disparition" des produits "non cliqués"
    die() {
       this.DOM.parentNode.removeChild(this.DOM); //On récupère le parent de notre élément 'li' du DOM, le parent va enlever l'enfant (this.DOM), permet de "s'auto-enlever" en quelque sorte.
-      delete window[this.container].components[['product' + this._id]];
+      delete window[this.container].products[['product' + this._id]];
+   }
+
+   addToCart(){
+     orinoco.panier.add({
+       id      : this._id,
+       imageUrl: this.imageUrl,
+       name    : this.name,
+       price   : this.price/100,
+     })
    }
 }
 
