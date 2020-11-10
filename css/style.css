@@ -24,6 +24,10 @@ body {
    overflow-x: hidden;
 }
 
+.col-md-12 {
+   padding-bottom: 10px;
+}
+
 .no-padding {
    padding: 0;
 }
@@ -588,8 +592,8 @@ img {
    .aa-cartbox-img {
    display: block;
    float: left;
-   height: 95px;
-   width: 80px;
+   height: 50%;
+   width: 50%;
 }
 #aa-header
    .aa-header-bottom
@@ -610,9 +614,8 @@ img {
    li
    .aa-cartbox-info {
    display: block;
-   float: left;
    margin-left: 10px;
-   width: 55%;
+   width: auto;
 }
 #aa-header
    .aa-header-bottom
@@ -1015,7 +1018,7 @@ img {
    height: 380px;
    text-align: center;
    margin: 0 0 20px 55px;
-   width: 40%;
+   width: 30%;
    position: relative;
    overflow: hidden;
 }
@@ -1053,7 +1056,7 @@ img {
 }
 .aa-product-catg li figure .aa-add-card-btn {
    background: #000 none repeat scroll 0 0;
-   bottom: 0;
+   bottom: 70px;
    color: #fff;
    cursor: pointer;
    font-size: 16px;
@@ -2294,7 +2297,7 @@ img {
 #checkout .checkout-area {
    display: inline;
    float: left;
-   padding: 178px 0;
+   padding: 50px 0;
    width: 100%;
 }
 #checkout .checkout-area .checkout-left {
@@ -2719,7 +2722,7 @@ img {
    }
 
    #checkout .checkout-area {
-      padding: 290px 0px;
+      padding: 50px 0px;
    }
 
    .aa-product-catg li {
@@ -3169,7 +3172,7 @@ img {
    }
 
    .aa-product-img {
-      width: 50%;
+      width: auto;
    }
 
    .aa-product-catg li {
@@ -3179,25 +3182,6 @@ img {
 
    .slick-prev {
       left: 84%;
-   }
-
-   #aa-promo .aa-promo-area {
-      margin-top: -20px;
-      padding: 0;
-   }
-
-   #aa-promo .aa-promo-area .aa-promo-left {
-      height: 250px;
-      width: 100%;
-   }
-
-   #aa-promo .aa-promo-area .aa-promo-right {
-      height: auto;
-   }
-
-   #aa-promo .aa-promo-area .aa-promo-right .aa-single-promo-right {
-      height: 250px;
-      width: 100%;
    }
 
    #aa-product .aa-product-area {

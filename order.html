@@ -9,6 +9,8 @@
    <link href="css/font-awesome.css" rel="stylesheet" />
    <!-- Bootstrap -->
    <link href="css/bootstrap.css" rel="stylesheet" />
+   <!-- Favicon -->
+   <link rel="favicon.ico" href="/img/favicon.ico">
    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
    <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
    <!-- Product view slider -->
@@ -27,11 +29,15 @@
    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css" />
    <!-- Pages et composants JS -->
-   <script src="js/composants/cart.js"></script>
+   <script src="js/composants/modal.js"></script>
+   <script src="js/composants/panier.js"></script>
    <script src="js/composants/product.js"></script>
    <script src="js/datamanager.js"></script>
    <script src="js/pages/order.js"></script>
-   <script src="js/pages/page.js" defer></script>
+   <script src="js/pages/pageManager.js"></script>
+   <script src="js/pages/productList.js"></script>
+   <script src="js/pages/productPage.js"></script>
+   <script src="js/index.js" defer></script>
 </head>
 
 <body>
@@ -146,7 +152,59 @@
                <div class="checkout-area">
                   <form action="checkout" method="POST" id="checkout">
                      <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
+                           <div class="checkout-right">
+                              <h4>
+                                 <strong>Récapitulatif de la commande</strong>
+                              </h4>
+                              <div class="aa-order-summary-area">
+                                 <table class="table table-responsive">
+                                    <thead>
+                                       <tr>
+                                          <th scope="col">Article</th>
+                                          <th scope="col">Quantité</th>
+                                          <th scope="col">Couleur</th>
+                                          <th scope="col">Total</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td>
+                                             <strong>nomArticle</strong>
+                                          </td>
+                                          <td>qtyArticle</td>
+                                          <td>color</td>
+                                          <td></td>
+                                       </tr>
+                                       <tr>
+                                          <td>
+                                             <strong>nomArticle</strong>
+                                          </td>
+                                          <td>qtyArticle</td>
+                                          <td>color</td>
+                                          <td></td>
+                                       </tr>
+                                       <tr>
+                                          <td>
+                                             <strong>nomArticle</strong>
+                                          </td>
+                                          <td>qtyArticle</td>
+                                          <td>color</td>
+                                          <td></td>
+                                       </tr>
+                                    </tbody>
+                                    <tfoot>
+                                       <tr>
+                                          <th>Total panier</th>
+                                          <td>totalArticle</td>
+                                          <td colspan="2">€</td>
+                                       </tr>
+                                    </tfoot>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
                            <div class="checkout-left">
                               <div class="panel-group" id="accordion">
                                  <!-- Shipping Address -->
@@ -154,9 +212,10 @@
                                     <div class="panel-heading">
                                        <h4 class="panel-title">
                                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                             <strong>Adresse de livraison</strong><small><em>
-                                                   (Cliquez pour
-                                                   dérouler)</em></small>
+                                             <strong>Adresse de livraison</strong>
+                                             <small>
+                                                <em>(Cliquez pour dérouler)</em>
+                                             </small>
                                           </a>
                                        </h4>
                                     </div>
@@ -214,58 +273,6 @@
                                        </div>
                                     </div>
                                  </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="checkout-right">
-                              <h4>
-                                 <strong>Récapitulatif de la commande</strong>
-                              </h4>
-                              <div class="aa-order-summary-area">
-                                 <table class="table table-responsive">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">Article</th>
-                                          <th scope="col">Quantité</th>
-                                          <th scope="col">Couleur</th>
-                                          <th scope="col">Total</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                          <td>
-                                             <strong>nomArticle</strong>
-                                          </td>
-                                          <td>qtyArticle</td>
-                                          <td>color</td>
-                                          <td></td>
-                                       </tr>
-                                       <tr>
-                                          <td>
-                                             <strong>nomArticle</strong>
-                                          </td>
-                                          <td>qtyArticle</td>
-                                          <td>color</td>
-                                          <td></td>
-                                       </tr>
-                                       <tr>
-                                          <td>
-                                             <strong>nomArticle</strong>
-                                          </td>
-                                          <td>qtyArticle</td>
-                                          <td>color</td>
-                                          <td></td>
-                                       </tr>
-                                    </tbody>
-                                    <tfoot>
-                                       <tr>
-                                          <th>Total panier</th>
-                                          <td>totalArticle</td>
-                                          <td colspan="2">€</td>
-                                       </tr>
-                                    </tfoot>
-                                 </table>
                               </div>
                            </div>
                         </div>

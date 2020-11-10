@@ -1,13 +1,13 @@
-// Création de l'icone mon panier sur le header
+// Création de l'icone mon panier sur le header 
 class Panier {
   constructor(domTarget) {
-    this.DOM = document.createElement('div'); //Création d'un nouvel élément "div" dans le DOM. L'opérateur this fait référence à Cart
+    this.DOM = document.createElement('div'); //Création d'un nouvel élément "div" dans le DOM. L'opérateur this fait référence à Panier
     this.DOM.className = 'aa-cartbox'; //Zone d'affichage du panier
     domTarget.appendChild(this.DOM); //Déplacer un élément d'un endroit vers un autre
 
-    //récupère la liste de(s) produit(s) dans le panier
-    this.products = orinoco.dataManager.getLocalData("panier",true);
-    if (this.products === null) this.products = []; 
+    ////////// récupère la liste de(s) produit(s) dans le panier
+    this.products = orinoco.dataManager.getLocalData("panier", true);
+    if (this.products === null) this.products = [];
 
     this.render();
   }
@@ -27,6 +27,7 @@ class Panier {
         <a class="aa-cartbox-checkout aa-primary-btn" href="order.html">Passer la commande</a>
       </div>`;
   }
+
   //Affichage de l'icone dans la page
   templateProduits() {
     let content = '';
@@ -45,30 +46,31 @@ class Panier {
     return content;
   }
 
+  //Ajout d'un produit dans le panier
   add(product) {
     this.products.push(product);
     this.updatePanier();
   }
-
-  remove(productIdToRemove){
+  //Supprimer un produit du panier
+  remove(productIdToRemove) {
     let nouveauPanier = [];
     let removed = false;
-    for (let i=0, size=this.products.length; i <size; i++){
-      if(removed) {
+    for (let i = 0, size = this.products.length; i < size; i++) {
+      if (removed) {
         nouveauPanier.push(this.products[i]);
         continue;
       }
       if (this.products[i].id !== productIdToRemove) {
         nouveauPanier.push(this.products[i]);
-        continue;        
+        continue;
       }
       removed = true;
     }
     this.products = nouveauPanier;
     this.updatePanier();
   }
-
-  updatePanier(){    
+  //Mise à jour du panier
+  updatePanier() {
     orinoco.dataManager.setLocalData("panier", this.products);
     this.render();
   }

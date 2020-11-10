@@ -9,6 +9,8 @@
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="favicon.ico" href="img/favicon.ico">
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
     <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
     <!-- Product view slider -->
@@ -26,6 +28,16 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css" />
+    <!-- Pages et composants JS -->
+    <script src="js/composants/modal.js"></script>
+    <script src="js/composants/panier.js"></script>
+    <script src="js/composants/product.js"></script>
+    <script src="js/datamanager.js"></script>
+    <script src="js/pages/order.js"></script>
+    <script src="js/pages/pageManager.js"></script>
+    <script src="js/pages/productList.js"></script>
+    <script src="js/pages/productPage.js"></script>
+    <script src="js/index.js" defer></script>
 </head>
 
 <body>
@@ -77,26 +89,23 @@
     </header>
     <!-- / header section -->
     <!-- Cart view section -->
-    <section id="order">
-        <div class="container">
-
-
-
-            <div class="row">
-                <article>
-                    <h1 class="panel-title">
-                        <span>Votre commande a bien été enregistrée.<br />Prix total :<br />Identifiant de
-                            commande.</span>
-                    </h1>
-                </article>
-
-
+    <main>
+        <section id="order">
+            <div class="jumbotron ConfirmationDeCommande">
+                <div class="row">
+                    <article>
+                        <h1 class="display-4">
+                            <span>Votre commande a bien été enregistrée.</span>
+                            <br>
+                            <span>Prix total : </span>
+                            <br>
+                            <span>Identifiant de commande.</span>
+                        </h1>
+                    </article>
+                </div>
             </div>
-
-
-
-        </div>
-    </section>
+        </section>
+    </main>
     <!-- footer -->
     <footer id="aa-footer">
         <!-- footer bottom -->

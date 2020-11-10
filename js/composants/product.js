@@ -1,7 +1,7 @@
 ///Composant réutilisable sur des projets futurs
 //Affichage du produit
 class Product {
-   constructor(props, domTarget, container, showDetails=false) {
+   constructor(props, domTarget, container, showDetails = false) {
       for (const [key, value] of Object.entries(props)) {
          this[key] = value;
       }
@@ -54,10 +54,10 @@ class Product {
            <span class="aa-product-price">${this.price / 100}€</span>
         </figcaption>
       </figure>
-      <div class="_aa-product-hvr-content">
+      <div class="aa-product-hvr-content">
 
-      <select>
-         <option>à faire</option>
+      <select id="choix">
+         <option id="colors">${this.colors}</option>
       </select>
       <button onclick="orinoco.products.product${this._id}.addToCart()">
          Ajouter au panier
@@ -72,13 +72,14 @@ class Product {
       delete window[this.container].products[['product' + this._id]];
    }
 
-   addToCart(){
-     orinoco.panier.add({
-       id      : this._id,
-       imageUrl: this.imageUrl,
-       name    : this.name,
-       price   : this.price/100,
-     })
+   addToCart() {
+      orinoco.panier.add({
+         id: this._id,
+         imageUrl: this.imageUrl,
+         name: this.name,
+         colors: this.colors, //ajout pour gérer choix couleur (voir avec Lionel)
+         price: this.price / 100,
+      })
    }
 }
 
