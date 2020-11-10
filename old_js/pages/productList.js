@@ -9,6 +9,8 @@ class ProductList {
    showProducts(list) {
       const target = document.querySelector('ul.aa-product-catg'); //Retourne le selecteur spécifié (faire un createElement pour un meilleur affichage du produit?)
       for (let i = 0, size = list.length; i < size; i++) {
+          console.log("var:",orinoco.products["product" + list[i]._id]);
+          
          if (orinoco.products["product" + list[i]._id] !== undefined) {
             orinoco.products["product" + list[i]._id].changeView();
             continue;

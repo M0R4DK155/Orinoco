@@ -1,6 +1,7 @@
 class PageManager {
   constructor(domTarget) {
     this.domTarget = domTarget;
+    this.page = null;
     window.onpopstate = (event)=> {
       alert(
         "adresse: " +
@@ -16,7 +17,7 @@ class PageManager {
   changePage(title, url, newPage) {
     document.title = title;
     history.pushState({}, title, "?" + url);
-    orinoco.page = newPage;
+    this.page = newPage;
   }
 
   /**
