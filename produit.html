@@ -14,7 +14,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/a1f0da57c8.js" crossorigin="anonymous"></script>
     <link rel="favicon" href="img/favicon.ico">
-    <title>OriKids - Confirmation de commande</title>
+    <title>OriKids - Produit</title>
 
     <!-- elements structurants -->
     <script src="js/components.js"></script>
@@ -26,6 +26,7 @@
 
     <!-- pages -->
     <script src="js/pages/productPage.js"></script>
+
 
     <!-- on initialise la page -->
     <script src="js/index.js" defer></script>
@@ -41,7 +42,7 @@
             <button class="panier" onclick='location.href="panier.html"' data-target="panier">Panier ( <span
                     class="qteArticle"></span> )<i class="fas fa-shopping-cart"></i></button>
         </div>
-        <p>CONFIRMATION DE COMMANDE</p>
+        <p>PRODUIT</p>
 
     </header>
 
@@ -53,16 +54,28 @@
     </section>
     <!-------------------- On injecte ici -------------------->
     <main id="main">
-
-        <div class="jumbotron ConfirmationDeCommande">
-            <h1 class="display-4">Votre commande a bien été prise en compte.<i class="fas fa-check"></i></h1>
-            <div id="recap"></div>
-
-
-            <a class="btn btn-secondary btn-lg retour" href="index.html" onclick="retour()" role="button">Retour à
-                l'accueil</a>
-        </div>
-
+        <h2 id="title">FICHE DU PRODUIT</h2>
+        <div id="produit"></div>
+        <article>
+            <h3 id="peluche">Norbert</h3>
+            <img src="http://localhost:3000/images/teddy_1.jpg">
+            <div>
+                <h4>Prix : </h4>
+                <p>€</p>
+                <h4>Description</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sed reiciendis corrupti sequi.
+                    Aliquam, a corporis? Culpa, in. Hic enim quisquam ratione totam atque quod alias veniam sint
+                    eligendi aliquam?</p>
+                <label>Couleur</label>
+                <select id="choix">
+                    <option id="couleur">Tan</option>
+                    <option id="couleur">Chocolate</option>
+                    <option id="couleur">Black</option>
+                    <option id="couleur">White</option>
+                </select>
+                <button id="ajoutPanier">Ajouter au panier</button>
+            </div>
+        </article>
     </main>
 
     <footer id="footer">
