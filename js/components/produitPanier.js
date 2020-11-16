@@ -1,28 +1,29 @@
-class ProduitPanier extends Component{
+class ProduitPanier extends Component {
 
-  imageUrl = null;
-  name     = null;
-  price    = null;
-  qty      = null;
-  total    = null;
+    imageUrl = null;
+    name = null;
+    price = null;
+    qty = null;
+    total = null;
 
-  constructor(props, domTarget){
-    super("produit",props, domTarget);
-    this.render();
-  }
+    constructor(props, domTarget) {
+        super("produit", props, domTarget);
+        this.render();
+    }
 
-  add(){
+    add() {
 
-  }
-  remove(){
+    }
+    remove() {
 
-  }
-  delete(){
+    }
 
-  }
+    delete() {
 
-  render(){
+    }
 
-  }
+    render() {
+
+    }
 
 }

@@ -2,283 +2,133 @@
 <html lang="fr">
 
 <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <title>OriKids | Accueil</title>
-   <!-- Font awesome -->
-   <link href="css/font-awesome.css" rel="stylesheet" />
-   <!-- Bootstrap -->
-   <link href="css/bootstrap.css" rel="stylesheet" />
-   <!-- Favicon -->
-   <link rel="favicon.ico" href="img/favicon.ico">
-   <!-- SmartMenus jQuery Bootstrap Addon CSS -->
-   <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
-   <!-- Product view slider -->
-   <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css" />
-   <!-- slick slider -->
-   <link rel="stylesheet" type="text/css" href="css/slick.css" />
-   <!-- price picker slider -->
-   <link rel="stylesheet" type="text/css" href="css/nouislider.css" />
-   <!-- Theme color -->
-   <link id="switcher" href="css/theme-color/default-theme.css" rel="stylesheet" />
-   <!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
-   <!-- Top Slider CSS -->
-   <link href="css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all" />
-   <!-- Main style sheet -->
-   <link href="css/style.css" rel="stylesheet" />
-   <!-- Google Font -->
-   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
-   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css" />
-   <!-- Pages et composants JS -->
-   <script src="old_js/composants/modal.js"></script>
-   <script src="old_js/composants/panier.js"></script>
-   <script src="old_js/composants/product.js"></script>
-   <script src="old_js/datamanager.js"></script>
-   <script src="old_js/pages/order.js"></script>
-   <script src="old_js/pages/pageManager.js"></script>
-   <script src="old_js/pages/productList.js"></script>
-   <script src="old_js/pages/productPage.js"></script>
-   <script src="old_js/index.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Orinoco | OriKids, l'expert de la peluche made in France.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a1f0da57c8.js" crossorigin="anonymous"></script>
+    <link rel="favicon" href="img/favicon.ico">
+    <title>OriKids - Accueil</title>
+
+    <!-- elements structurants -->
+    <script src="js/components.js"></script>
+    <script src="js/pages/page.js"></script>
+    <script src="js/pages/pageManager.js"></script>
+    <script src="js/datamanager.js"></script>
+
+    <!-- composants -->
+    <script src="js/components/panier.js"></script>
+    <script src="js/components/carteProduit.js"></script>
+
+    <!-- pages -->
+    <script src="js/pages/productPage.js"></script>
+    <script src="js/pages/productList.js"></script>
+
+
+    <!-- on initialise la page -->
+    <script src="js/index.js" defer></script>
+
 </head>
 
 <body>
-   <!-- wpf loader Two -->
-   <div id="wpf-loader-two">
-      <div class="wpf-loader-two-inner">
-         <span>Orinoco</span>
-      </div>
-   </div>
-   <!-- / wpf loader Two -->
-   <!-- SCROLL TOP BUTTON -->
-   <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
-   <!-- END SCROLL TOP BUTTON -->
-   <!-- Start header section -->
-   <header id="aa-header">
-      <!-- start header top  -->
-      <div class="aa-header-top">
-         <div class="container">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
             <div class="row">
-               <div class="col-md-12">
-                  <div class="aa-header-top-area">
-                     <!-- start header top left -->
-                     <div class="aa-header-top-left"></div>
-                     <!-- / header top left -->
-                     <div class="aa-header-top-right">
-                        <ul class="aa-head-top-nav-right">
-                           <li class="hidden-xs" onclick="orinoco.pageManager.definePage({'page':'list'})">Nos produits
-                           </li>
-                           <li class="hidden-xs"><a href="order.html">Mon panier</a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
+                <div class="col-md-12">
+                    <a href="index.html">
+                        <img src="img/Logo_Orinoco.png" id="logo" alt="Logo">
+                    </a>
+                    <div class="boutons"></div>
+
+                </div>
             </div>
-         </div>
-      </div>
-      <!-- / header top  -->
-      <!-- start header bottom  -->
-      <div class="aa-header-bottom">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="aa-header-bottom-area">
-                     <!-- logo  -->
-                     <div class="aa-logo">
-                        <a href="index.html">
-                           <img src="img/Logo_Orinoco.png" alt="Logo_Orinoco img" />
-                        </a>
-                     </div>
-                     <!--  *********************** ICI *************************** -->
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- / header bottom  -->
-   </header>
-   <!-- / header section -->
-   <!-- menu -->
-   <section id="menu">
-      <div class="container">
-         <div class="menu-area">
-            <!-- Navbar -->
-            <div class="navbar navbar-default" role="navigation">
-               <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                     <span class="sr-only">Toggle navigation</span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                  </button>
-               </div>
-               <div class="navbar-collapse collapse">
-                  <!-- Left nav -->
-                  <ul class="nav navbar-nav">
-                     <li onclick="orinoco.pageManager.definePage({'page':'list'})">Nos produits</li>
-                     <li><a href="order.html">Mon panier</a></li>
-                  </ul>
-               </div>
-               <!--/.nav-collapse -->
-            </div>
-         </div>
-      </div>
-   </section>
-   <!-- / menu -->
-   <h2>OriKids, les ours en peluche faits à la main</h2>
-   <!-- Products section -->
-   <section id="aa-product">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="row">
-                  <div class="aa-product-area">
-                     <!-- start product navigation -->
-                     <!-- Tab panes -->
-                     <div class="tab-content">
-                        <ul class="aa-product-catg">
-                           <!-- on va injecter nos produits ici-->
-                        </ul>
-                     </div>
-                     <!-- quick view modal -->
-                     <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-label="myModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                           <div class="modal-content">
-                              <div class="modal-body">
-                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    &times;
-                                 </button>
-                                 <div class="row">
-                                    <!-- Modal view slider -->
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                       <div class="aa-product-view-slider">
-                                          <div class="simpleLens-gallery-container" id="demo-1">
-                                             <div class="simpleLens-container">
-                                                <div class="simpleLens-big-image-container">
-                                                   <a class="simpleLens-lens-image"
-                                                      data-lens-image="img/view-slider/large/polo-shirt-1a.png">
-                                                      <img src="img/view-slider/medium/teddy_1.png"
-                                                         class="simpleLens-big-image" alt="teddy_1" />
-                                                   </a>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <!-- Modal view content -->
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                       <div class="aa-product-view-content">
-                                          <h3>Peluche ours marron</h3>
-                                          <div class="aa-price-block">
-                                             <span class="aa-product-view-price">12.90€</span>
-                                             <p class="aa-product-avilability">
-                                                Disponible: <span>En stock</span>
-                                             </p>
-                                          </div>
-                                          <p>
-                                             Des yeux rieurs et tout ronds, un nez tout doux,
-                                             un jolib sourire, cet adorable ours en peluche
-                                             fera le bonheur de toute la famille !
-                                          </p>
-                                          <h4>Couleur</h4>
-                                          <div class="aa-prod-view-color">
-                                             <form action="post">
-                                                <select name="#" id="#">
-                                                   <option value="0" selected="selected">
-                                                      Brown
-                                                   </option>
-                                                   <option value="1">Tan</option>
-                                                   <option value="2">Black</option>
-                                                   <option value="3">White</option>
-                                                </select>
-                                             </form>
-                                          </div>
-                                          <h4>Quantité</h4>
-                                          <div class="aa-prod-quantity">
-                                             <input type="number" min="1" max="10" value="1" name="product_qty"
-                                                id="quantity" class="form-control" placeholder="Quantité"
-                                                aria-label="Quantité" aria-describedby="quantity" />
-                                          </div>
-                                          <div class="aa-prod-view-bottom">
-                                             <a href="product.html" class="aa-add-to-cart-btn">Voir détails</a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <!-- /.modal-content -->
-                        </div>
-                        <!-- /.modal-dialog -->
-                     </div>
-                     <!-- / quick view modal -->
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <!-- footer -->
-   <footer id="aa-footer">
-      <!-- footer bottom -->
-      <div class="aa-footer-top">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="aa-footer-top-area">
-                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                           <div class="aa-footer-widget">
-                              <h3>Menu principal</h3>
-                              <ul class="aa-footer-nav">
-                                 <li><a href="index.html">Accueil</a></li>
-                                 <li><a href="product.html">Nos produits</a></li>
-                                 <li><a href="order.html">Mon panier</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="aa-footer-widget">
-                              <div class="aa-footer-widget">
-                                 <h3>Contactez-nous</h3>
-                                 <address>
-                                    <p>Avenue des Champs-Élysées<br />75008 Paris</p>
-                                    <p><span class="fa fa-phone"></span>08.08.08.08.08</p>
-                                    <p>
-                                       <span class="fa fa-envelope"></span>contact@orinoco.com
-                                    </p>
-                                 </address>
-                                 <div class="aa-footer-social">
-                                    <a href="www.facebook.com"><span class="fa fa-facebook"></span></a>
-                                    <a href="www.twitter.com"><span class="fa fa-twitter"></span></a>
-                                    <a href="www.youtube.com"><span class="fa fa-youtube"></span></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </footer>
-   <!-- / footer -->
-   <!-- jQuery library -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-   <!-- Include all compiled plugins (below), or include individual files as needed -->
-   <script src="js/vendor/bootstrap.js"></script>
-   <!-- SmartMenus jQuery plugin -->
-   <script src="js/vendor/jquery.smartmenus.js"></script>
-   <!-- SmartMenus jQuery Bootstrap Addon -->
-   <script src="js/vendor/jquery.smartmenus.bootstrap.js"></script>
-   <!-- Product view slider -->
-   <script src="js/vendor/jquery.simpleGallery.js"></script>
-   <script src="js/vendor/jquery.simpleLens.js"></script>
-   <!-- slick slider -->
-   <script src="js/vendor/slick.js"></script>
-   <!-- Custom js -->
-   <script src="js/vendor/custom.js"></script>
+        </div>
+        <p>PRODUIT</p>
+
+    </header>
+
+    <section id="content">
+        <div class="container-fluid text-center">
+            <h2>Notre séléction de peluches</h2>
+            <p id="intro">Fait-main et 100% made in France</p>
+        </div>
+    </section>
+    <!-------------------- On injecte nos produits ici -------------------->
+    <main id="main">
+        <!-- Fil d'Ariane -->
+        <nav aria-label="breadcrumb">
+            <!-- <ol class="ariane">
+                <li class="breadcrumb-item"><a href="#">OriKids</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Page</li>
+            </ol> -->
+        </nav>
+
+        <div id="ourson">
+            <article id="listeArticle">
+                <h3 id="peluche">Norbert</h3>
+                <img src="http://localhost:3000/images/teddy_1.jpg" alt="teddy_1">
+                <div>
+                    <h4>Prix : </h4>
+                    <p>€</p>
+                    <a id="lien" href="produit.html">Voir le produit</a>
+                </div>
+            </article>
+            <article id="listeArticle">
+                <h3 id="peluche">Arnold</h3>
+                <img src="http://localhost:3000/images/teddy_2.jpg" alt="teddy_2">
+                <div>
+                    <h4>Prix : </h4>
+                    <p>€</p>
+                    <a id="lien" href="">Voir le produit</a>
+                </div>
+            </article>
+            <article id="listeArticle">
+                <h3 id="peluche">Garfunkel</h3>
+                <img src="http://localhost:3000/images/teddy_5.jpg" alt="teddy_5">
+                <div>
+                    <h4>Prix : </h4>
+                    <p>€</p>
+                    <a id="lien" href="">Voir le produit</a>
+                </div>
+            </article>
+            <article id="listeArticle">
+                <h3 id="peluche">Gustav</h3>
+                <img src="http://localhost:3000/images/teddy_4.jpg" alt="teddy_4">
+                <div>
+                    <h4>Prix : </h4>
+                    <p>€</p>
+                    <a id="lien" href="">Voir le produit</a>
+                </div>
+            </article>
+            <article id="listeArticle">
+                <h3 id="peluche">Lenny and Carl</h3>
+                <img src="http://localhost:3000/images/teddy_3.jpg" alt="teddy_3">
+                <div>
+                    <h4>Prix : </h4>
+                    <p>€</p>
+                    <a id="lien" href="">Voir le produit</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>
+            <a href="#">mentions légales</a>
+        </p>
+        <p>
+            <a href="mailto:contact@orinoco.com" target="_blank">contactez-nous</a>
+        </p>
+    </footer>
+
 </body>
 
 </html>
