@@ -22,7 +22,7 @@ class CarteProduit {
                 <div>
                     <h4>Prix : </h4>
                     <p>${this.price / 100}€</p>
-                    <a id="lien" onclick="orinoco.products.product${this._id}.changeView()" >Voir le produit</a>
+                    <a id="lien" onclick="${this.container}.products.product${this._id}.changeView()" >Voir le produit</a>
                 </div>
             </article>
         `

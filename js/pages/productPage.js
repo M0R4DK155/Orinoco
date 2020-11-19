@@ -20,7 +20,7 @@ class ProductPage extends Page {
     template(data) {
         return `
       ${this.ariane("produit : " + data.name)}
-      <article>
+      <article id="listeArticle">
         <h3>${data.name}</h3>
             <img src="${data.imageUrl}" alt="" srcset="">
         <div>
@@ -30,7 +30,7 @@ class ProductPage extends Page {
             <select id="choixCouleur">
                 ${this.colors(data.colors)}
             </select>
-            <button id="onclick="orinoco.products.product${this._id}.addToCart()">Ajouter au panier</button>
+            <button id="onclick="${this.container}.products.product${this._id}.addToCart()">Ajouter au panier</button>
         </div>
       </article>
     `
