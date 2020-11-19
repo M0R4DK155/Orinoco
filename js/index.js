@@ -5,8 +5,11 @@ var orinoco = {
     dataManager: new DataManager('http://localhost:3000/api/teddies/'),  // On récupère les données du serveur
     pageManager: null,
     panier: null,
-    produits: {},  // On intègre les composants
+    products: {},  // On intègre les composants
+    component: {}
 };
+// alerte si le serveur ne répond pas
+// alert("Nous sommes désolé, le serveur ne répond pas ! ")
 
 orinoco.pageManager = new PageManager(document.querySelector("main"));
 orinoco.panier = new Panier(document.querySelector(".boutons"));

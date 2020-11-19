@@ -3,10 +3,14 @@
    --violetpale: #f5d9ef;
    --blanc: #ffffff;
    --gris: #5f5c63;
+   --grisclair: #b0aeb3;
+   --grisfonce: #4b4747;
+   --marronclair: #4b1d1d;
    --rouge: #f51000;
    --pourpre: #b11010;
    --vert: #00b627;
    --vertpale: #00ff55;
+   --noirclair: #2c2929;
    --noir: #000000;
 }
 
@@ -32,7 +36,12 @@ header p {
    margin-top: 3%;
    width: auto;
 }
-
+a {
+   cursor: pointer;
+}
+nav {
+   cursor: pointer;
+}
 .container-fluid {
    background-color: var(--violetpale);
    font-family: 'Raleway', Arial, Helvetica, sans-serif;
@@ -62,7 +71,7 @@ header p {
    margin-top: 15%;
 }
 .panier:hover {
-   color: black;
+   color: var(--noir);
    background-color: var(--violet);
 }
 
@@ -86,34 +95,36 @@ header p {
 /* Liste des articles */
 
 article {
+   background-color: var(--violetpale);
    border-style: solid;
-   border-radius: 3px;
+   border-radius: 50px;
    border-color: var(--gris);
    margin: auto;
    margin-bottom: 1%;
    padding: 1%;
    text-align: center;
-   width: 75%;
+   width: 50%;
 }
+
 #lien {
    padding: 6px 6px 6px;
    font: bold 1.2em 'Raleway';
-   background: #f5f5f5;
+   background: var(--blanc);
    color: var(--noir);
    border-radius: 50px;
-   border: 2px solid rgb(70, 64, 64);
-   box-shadow: 1px 1px 3px rgb(75, 71, 71);
+   border: 2px solid var(--noirclair);
+   box-shadow: 1px 1px 3px var(--grisfonce);
 }
 #lien:hover {
-   background-color: rgb(176, 174, 179);
+   background-color: var(--grisclair);
    transition-duration: 0.2s;
 }
 img {
-   color: rgb(44, 41, 41);
+   color: var(--noirclair);
    width: 50%;
    border-radius: 3px;
-   border: 2px solid rgb(70, 64, 64);
-   box-shadow: 1px 1px 3px rgb(75, 71, 71);
+   border: 2px solid var(--noirclair);
+   box-shadow: 1px 1px 3px var(--grisfonce);
 }
 #panier,
 #total {
@@ -130,34 +141,34 @@ label {
    font-weight: bold;
 }
 
-/* bouton de la fiche du teddy*/
+/* bouton de la fiche du produit*/
 
 #liste,
 #voirPanier,
 #stockage {
-   color: black;
+   color: var(--noir);
    font-family: 'Raleway', Arial, Helvetica, sans-serif;
    font-size: 1em;
    font-weight: bold;
-   background-color: #ffffff;
+   background-color: var(--blanc);
    border-style: solid;
    border-radius: 3px;
    border-width: 1px;
-   border-color: rgb(71, 70, 71);
+   border-color: var(--grisfonce);
    margin: 2%;
 }
 #liste:hover,
 #voirPanier:hover,
 #stockage:hover {
-   background-color: rgb(176, 174, 179);
+   background-color: var(--grisclair);
    transition-duration: 0.2s;
 }
 #valider {
-   color: black;
+   color: var(--noir);
    font-family: 'Raleway', Arial, Helvetica, sans-serif;
    font-size: 1.2em;
    font-weight: bold;
-   background-color: #ffffff;
+   background-color: var(--blanc);
    border-style: solid;
    border-radius: 3px;
    border-width: 2px;
@@ -217,18 +228,6 @@ p {
 #price::after {
    content: ' €';
 }
-#articlePanier,
-#listeArticle {
-   background-color: var(--violetpale);
-   border-style: solid;
-   border-radius: 25px;
-   border-color: var(--gris);
-   margin: auto;
-   margin-bottom: 1%;
-   padding: 1%;
-   text-align: center;
-   width: 40%;
-}
 
 /* Confirmation de commande */
 
@@ -244,7 +243,7 @@ p {
 }
 
 .abientot {
-   color: #4b1d1d;
+   color: var(--marronclair);
    font-family: 'Raleway', Arial, Helvetica, sans-serif;
    font-size: 1.5em;
    font-weight: bold;
@@ -259,11 +258,16 @@ p {
 /* Responsivité */
 @media screen and (max-width: 767px) {
    article {
-      width: 100%;
+      width: 75%;
    }
    article h3,
    p {
       font-size: 1em;
+   }
+   nav {
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 5px 0px 20px 0;
    }
    .container-fluid {
       font-size: 1em;
@@ -286,7 +290,6 @@ p {
    div {
       padding: 0px 0 10px 0;
    }
-
    footer p {
       font-size: 1em;
    }
@@ -296,9 +299,13 @@ p {
    #main {
       padding: 20px 0 135px 0;
    }
-
    #ourson {
       padding: 10px 0 10px 0;
+   }
+   nav {
+      font-size: 1.5em;
+      font-weight: bold;
+      padding: 5px 0px 25px 0;
    }
 }
 
@@ -308,5 +315,10 @@ p {
    }
    #ourson {
       padding: 10px 0 10px 0;
+   }
+   nav {
+      font-size: 1.5em;
+      font-weight: bold;
+      padding: 5px 0px 25px 0;
    }
 }

@@ -6,11 +6,6 @@ class Page {
 
     }
 
-    changePage(productName, productId) {
-        if (!this.addToHistory) return;
-        orinoco.pageManager.changePage("OriKids | produit " + productName, "product" + productId, this);
-    }
-
     /**
      * [ariane description]
      *
@@ -22,7 +17,7 @@ class Page {
     ariane(pageEnCours) {
         return `
     <nav>
-      OriKids > <span onclick="">Accueil</span> ${pageEnCours === null ? "" : "> " + pageEnCours} 
+      OriKids > <span onclick="new ProductList({changeHistory: true});">Accueil</span> ${pageEnCours === null ? "" : "> " + pageEnCours} 
     </nav>
     `;
     }

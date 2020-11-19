@@ -1,16 +1,9 @@
+//Gestion de la navigation vers les différentes pages
 class PageManager {
     constructor(domTarget) {
         this.domTarget = domTarget;
         this.page = null;
-        window.onpopstate = (event) => {
-            alert(
-                "adresse: " +
-                document.location.search +
-                ", état: " +
-                JSON.stringify(event.state)
-            );
-            this.definePage({ changeHistory: false })
-        };
+        this.fonctionAuChangementDePage();
         this.definePage({ changeHistory: false })
     }
 
@@ -32,7 +25,8 @@ class PageManager {
         if (todo.page === undefined) {
             todo.page = window.location.search.slice(1);//La méthode slice() permet de "trancher un morceau particulier d'une chaine de caractère, dans notre cas le ?. Méthode plus ou moins similaire à .substr.
         }
-        // if (todo.page.slice(0, 5) === "order")   return new Order(todo.changeHistory); 
+        if (todo.page === "") return new ProductList({ changeHistory: false });
+        if (todo.page.slice(0, 5) === "order") return new Order(todo.changeHistory);
         if (todo.page.slice(0, 7) === "product") return new ProductPage(
             {
                 changeHistory: todo.changeHistory,
@@ -40,7 +34,19 @@ class PageManager {
                 idProduct: todo.page.slice(7),
             }
         );
-        // if (todo.page.slice(0, 4) === "list")    return new ProductList(todo.changeHistory);
-        // new ProductList(todo.changeHistory);
+        if (todo.page.slice(0, 4) === "list") return new ProductList(todo.changeHistory);
+        new ProductList(todo.changeHistory);
+    }
+
+    fonctionAuChangementDePage() {
+        window.onpopstate = (event) => {
+            alert(
+                "adresse: " +
+                document.location.search +
+                ", état: " +
+                JSON.stringify(event.state)
+            );
+            this.definePage({ changeHistory: false })
+        };
     }
 }

@@ -1,13 +1,16 @@
+//Composant panier
 class Panier {
     constructor(domTarget) {
         this.DOM = document.createElement("div");
         this.DOM.className = "boutons";
         domTarget.appendChild(this.DOM);
+        orinoco.dataManager.getLocalData("panier", true);
         this.products = [];
         this.render();
         orinoco.panier = this;
     }
 
+    //Affichage du panier
     render() {
         this.DOM.innerHTML = `
                     <button class="panier" 
@@ -31,7 +34,9 @@ class Panier {
 
     add(product) {
         this.products.push(product);
+        orinoco.dataManager.setLocalData("panier", this.products);
         this.render();
     }
 }
+
 

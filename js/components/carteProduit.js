@@ -1,13 +1,14 @@
+//Fiche détaillée du produit
 class CarteProduit {
     constructor(props, domTarget, container) {
         for (const [key, value] of Object.entries(props)) {
             this[key] = value;
         }
         this.showDetails = false;
-        this.DOM = document.createElement("div");
+        this.DOM = document.createElement("article");
         this.DOM.className = "listeArticle";
         domTarget.appendChild(this.DOM);
-        window[container].components["product" + this._id] = this;
+        window[container].products["product" + this._id] = this;
         this.container = container;
         this.products = [];
         this.render();
@@ -16,12 +17,12 @@ class CarteProduit {
 
     resumeTemplate() {
         return `
-        <h3 id="peluche">${this.products.name}</h3>
-                <img src="${this.imageUrl}" alt="teddy_1">
+        <h3 id="peluche">${this.name}</h3>
+                <img src="${this.imageUrl}" alt="" srcset="">
                 <div>
                     <h4>Prix : </h4>
                     <p>${this.price / 100}€</p>
-                    <a id="lien" href="produit.html" onclick="${this.container}.components.product${this._id}.changeView()" >Voir le produit</a>
+                    <a id="lien" onclick="orinoco.products.product${this._id}.changeView()" >Voir le produit</a>
                 </div>
             </article>
         `
@@ -32,15 +33,18 @@ class CarteProduit {
     }
 
     changeView() {
-        console.log(this);
+        new ProductPage({
+            name: this.name,
+            idProduct: this._id
+        })
     }
 
-    detailedTemplate() {
-        return "-----";
-    }
+    // detailedTemplate() {
+    //     return "-----";
+    // }
 
-    die() {
-        this.DOM.parentNode.removeChild(this.DOM);
-        delete (window[this.container].components["product" + this._id]);
-    }
+    // die() {
+    //     this.DOM.parentNode.removeChild(this.DOM);
+    //     delete (window[this.container].component["product" + this._id]);
+    // }
 }
