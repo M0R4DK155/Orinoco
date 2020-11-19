@@ -12,7 +12,6 @@ class CarteProduit {
         this.container = container;
         this.products = [];
         this.render();
-        orinoco.panier = this;
     }
 
     resumeTemplate() {

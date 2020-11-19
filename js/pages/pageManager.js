@@ -26,7 +26,7 @@ class PageManager {
             todo.page = window.location.search.slice(1);//La méthode slice() permet de "trancher un morceau particulier d'une chaine de caractère, dans notre cas le ?. Méthode plus ou moins similaire à .substr.
         }
         if (todo.page === "") return new ProductList({ changeHistory: false });
-        if (todo.page.slice(0, 5) === "order") return new Order(todo.changeHistory);
+        if (todo.page.slice(0, 6) === "panier") return new Order(todo.changeHistory);
         if (todo.page.slice(0, 7) === "product") return new ProductPage(
             {
                 changeHistory: todo.changeHistory,

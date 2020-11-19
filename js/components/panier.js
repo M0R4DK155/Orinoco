@@ -5,17 +5,17 @@ class Panier {
         this.DOM.className = "boutons";
         domTarget.appendChild(this.DOM);
         orinoco.dataManager.getLocalData("panier", true);
-        this.products = [];
+        this.contentBasket = orinoco.dataManager.getLocalData("panier", true);
+        if (this.contentBasket === null) this.contentBasket = [];
         this.render();
-        orinoco.panier = this;
     }
 
     //Affichage du panier
     render() {
         this.DOM.innerHTML = `
                     <button class="panier" 
-                        onclick='location.href="panier.html"' 
-                        data-target="panier">Panier (${this.products.length})<i class="fas fa-shopping-cart"></i>
+                        onclick='new Order()' 
+                        data-target="panier">Panier (${this.contentBasket.length})<i class="fas fa-shopping-cart"></i>
                     </button>
                 </div>
                 `;
@@ -24,17 +24,17 @@ class Panier {
 
     templateProduits() {
         let content = "";
-        for (let i = 0, size = this.products.length; i < size; i++) {
+        for (let i = 0, size = this.contentBasket.length; i < size; i++) {
             content += `
-            <span class="qteArticle">${this.products[i].products}</span>
+            <span class="qteArticle">${this.contentBasket[i].contentBasket}</span>
             `
         }
         return content;
     }
 
     add(product) {
-        this.products.push(product);
-        orinoco.dataManager.setLocalData("panier", this.products);
+        this.contentBasket.push(product);
+        orinoco.dataManager.setLocalData("panier", this.contentBasket);
         this.render();
     }
 }

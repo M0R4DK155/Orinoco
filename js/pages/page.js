@@ -3,7 +3,7 @@ class Page {
         for (const [key, value] of Object.entries(pageSpecs)) {
             this[key] = value;
         }
-
+      if (this.changeHistory === undefined) this.changeHistory = true;
     }
 
     /**

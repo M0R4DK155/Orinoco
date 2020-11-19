@@ -5,8 +5,8 @@ var orinoco = {
     dataManager: new DataManager('http://localhost:3000/api/teddies/'),  // On récupère les données du serveur
     pageManager: null,
     panier: null,
-    products: {},  // On intègre les composants
-    component: {}
+    products: {},  
+    // component: {}
 };
 // alerte si le serveur ne répond pas
 // alert("Nous sommes désolé, le serveur ne répond pas ! ")
