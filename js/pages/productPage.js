@@ -3,26 +3,22 @@ class ProductPage extends Page {
     constructor(pageSpecs) {
         super(pageSpecs);
         this.productInfo = orinoco.dataManager.products[this.idProduct];
-        console.log("this.productInfo:",this.productInfo);
-        
+        console.log(pageSpecs)
+
         if (this.productInfo === undefined) {
-            console.log("ok");
             orinoco.dataManager.getDataProductFromServer(this.idProduct, this.saveData.bind(this));
             return;
         }
         this.showProduct();
     }
 
-    saveData(productInfo){
-        console.log("productInfo:",productInfo);
-        
-      this.productInfo = productInfo;
-      this.showProduct();
+    saveData(productInfo) {
+        this.productInfo = productInfo;
+        this.showProduct();
     }
 
     //Fonction pour afficher le produit sélectionné au clic
     showProduct() {
-        console.log(this)
         orinoco.pageManager.changePage("oriKids : " + this.productInfo.name, "product" + this.productInfo._id, this);
         orinoco.pageManager.domTarget.innerHTML = this.template();
     }
@@ -41,7 +37,7 @@ class ProductPage extends Page {
             <select id="choixCouleur">
                 ${this.colors(this.productInfo.colors)}
             </select>
-            <button id="" onclick="orinoco.pageManager.page.addToCart()">Ajouter au panier</button>
+            <a id="lien" onclick="orinoco.pageManager.page.addToCart()">Ajouter au panier</a>
         </div>
       </article>
     `
@@ -56,9 +52,9 @@ class ProductPage extends Page {
     }
     //Ajout au panier
     addToCart() {
-        orinoco.panier.add({
-            id   : this.productInfo._id,
-            name : this.productInfo.name,
+        orinoco.cart.add({
+            id: this.productInfo._id,
+            name: this.productInfo.name,
             price: this.productInfo.price / 100,
         })
     }

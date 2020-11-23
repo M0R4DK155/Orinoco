@@ -1,5 +1,5 @@
 //Fiche détaillée du produit
-class CarteProduit {
+class DetailedProduct {
     constructor(props, domTarget, container) {
         for (const [key, value] of Object.entries(props)) {
             this[key] = value;

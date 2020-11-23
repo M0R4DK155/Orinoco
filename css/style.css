@@ -107,7 +107,7 @@ article {
 }
 
 #lien {
-   padding: 6px 6px 6px;
+   padding: 6px 50px 6px;
    font: bold 1.2em 'Raleway';
    background: var(--blanc);
    color: var(--noir);
@@ -127,7 +127,7 @@ img {
    box-shadow: 1px 1px 3px var(--grisfonce);
 }
 #panier,
-#total {
+#totalPanier {
    font-size: 1.3em;
    font-family: 'Raleway', Arial, Helvetica, sans-serif;
    font-weight: bold;
@@ -297,7 +297,7 @@ p {
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
    #main {
-      padding: 20px 0 135px 0;
+      padding: 20px 0 50px 0;
    }
    #ourson {
       padding: 10px 0 10px 0;

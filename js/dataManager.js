@@ -31,14 +31,11 @@ class DataManager {
 
     getLocalData(valueName, getJson = false) {
         const data = localStorage.getItem(valueName); //Stockage du produit dans le storage
-        console.log("JSON.parse(data):", JSON.parse(data));
-
-        return getJson ? JSON.parse(data) : data;
+        return getJson ? JSON.parse(data) : data; //On vérifie si on a getJson, si getJson est sur true on le parse sinon il retourne une string
     }
 
     setLocalData(key, value) {
         if (typeof value !== "string") value = JSON.stringify(value);
-        console.log(JSON.stringify(value))
         return localStorage.setItem(key, value);
     }
 }

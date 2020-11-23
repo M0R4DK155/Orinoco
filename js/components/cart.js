@@ -1,12 +1,12 @@
 //Composant panier
-class Panier {
+class Cart {
     constructor(domTarget) {
         this.DOM = document.createElement("div");
         this.DOM.className = "boutons";
         domTarget.appendChild(this.DOM);
-        orinoco.dataManager.getLocalData("panier", true);
-        this.contentBasket = orinoco.dataManager.getLocalData("panier", true);
-        if (this.contentBasket === null) this.contentBasket = [];
+        orinoco.dataManager.getLocalData("panier", true); //Récupère le contenu du panier dans le local storage
+        this.contentBasket = orinoco.dataManager.getLocalData("panier", true); //Enregistre le panier dans le local storage
+        if (this.contentBasket === null) this.contentBasket = []; //Si le panier est vide, il retourne un tableau
         this.render();
     }
 
@@ -31,7 +31,7 @@ class Panier {
         }
         return content;
     }
-
+    //Ajouter un produit dans le panier
     add(product) {
         this.contentBasket.push(product);
         orinoco.dataManager.setLocalData("panier", this.contentBasket);
