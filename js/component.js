@@ -1,4 +1,4 @@
-class Component {
+class Component extends LifeCycle {
 
     DOM = null;
 
@@ -18,6 +18,13 @@ class Component {
         this.DOM = document.createElement(tagName);
         domTarget.appendChild(this.DOM);
         console.log(DOM)
+    }
+
+    mounted() {
+        // alert("ajouté");
+    }
+    unmounted() {
+        delete (orinoco.products[this.ref]);
     }
 }
 

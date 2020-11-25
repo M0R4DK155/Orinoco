@@ -45,4 +45,8 @@ class Order extends Page {
       `
   }
 
+  whenMounted() {
+    alert("à compléter");
+  }
+
 }

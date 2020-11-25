@@ -1,11 +1,11 @@
 //Composant permettant l'affichage du ou des produits dans le panier
 class ProductCart extends Component { //Le mot-clé extends est utilisé dans les déclarations et expressions de classes afin de signifier qu'un type représenté par une classe hérite d'un autre type.
 
-    imageUrl = this.imageUrl;
-    name = this.name;
-    price = this.price;
-    qty = this.qty;
-    total = this.total;
+    imageUrl;
+    name;
+    price;
+    qty;
+    total;
 
     constructor(props, domTarget) {
         super("product", props, domTarget);

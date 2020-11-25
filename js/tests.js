@@ -1,10 +1,10 @@
-//Validation du panier
-confirmCart() {
-    orinoco.order.confirmCart({
-        firstName:,
-        name:,
-        email:,
-        address:,
-        city:,
-    })
-}
+// //Validation du panier
+// confirmCart() 
+//     orinoco.order.confirmCart({
+//         firstName:,
+//         name:,
+//         email:,
+//         address:,
+//         city:,
+//     })
+
