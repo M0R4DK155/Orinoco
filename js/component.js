@@ -12,19 +12,22 @@ class Component extends LifeCycle {
      * @return  {[type]}             [return description]
      */
     constructor(tagName, props, domTarget) {
+      super();
         for (const [key, value] of Object.entries(props)) {
             this[key] = value;
         }
         this.DOM = document.createElement(tagName);
+        this.DOM.id = this.id;
         domTarget.appendChild(this.DOM);
         console.log(DOM)
     }
 
-    mounted() {
-        // alert("ajouté");
-    }
+    // mounted() {
+    //     // alert("ajouté");
+    // }
     unmounted() {
         delete (orinoco.products[this.ref]);
+        if( this.whenUnmounted !== undefined ) this.whenUnmounted();
     }
 }
 

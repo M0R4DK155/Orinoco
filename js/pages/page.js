@@ -1,5 +1,6 @@
 class Page extends LifeCycle {
   constructor(pageSpecs) {
+    super();
     for (const [key, value] of Object.entries(pageSpecs)) {
       this[key] = value;
     }
