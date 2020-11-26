@@ -29,11 +29,11 @@ main {
    width: 100%;
 }
 header p {
-   font-size: 1.5em;
+   font-size: 2em;
    text-align: center;
 }
 #logo {
-   margin-top: 3%;
+   margin-top: 6%;
    width: auto;
 }
 a {
@@ -68,8 +68,8 @@ nav {
    border-width: 1px;
    border-radius: 5px;
    border-color: var(--violet);
-   margin-top: 15%;
 }
+
 .panier:hover {
    color: var(--noir);
    background-color: var(--violet);
@@ -126,8 +126,8 @@ img {
    border: 2px solid var(--noirclair);
    box-shadow: 1px 1px 3px var(--grisfonce);
 }
-#panier,
-#totalPanier {
+#contentBasket,
+#totalBasket {
    font-size: 1.3em;
    font-family: 'Raleway', Arial, Helvetica, sans-serif;
    font-weight: bold;

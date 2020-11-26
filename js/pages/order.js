@@ -9,8 +9,8 @@ class Order extends Page {
 
   template() {
     return `
-      <div id="panier"></div>
-      <div id="totalPanier">Le montant total de votre commande est de : €</div>
+      <div id="contentBasket"></div>
+      <div id="totalBasket">Le montant total de votre commande est de : €</div>
       <form id="formulaire">
         <div class="form-row">
           <div class="form-group col-md-5">

@@ -3,8 +3,6 @@ class ProductPage extends Page {
     constructor(pageSpecs) {
         super(pageSpecs);
         this.productInfo = orinoco.dataManager.products[this.idProduct];
-        console.log(pageSpecs)
-
         if (this.productInfo === undefined) {
             orinoco.dataManager.getDataProductFromServer(this.idProduct, this.saveData.bind(this));
             return;

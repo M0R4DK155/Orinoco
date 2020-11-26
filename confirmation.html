@@ -17,29 +17,35 @@
     <title>OriKids - Confirmation de commande</title>
 
     <!-- elements structurants -->
-    <script src="js/components.js"></script>
+    <script src="js/lifecycle.js"></script>
+    <script src="js/component.js"></script>
     <script src="js/pages/page.js"></script>
     <script src="js/pages/pageManager.js"></script>
     <script src="js/datamanager.js"></script>
 
     <!-- composants -->
+    <script src="js/components/cart.js"></script>
+    <script src="js/components/detailedProduct.js"></script>
 
     <!-- pages -->
-    <script src="js/pages/productPage.js"></script>
+    <script src="js/pages/order.js"></script>
+
 
     <!-- on initialise la page -->
     <script src="js/index.js" defer></script>
 </head>
 
 <body>
-
+    <!-- Header -->
     <header id="header">
-        <a href="index.html">
-            <img src="img/Logo_Orinoco.png" id="logo" alt="Logo">
-        </a>
-        <div class="boutons">
-            <button class="panier" onclick='location.href="panier.html"' data-target="panier">Panier ( <span
-                    class="qteArticle"></span> )<i class="fas fa-shopping-cart"></i></button>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" id="cartContainer">
+                    <a href="index.html">
+                        <img src="img/Logo_Orinoco.png" id="logo" alt="Logo">
+                    </a>
+                </div>
+            </div>
         </div>
         <p>CONFIRMATION DE COMMANDE</p>
 
@@ -54,7 +60,7 @@
     <!-------------------- On injecte ici -------------------->
     <main id="main">
 
-        <div class="jumbotron ConfirmationDeCommande">
+        <div class="jumbotron" id="ConfirmationDeCommande">
             <h1 class="display-4">Votre commande a bien été prise en compte.<i class="fas fa-check"></i></h1>
             <div id="recap"></div>
 
