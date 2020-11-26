@@ -54,6 +54,7 @@ class ProductPage extends Page {
             id: this.productInfo._id,
             name: this.productInfo.name,
             price: this.productInfo.price / 100,
+            imageUrl: this.productInfo.imageUrl,
         })
     }
 
