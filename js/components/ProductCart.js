@@ -29,13 +29,12 @@ class ProductCart extends Component { //Le mot-clé extends est utilisé dans le
         this.DOM.innerHTML = `
                     <div id="panier">
                         <article id="articlePanier">
-                            <h2>Norbert</h2><img src="${this.imageUrl}">
+                            <h2>${this.name}</h2><img src="${this.imageUrl}">
                                 <div id="produit">
                                     <h3>Quantité: </h3>
                                         <p>${this.qty}</p>
                                     <h3>Prix: </h3>
                                         <p id="price">${this.price}</p>
-                                            <button id="supprime">supprimer l'article</button>
                                 </div>
                         </article>
                     </div>

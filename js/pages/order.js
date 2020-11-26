@@ -37,10 +37,7 @@ class Order extends Page {
           <input type="text" name="city" class="form-control" id="city" placeholder="Votre ville..." required /><span id="oublisVille"></span><br />
         </div>
 
-        <a id="lien" href="confirmation.html">
-          Valider
-        </a>
-      </form>
+      <button class="panier" id="valider" href="confirmation.html"><span class="fa fa-send">Valider la commande</span>
       
       `
   }
