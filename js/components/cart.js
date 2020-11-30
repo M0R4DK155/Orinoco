@@ -3,7 +3,7 @@ class Cart {
     constructor(domTarget) {
         this.DOM = document.createElement("div");
         this.DOM.className = "boutons";
-        this.DOM.id="panier";
+        this.DOM.id = "panier";
         domTarget.appendChild(this.DOM);
         orinoco.dataManager.getLocalData("panier", true); //Récupère le contenu du panier dans le local storage
         this.contentBasket = orinoco.dataManager.getLocalData("panier", true); //Enregistre le panier dans le local storage
@@ -11,7 +11,7 @@ class Cart {
         this.render();
     }
 
-    //Affichage du panier
+    //Affichage dynamique du panier
     render() {
         this.DOM.innerHTML = `
                     <button class="panier" 

@@ -27,7 +27,7 @@ class ProductPage extends Page {
       ${this.ariane("produit : " + this.productInfo.name)}
       <article id="listeArticle">
         <h3>${this.productInfo.name}</h3>
-            <img src="${this.productInfo.imageUrl}" alt=""teddy"" srcset="">
+            <img src="${this.productInfo.imageUrl}" alt="teddy" srcset="">
         <div>
             <h4>${this.productInfo.price / 100} €</h4>
             <h4>Description du produit</h4>

@@ -218,9 +218,15 @@ label {
    margin: auto;
    width: 50%;
 }
-article h3,
+article h3 {
+   font-size: 1.4em;
+   font-weight: bold;
+   color: var(--noir);
+   margin: 5%;
+}
+
 p {
-   font-size: 1.5em;
+   font-size: 1.2em;
    font-weight: bold;
    color: var(--noir);
    margin: 5%;

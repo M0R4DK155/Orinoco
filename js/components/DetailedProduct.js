@@ -12,6 +12,8 @@ class DetailedProduct {
         this.container = container;
         this.products = [];
         this.render();
+
+        // console.log(this)
     }
 
     resumeTemplate() {
@@ -26,7 +28,7 @@ class DetailedProduct {
             </article>
         `
     }
-
+    // Affichage dynamique du produit sélectionné sous forme de fiche
     render() {
         this.DOM.innerHTML = this.showDetails ? this.detailedTemplate() : this.resumeTemplate();
     }

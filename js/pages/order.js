@@ -2,18 +2,19 @@
 class Order extends Page {
   constructor(pageSpecs = {}) {
     super(pageSpecs)
-    console.log(pageSpecs, this)
+    // console.log(pageSpecs, this)
     if (this.changeHistory) orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page
     this.products = this.redefineCartContent(orinoco.cart.contentBasket);
     orinoco.pageManager.domTarget.innerHTML = this.template();
   }
 
+  //Rendu dans le DOM
   template() {
     return `
       <div id="contentBasket">
         ${this.addProductsInResume()}
       </div>
-      <div id="totalBasket">Le montant total de votre commande est de : €</div>
+      <div id="totalBasket">Le montant total de votre commande est de :  €</div>
       <form id="formulaire">
         <div class="form-row">
           <div class="form-group col-md-5">
@@ -40,21 +41,21 @@ class Order extends Page {
           <input type="text" name="city" class="form-control" id="city" placeholder="Votre ville..." required /><span id="oublisVille"></span><br />
         </div>
 
-      <button class="panier" id="valider" href="confirmation.html"><span class="fa fa-send">Valider la commande</span>
+      <button class="panier" id="valider" type="submit" href="confirmation.html"><span class="fa fa-send">Valider la commande</span>
       
       `
   }
-  
-  addProductsInResume(){
-    let productListHtml ="";
+  //Affichage dynamique des produits du panier dans la page
+  addProductsInResume() {
+    let productListHtml = "";
     // console.log(this.products);
     for (const [key, value] of Object.entries(this.products)) {
-      productListHtml+= this.templateProductLine(value);
+      productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit
     }
     return productListHtml;
   }
 
-  templateProductLine(data){
+  templateProductLine(data) {
     // console.log(data)
     return `
       <div id="panier">
@@ -68,7 +69,7 @@ class Order extends Page {
                               <button onclick="orinoco.pageManager.page.changeQty('${data.id}','+')">+</button>
                           </p>
                       <h3>Prix: </h3>
-                          <p id="price">${data.price*data.qty}</p>
+                          <p id="price">${data.price * data.qty}</p>
                   </div>
           </article>
       </div>
@@ -80,24 +81,31 @@ class Order extends Page {
    *
    * @param   {Array}  products  contenu du panier
    *
-   * @return  {Object}            le contenu factorisé
+   * @return  {Object}           le contenu factorisé
    */
-  redefineCartContent(products){
+
+  redefineCartContent(products) {
     const factorisedProductList = {}
-    for(let i=0, size=products.length; i<size; i++){
-      if (factorisedProductList[products[i].id] !== undefined){
+    for (let i = 0, size = products.length; i < size; i++) {
+      if (factorisedProductList[products[i].id] !== undefined) {
         factorisedProductList[products[i].id].qty++;
         continue;
       }
-      factorisedProductList[products[i].id] = {...products[i], qty:1};
+      factorisedProductList[products[i].id] = { ...products[i], qty: 1 };
     }
     return factorisedProductList;
   }
 
-  changeQty(productId, direction){
+  //Calcul du prix selon la quantité choisie
+  changeQty(productId, direction) {
     if (direction === "+") this.products[productId].qty++;
     if (direction === "-") this.products[productId].qty--;
     orinoco.pageManager.domTarget.innerHTML = this.template();
   }
 
-}
+  //Calcul du montant total du panier
+  totalBasket(data) {
+
+  }
+
+} 

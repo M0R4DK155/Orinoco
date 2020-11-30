@@ -6,7 +6,7 @@ class PageManager {
         this.fonctionAuChangementDePage();
         this.definePage({ changeHistory: false })
     }
-
+    //Gestion de l'historique de navigation
     changePage(title, url, newPage) {
         document.title = title;
         history.pushState({}, title, "?" + url);

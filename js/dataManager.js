@@ -29,6 +29,7 @@ class DataManager {
      * @return  {String|JSON}         le contenu du localStorage soit sous forme de chaine soit sous forme de JSON
      */
 
+    //Gestion des produits dans le storage
     getLocalData(valueName, getJson = false) {
         const data = localStorage.getItem(valueName); //Stockage du produit dans le storage
         return getJson ? JSON.parse(data) : data; //On vérifie si on a getJson, si getJson est sur true on le parse sinon il retourne une string

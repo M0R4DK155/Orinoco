@@ -15,6 +15,7 @@ class Page extends LifeCycle {
    * @return  {String}                    [return description]
    */
 
+  //Affichage dynamique du fil d'ariane
   ariane(pageEnCours) {
     return `
     <nav>
