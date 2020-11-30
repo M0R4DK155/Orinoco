@@ -56,6 +56,7 @@ class ProductPage extends Page {
             price: this.productInfo.price / 100,
             imageUrl: this.productInfo.imageUrl,
         })
+        alert("Vous avez ajouté un produit au panier")
     }
 
 

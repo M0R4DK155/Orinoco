@@ -70,6 +70,7 @@ class Order extends Page {
                           </p>
                       <h3>Prix: </h3>
                           <p id="price">${data.price * data.qty}</p>
+                              <button id="supprime">Supprimer le produit</button>
                   </div>
           </article>
       </div>
@@ -103,9 +104,15 @@ class Order extends Page {
     orinoco.pageManager.domTarget.innerHTML = this.template();
   }
 
+  //Ajouter minimum et maximum à QTY
+  //Supprimer un produit du panier
+  // deleteToCart() {
+  //   let supprime = document.createElement('button');
+  //   supprime.textContent = "supprimer le produit";
+  //   supprime.id = "supprime";
+  //   alert("Vous avez supprimé un produit au panier")
+
+  //Alerte si le panier est vide
   //Calcul du montant total du panier
-  totalBasket(data) {
 
-  }
-
-} 
+}
