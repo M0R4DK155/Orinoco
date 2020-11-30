@@ -1,16 +1,18 @@
+/* global orinoco */
+
 //Création de la page panier
 class Order extends Page {
-  constructor(pageSpecs = {}) {
-    super(pageSpecs)
-    // console.log(pageSpecs, this)
-    if (this.changeHistory) orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page
-    this.products = this.redefineCartContent(orinoco.cart.contentBasket);
-    orinoco.pageManager.domTarget.innerHTML = this.template();
-  }
+	constructor(pageSpecs = {}) {
+		super(pageSpecs);
+		// console.log(pageSpecs, this)
+		if (this.changeHistory) orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page
+		this.products = this.redefineCartContent(orinoco.cart.contentBasket);
+		orinoco.pageManager.domTarget.innerHTML = this.template();
+	}
 
-  //Rendu dans le DOM
-  template() {
-    return `
+	//Rendu dans le DOM
+	template() {
+		return `
       <div id="contentBasket">
         ${this.addProductsInResume()}
       </div>
@@ -43,21 +45,21 @@ class Order extends Page {
 
       <button class="panier" id="valider" type="submit" href="confirmation.html"><span class="fa fa-send">Valider la commande</span>
       
-      `
-  }
-  //Affichage dynamique des produits du panier dans la page
-  addProductsInResume() {
-    let productListHtml = "";
-    // console.log(this.products);
-    for (const [key, value] of Object.entries(this.products)) {
-      productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit
-    }
-    return productListHtml;
-  }
+      `;
+	}
+	//Affichage dynamique des produits du panier dans la page
+	addProductsInResume() {
+		let productListHtml = "";
+		// console.log(this.products);
+		for (const value of Object.values(this.products)) {
+			productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit
+		}
+		return productListHtml;
+	}
 
-  templateProductLine(data) {
-    // console.log(data)
-    return `
+	templateProductLine(data) {
+		// console.log(data)
+		return `
       <div id="panier">
           <article id="articlePanier">
               <h2>${data.name}</h2><img src="${data.imageUrl}">
@@ -75,44 +77,45 @@ class Order extends Page {
           </article>
       </div>
   `;
-  }
+	}
 
-  /**
-   * regroupe les éléments dupliqués dans le panier
-   *
-   * @param   {Array}  products  contenu du panier
-   *
-   * @return  {Object}           le contenu factorisé
-   */
+	/**
+	 * regroupe les éléments dupliqués dans le panier
+	 *
+	 * @param   {Array}  products  contenu du panier
+	 *
+	 * @return  {Object}           le contenu factorisé
+	 */
 
-  redefineCartContent(products) {
-    const factorisedProductList = {}
-    for (let i = 0, size = products.length; i < size; i++) {
-      if (factorisedProductList[products[i].id] !== undefined) {
-        factorisedProductList[products[i].id].qty++;
-        continue;
-      }
-      factorisedProductList[products[i].id] = { ...products[i], qty: 1 };
-    }
-    return factorisedProductList;
-  }
+	redefineCartContent(products) {
+		const factorisedProductList = {};
+		for (let i = 0, size = products.length; i < size; i++) {
+			if (factorisedProductList[products[i].id] !== undefined) {
+				factorisedProductList[products[i].id].qty++;
+				continue;
+			}
+			factorisedProductList[products[i].id] = { ...products[i], qty: 1 };
+		}
+		return factorisedProductList;
+	}
 
-  //Calcul du prix selon la quantité choisie
-  changeQty(productId, direction) {
-    if (direction === "+") this.products[productId].qty++;
-    if (direction === "-") this.products[productId].qty--;
-    orinoco.pageManager.domTarget.innerHTML = this.template();
-  }
+	//Calcul du prix selon la quantité choisie
+	changeQty(productId, direction) {
+		if (direction === "+") this.products[productId].qty++;
+		if (direction === "-") this.products[productId].qty--;
+		orinoco.pageManager.domTarget.innerHTML = this.template();
+	}
 
-  //Ajouter minimum et maximum à QTY
-  //Supprimer un produit du panier
-  // deleteToCart() {
-  //   let supprime = document.createElement('button');
-  //   supprime.textContent = "supprimer le produit";
-  //   supprime.id = "supprime";
-  //   alert("Vous avez supprimé un produit au panier")
+	//Ajouter minimum et maximum à QTY
+	//Supprimer un produit du panier
+	deleteToCart() {
+		let supprime = document.createElement("button");
+		supprime.textContent = "supprimer le produit";
+		supprime.id = "supprime";
+		alert("Vous avez supprimé un produit au panier");
+	}
 
-  //Alerte si le panier est vide
-  //Calcul du montant total du panier
+	//Alerte si le panier est vide
+	//Calcul du montant total du panier
 
 }
