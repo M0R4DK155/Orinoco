@@ -1,4 +1,5 @@
 /* global orinoco */
+"use strict";
 
 //Création de la page panier
 class Order extends Page {
@@ -6,8 +7,7 @@ class Order extends Page {
 		super(pageSpecs);
 		// console.log(pageSpecs, this)
 		if (this.changeHistory) orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page
-		this.products = this.redefineCartContent(orinoco.cart.contentBasket);
-		orinoco.pageManager.domTarget.innerHTML = this.template();
+		this.render();
 	}
 
 	//Rendu dans le DOM
@@ -50,7 +50,6 @@ class Order extends Page {
 	//Affichage dynamique des produits du panier dans la page
 	addProductsInResume() {
 		let productListHtml = "";
-		// console.log(this.products);
 		for (const value of Object.values(this.products)) {
 			productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit
 		}
@@ -72,7 +71,7 @@ class Order extends Page {
                           </p>
                       <h3>Prix: </h3>
                           <p id="price">${data.price * data.qty}</p>
-                              <button id="supprime">Supprimer le produit</button>
+                              <button id="supprime" onclick="orinoco.pageManager.page.deleteToCart('${data.id}')">Supprimer le produit</button>
                   </div>
           </article>
       </div>
@@ -89,6 +88,7 @@ class Order extends Page {
 
 	redefineCartContent(products) {
 		const factorisedProductList = {};
+		products.sort();
 		for (let i = 0, size = products.length; i < size; i++) {
 			if (factorisedProductList[products[i].id] !== undefined) {
 				factorisedProductList[products[i].id].qty++;
@@ -101,21 +101,29 @@ class Order extends Page {
 
 	//Calcul du prix selon la quantité choisie
 	changeQty(productId, direction) {
-		if (direction === "+") this.products[productId].qty++;
-		if (direction === "-") this.products[productId].qty--;
-		orinoco.pageManager.domTarget.innerHTML = this.template();
+		orinoco.cart.changeQty(productId, direction);
+		this.render();
 	}
 
-	//Ajouter minimum et maximum à QTY
-	//Supprimer un produit du panier
-	deleteToCart() {
-		let supprime = document.createElement("button");
-		supprime.textContent = "supprimer le produit";
-		supprime.id = "supprime";
+	/**
+	 * 	Supprimer un produit du panier
+	 *
+	 * @param   {String}  product  l'id du produit
+	 *
+	 * @return  {void}
+	 */
+	deleteToCart(product) {
 		alert("Vous avez supprimé un produit au panier");
+		orinoco.cart.delete(product);
+		this.render();
 	}
 
 	//Alerte si le panier est vide
 	//Calcul du montant total du panier
 
+
+	render(){
+		this.products = this.redefineCartContent(orinoco.cart.contentBasket);
+		orinoco.pageManager.domTarget.innerHTML = this.template();
+	}
 }
