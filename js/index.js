@@ -1,17 +1,16 @@
 /* eslint-disable no-undef */
 // Page de base - Routeur par défaut
 var orinoco = {
+	cart: null, //Affichage du panier
 	dataManager: new DataManager("http://localhost:3000/api/teddies/"), // Récupération et gestion des données du serveur
 	pageManager: null, //Gestion navigation vers les différentes pages + gestion historique
-	cart: null, //Affichage du panier
-	products: {}, 
-	// component: {}
+	products: {}
 };
 // alerte si le serveur ne répond pas
 // alert("Nous sommes désolé, le serveur ne répond pas ! ")
 
-orinoco.pageManager = new PageManager(document.querySelector("main")); //Cible l'endroit où on injecte nos pages
 orinoco.cart = new Cart(document.querySelector("#cartContainer")); //Cible l'endroit où on injecte notre panier
+orinoco.pageManager = new PageManager(document.querySelector("main")); //Cible l'endroit où on injecte nos pages
 
 
 

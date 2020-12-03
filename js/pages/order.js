@@ -8,17 +8,19 @@ class Order extends Page {
 	constructor(pageSpecs = {}) {
 		super(pageSpecs);
 		// console.log(pageSpecs, this)
-		if (this.changeHistory) orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page
+		if (this.changeHistory && orinoco.pageManager !== null)
+			orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page
 		this.render();
 	}
 
 	//Rendu dans le DOM
 	template() {
+		document.getElementById("titre").innerText = "panier";
 		return `
       <div id="contentBasket">
         ${this.addProductsInResume()}
       </div>
-      <div id="totalBasket">Le montant total de votre commande est de :  €</div>
+      <div id="totalBasket">Le montant total de votre commande est de : ${this.getTotal()}€</div>
       <form id="formulaire">
         <div class="form-row">
           <div class="form-group col-md-5">
@@ -45,7 +47,7 @@ class Order extends Page {
           <input type="text" name="city" class="form-control" id="city" placeholder="Votre ville..." required /><span id="oublisVille"></span><br />
         </div>
 
-      <button class="panier" id="valider" type="submit" href="confirmation.html"><span class="fa fa-send">Valider la commande</span>
+      <button class="panier" id="valider" type="submit" onclick="orinoco.pageManager.page.sendForm(event)"><span class="fa fa-send">Valider la commande</span>
       
       `;
 	}
@@ -123,9 +125,44 @@ class Order extends Page {
 	//Alerte si le panier est vide
 	//Calcul du montant total du panier
 
-
 	render() {
 		this.products = this.redefineCartContent(orinoco.cart.contentBasket);
-		orinoco.pageManager.domTarget.innerHTML = this.template();
+		if (this.domTarget !== undefined)
+			this.domTarget.innerHTML = this.template();
+		else orinoco.pageManager.domTarget.innerHTML = this.template();
+	}
+
+	getTotal() {
+		let total = 0;
+		for (const value of Object.values(this.products)) {
+			total += value.qty * value.price;
+		}
+		return total;
+	}
+
+	sendForm(event) {
+		event.stopPropagation(); 
+		event.preventDefault();
+		const contact = {
+			firstName: document.getElementById("#firstName"),
+			lastName : document.getElementById("#lastName"),
+			address  : document.getElementById("#address"),
+			city     : document.getElementById("#city"),
+			email    : document.getElementById("#email"),
+		};
+		
+		let products = [];
+		for (const value of Object.values(this.products)) {
+			products.push(value.id);
+		}
+
+		orinoco.dataManager.sendForm(contact, products, this.showOrderID.bind(this));
+		
+
+	}
+
+	showOrderID(orderID){
+		console.log(":) "+orderID);
+		alert(":) "+orderID);
 	}
 }

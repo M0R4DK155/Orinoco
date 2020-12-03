@@ -28,7 +28,12 @@ class PageManager {
 			todo.page = window.location.search.slice(1);//La méthode slice() permet de "trancher un morceau particulier d'une chaine de caractère, dans notre cas le ?. Méthode plus ou moins similaire à .substr.
 		}
 		if (todo.page === "") return new ProductList({ changeHistory: false });
-		if (todo.page.slice(0, 6) === "panier") return new Order(todo.changeHistory);
+		if (todo.page.slice(0, 6) === "panier") return new Order(
+			{
+				"changeHistory": todo.changeHistory,
+				"domTarget": this.domTarget
+			}
+		);
 		if (todo.page.slice(0, 7) === "product") return new ProductPage(
 			{
 				changeHistory: todo.changeHistory,
@@ -36,8 +41,8 @@ class PageManager {
 				idProduct: todo.page.slice(7),
 			}
 		);
-		if (todo.page.slice(0, 4) === "list") return new ProductList(todo.changeHistory);
-		new ProductList(todo.changeHistory);
+		if (todo.page.slice(0, 4) === "list") return new ProductList({ changeHistory: todo.changeHistory});
+		new ProductList({ changeHistory: todo.changeHistory});
 	}
 	//Ecouteur - clic sur le bouton retour en arrière du navigateur + alert pour informer l'utilisateur
 	fonctionAuChangementDePage() {
