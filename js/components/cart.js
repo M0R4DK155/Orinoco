@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* global orinoco */
 
 //Composant panier
@@ -33,13 +34,15 @@ class Cart {
 		}
 		return content;
 	}
+    
 	//Ajouter un produit dans le panier
 	add(product) {
 		this.contentBasket.push(product);
 		orinoco.dataManager.setLocalData("panier", this.contentBasket);
 		this.render();
 	}
-
+    
+	//Retirer un produit du panier
 	delete(idProduct){
 		let newBasket = [];
 		for (let i=this.contentBasket.length-1; i>=0; i--){
@@ -49,7 +52,8 @@ class Cart {
 		orinoco.dataManager.setLocalData("panier", this.contentBasket);
 		this.render();
 	}
-
+    
+	//Gestion choix quantité
 	changeQty(productId, direction) {
 		let index=null;
 		for (let i=0, size =this.contentBasket.length; i<size; i++){

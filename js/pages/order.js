@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 /* global orinoco */
 "use strict";
 
@@ -122,7 +124,7 @@ class Order extends Page {
 	//Calcul du montant total du panier
 
 
-	render(){
+	render() {
 		this.products = this.redefineCartContent(orinoco.cart.contentBasket);
 		orinoco.pageManager.domTarget.innerHTML = this.template();
 	}

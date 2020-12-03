@@ -25,9 +25,9 @@ class Component extends LifeCycle {
     // mounted() {
     //     // alert("ajouté");
     // }
-    unmounted() {
-        delete (orinoco.products[this.ref]);
-        if( this.whenUnmounted !== undefined ) this.whenUnmounted();
-    }
+    // unmounted() {
+    //     delete (orinoco.products[this.ref]);
+    //     if( this.whenUnmounted !== undefined ) this.whenUnmounted();
+    // }
 }
 

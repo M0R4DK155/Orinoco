@@ -1,12 +1,14 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 /* global orinoco */
 
 //Affichage dynamique des produits
-class ProductPage extends Page {
+class ProductPage extends Page { //Le mot-clé extends est utilisé dans les déclarations et expressions de classes afin de signifier qu'un type représenté par une classe hérite d'un autre type.
 	constructor(pageSpecs) {
-		super(pageSpecs);
+		super(pageSpecs); //Le mot-clé super est utilisé afin d'appeler ou d'accéder à des fonctions définies sur l'objet parent (Page dans notre cas).
 		this.productInfo = orinoco.dataManager.products[this.idProduct];
 		if (this.productInfo === undefined) {
-			orinoco.dataManager.getDataProductFromServer(this.idProduct, this.saveData.bind(this));
+			orinoco.dataManager.getDataProductFromServer(this.idProduct, this.saveData.bind(this)); 
 			return;
 		}
 		this.showProduct();
@@ -17,7 +19,7 @@ class ProductPage extends Page {
 		this.showProduct();
 	}
 
-	//Fonction pour afficher le produit sélectionné au clic
+	//Fonction pour afficher le produit sélectionné au clic avec URL du produit dans la barre de navigation ( nom du produit est un + pour le référencement)
 	showProduct() {
 		orinoco.pageManager.changePage("oriKids : " + this.productInfo.name, "product" + this.productInfo._id, this);
 		orinoco.pageManager.domTarget.innerHTML = this.template();
