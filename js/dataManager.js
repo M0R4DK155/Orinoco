@@ -44,8 +44,9 @@ class DataManager {
 		return localStorage.setItem(key, value);
 	}
 
+	//Envoi du formulaire
 	async sendForm(contact, products, callback) {
-		let response = await fetch(this.src + "/order", {
+		let response = await fetch(this.src + "/order", { // création de la variable pour relier à l'API
 			method: "POST",
 			body: {
 				"contact": contact,
@@ -55,4 +56,5 @@ class DataManager {
 		response = await response.json();
 		callback(response);
 	}
+	// localStorage.clear()
 }

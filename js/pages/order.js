@@ -15,7 +15,7 @@ class Order extends Page {
 
 	//Rendu dans le DOM
 	template() {
-		document.getElementById("titre").innerText = "panier";
+		document.getElementById("titre").innerText = "PANIER";
 		return `
       <div id="contentBasket">
         ${this.addProductsInResume()}
@@ -25,29 +25,35 @@ class Order extends Page {
         <div class="form-row">
           <div class="form-group col-md-5">
             <label for="firstname">Prénom :</label>
-            <input type="text" name="firstName" class="form-control" id="firstname" placeholder="Votre prénom..." required /><span id="oublisPrenom"></span><br />
+            <input type="text" name="firstName" class="form-control" id="firstname" placeholder="Votre prénom..." required />
+            <span id="oublisPrenom"></span><br />
           </div>
           <div class="form-group col-md-5">
             <label for="name">Nom :</label>
-            <input type="text" name="lastName" class="form-control" id="name" placeholder="Votre nom..." required /><span id="oublisNom"></span><br />
+            <input type="text" name="lastName" class="form-control" id="name" placeholder="Votre nom..." required />
+            <span id="oublisNom"></span><br />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-5">
             <label for="email">Email :</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="Votre email@email.fr" required /><span id="oublisEmail"></span><br />
+            <input type="email" name="email" class="form-control" id="email" placeholder="Votre email@email.fr" required />
+            <span id="oublisEmail"></span><br />
           </div>
           <div class="form-group col-md-5">
             <label for="address">Adresse :</label>
-            <input type="text" name="address" class="form-control" id="address" placeholder="6, Rue du Moulin" required /><span id="oublisAdress"></span><br />
+            <input type="text" name="address" class="form-control" id="address" placeholder="6, Rue du Moulin" required />
+            <span id="oublisAdress"></span><br />
           </div>
         </div>
         <div class="form-group col-md-8">
           <label for="city">Ville :</label>
-          <input type="text" name="city" class="form-control" id="city" placeholder="Votre ville..." required /><span id="oublisVille"></span><br />
+          <input type="text" name="city" class="form-control" id="city" placeholder="Votre ville..." required />
+          <span id="oublisVille"></span><br />
         </div>
 
-      <button class="panier" id="valider" type="submit" onclick="orinoco.pageManager.page.sendForm(event)"><span class="fa fa-send">Valider la commande</span>
+      <button class="panier" id="valider" type="submit" onclick="orinoco.pageManager.page.sendForm(event)">
+      <span class="fa fa-send">Valider la commande</span>
       
       `;
 	}
@@ -75,7 +81,7 @@ class Order extends Page {
                           </p>
                       <h3>Prix: </h3>
                           <p id="price">${data.price * data.qty}</p>
-                              <button id="supprime" onclick="orinoco.pageManager.page.deleteToCart('${data.id}')">Supprimer le produit</button>
+                              <button id="supprime" onclick="orinoco.pageManager.page.deleteToCart('${data.id}')"><i class="fas fa-trash"></i> Supprimer le produit</button>
                   </div>
           </article>
       </div>
@@ -123,7 +129,7 @@ class Order extends Page {
 	}
 
 	//Alerte si le panier est vide
-	//Calcul du montant total du panier
+	
 
 	render() {
 		this.products = this.redefineCartContent(orinoco.cart.contentBasket);
@@ -131,7 +137,8 @@ class Order extends Page {
 			this.domTarget.innerHTML = this.template();
 		else orinoco.pageManager.domTarget.innerHTML = this.template();
 	}
-
+    
+	//Calcul du montant total du panier
 	getTotal() {
 		let total = 0;
 		for (const value of Object.values(this.products)) {
@@ -140,27 +147,34 @@ class Order extends Page {
 		return total;
 	}
 
+	//Création de l'objet contact et du tableau de produits pour la requete à envoyer au serveur
 	sendForm(event) {
 		event.stopPropagation(); 
 		event.preventDefault();
+		//Récupération des champs du formulaire
 		const contact = {
-			firstName: document.getElementById("#firstName"),
-			lastName : document.getElementById("#lastName"),
-			address  : document.getElementById("#address"),
-			city     : document.getElementById("#city"),
-			email    : document.getElementById("#email"),
+			firstName: document.getElementById("#firstName").value,
+            
+			lastName : document.getElementById("#lastName").value,
+            
+			address  : document.getElementById("#address").value,
+            
+			city     : document.getElementById("#city").value,
+            
+			email    : document.getElementById("#email").value,
+            
 		};
 		
-		let products = [];
-		for (const value of Object.values(this.products)) {
-			products.push(value.id);
+		let products = []; //initialisation de l'objet qui va contenir les id des produits 
+		for (const value of Object.values(this.products)) { //boucle pour recuperer les id 
+			products.push(value.id); //envoie des id dans la variable products
 		}
 
 		orinoco.dataManager.sendForm(contact, products, this.showOrderID.bind(this));
 		
 
 	}
-
+	//Fonction callback de sendForm
 	showOrderID(orderID){
 		console.log(":) "+orderID);
 		alert(":) "+orderID);

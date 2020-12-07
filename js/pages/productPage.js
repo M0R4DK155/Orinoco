@@ -27,6 +27,7 @@ class ProductPage extends Page { //Le mot-clé extends est utilisé dans les dé
 
 	//Vue détaillée du produit cliqué
 	template() {
+		document.getElementById("titre").innerText = "PRODUIT";
 		return `
       ${this.ariane("produit : " + this.productInfo.name)}
       <article id="listeArticle">
