@@ -24,7 +24,7 @@ class Cart {
                 `;
 
 	}
-    
+
 	//Affichage du nombre de produit dans le panier sous forme d'icone
 	templateProduits() {
 		let content = "";
@@ -35,48 +35,53 @@ class Cart {
 		}
 		return content;
 	}
-    
+
 	//Ajouter un produit dans le panier
 	add(product) {
 		this.contentBasket.push(product);
 		orinoco.dataManager.setLocalData("panier", this.contentBasket);
 		this.render();
 	}
-    
+
 	//Retirer un produit du panier
-	delete(idProduct){
+	delete(idProduct) {
 		let newBasket = [];
-		for (let i=this.contentBasket.length-1; i>=0; i--){
+		for (let i = this.contentBasket.length - 1; i >= 0; i--) {
 			if (this.contentBasket[i].id !== idProduct) newBasket.push(this.contentBasket[i]);
 		}
 		this.contentBasket = newBasket;
 		orinoco.dataManager.setLocalData("panier", this.contentBasket);
 		this.render();
 	}
-    
+
 	//Gestion choix quantité -+
 	changeQty(productId, direction) {
-		let index=null;
-		for (let i=0, size =this.contentBasket.length; i<size; i++){
+		let index = null;
+		for (let i = 0, size = this.contentBasket.length; i < size; i++) {
 			if (this.contentBasket[i].id === productId) {
 				index = i;
 				break;
 			}
 		}
-		switch(direction){
-		case "+" : 
-			this.contentBasket.push(this.contentBasket[index]);
-			break;
-		case "-" : 
-			if (index > -1) {
-				this.contentBasket.splice(index, 1);
-			}
-			break;
-		default : 
-			alert("direction non définie");
-			break;
+		switch (direction) {
+			case "+":
+				this.contentBasket.push(this.contentBasket[index]);
+				break;
+			case "-":
+				if (index > -1) {
+					this.contentBasket.splice(index, 1);
+				}
+				break;
+			default:
+				alert("direction non définie");
+				break;
 		}
 		orinoco.dataManager.setLocalData("panier", this.contentBasket);
+		this.render();
+	}
+
+	clear() {
+		this.contentBasket = [];
 		this.render();
 	}
 }

@@ -46,15 +46,19 @@ class DataManager {
 
 	//Envoi du formulaire
 	async sendForm(contact, products, callback) {
-		let response = await fetch(this.src + "/order", { // création de la variable pour relier à l'API
-			method: "POST",
-			body: {
+		let response = await fetch(this.src + "order", {
+			method: "post",
+			headers: {
+				"Accept": "application/json",
+				"Content-Type": "application/json"
+			},
+			body:  JSON.stringify({
 				"contact": contact,
 				"products": products
-			}
+			})
 		});
 		response = await response.json();
 		callback(response);
+		localStorage.clear();
 	}
-	// localStorage.clear()
 }
