@@ -24,7 +24,8 @@ class Cart {
                 `;
 
 	}
-
+    
+	//Affichage du nombre de produit dans le panier sous forme d'icone
 	templateProduits() {
 		let content = "";
 		for (let i = 0, size = this.contentBasket.length; i < size; i++) {
@@ -53,7 +54,7 @@ class Cart {
 		this.render();
 	}
     
-	//Gestion choix quantité
+	//Gestion choix quantité -+
 	changeQty(productId, direction) {
 		let index=null;
 		for (let i=0, size =this.contentBasket.length; i<size; i++){

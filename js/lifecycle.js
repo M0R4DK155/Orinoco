@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 class LifeCycle {
 	die() { }
 	mounted() {

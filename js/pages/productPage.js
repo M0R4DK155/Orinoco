@@ -45,6 +45,7 @@ class ProductPage extends Page { //Le mot-clé extends est utilisé dans les dé
       </article>
     `;
 	}
+    
 	//Option de personnalisation - Couleur de la peluche
 	colors(list) {
 		let content = "";
@@ -53,6 +54,7 @@ class ProductPage extends Page { //Le mot-clé extends est utilisé dans les dé
 		}
 		return content;
 	}
+    
 	//Ajout au panier
 	addToCart() {
 		orinoco.cart.add({

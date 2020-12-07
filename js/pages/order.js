@@ -57,6 +57,7 @@ class Order extends Page {
       
       `;
 	}
+    
 	//Affichage dynamique des produits du panier dans la page
 	addProductsInResume() {
 		let productListHtml = "";

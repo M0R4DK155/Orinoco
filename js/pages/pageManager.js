@@ -8,6 +8,7 @@ class PageManager {
 		this.fonctionAuChangementDePage();
 		this.definePage({ changeHistory: false });
 	}
+    
 	//Fonction changement de page - URL
 	changePage(title, url, newPage) {
 		document.title = title;
@@ -44,6 +45,7 @@ class PageManager {
 		if (todo.page.slice(0, 4) === "list") return new ProductList({ changeHistory: todo.changeHistory});
 		new ProductList({ changeHistory: todo.changeHistory});
 	}
+    
 	//Ecouteur - clic sur le bouton retour en arrière du navigateur + alert pour informer l'utilisateur
 	fonctionAuChangementDePage() {
 		window.onpopstate = (event) => {
