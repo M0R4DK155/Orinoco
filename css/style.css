@@ -1,144 +1,144 @@
 :root {
-   --violet: #9c27b0;
-   --violetpale: #f5d9ef;
-   --blanc: #ffffff;
-   --gris: #5f5c63;
-   --grisclair: #b0aeb3;
-   --grisfonce: #4b4747;
-   --marronclair: #4b1d1d;
-   --rouge: #f51000;
-   --pourpre: #b11010;
-   --vert: #00b627;
-   --vertpale: #00ff55;
-   --noirclair: #2c2929;
-   --noir: #000000;
+    --violet: #9c27b0;
+    --violetpale: #f5d9ef;
+    --blanc: #ffffff;
+    --gris: #5f5c63;
+    --grisclair: #b0aeb3;
+    --grisfonce: #4b4747;
+    --marronclair: #4b1d1d;
+    --rouge: #f51000;
+    --pourpre: #b11010;
+    --vert: #00b627;
+    --vertpale: #00ff55;
+    --noirclair: #2c2929;
+    --noir: #000000;
 }
-
 body {
-   margin: 0px;
-   height: auto;
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-weight: bold;
+    margin: 0px;
+    height: auto;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
-
 header {
-   background-color: var(--violetpale);
+    background-color: var(--violetpale);
 }
 main {
-   text-align: center;
-   width: 100%;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 15px 0;
 }
 header p {
-   font-size: 2em;
-   text-align: center;
+    font-size: 2em;
+    text-align: center;
 }
 #logo {
-   margin-top: 6%;
-   width: auto;
+    margin-top: 6%;
+    width: auto;
 }
 a {
-   cursor: pointer;
+    cursor: pointer;
 }
 nav {
-   cursor: pointer;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 5px 0px 25px 0;
 }
 .container-fluid {
-   background-color: var(--violetpale);
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-size: 1.5em;
-   font-weight: bold;
-   padding: 2%;
-   border-style: solid;
-   border-width: 2px;
-   border-radius: 5px;
-   border-color: var(--noir);
-   margin: 1%;
+    background-color: var(--violetpale);
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 2%;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: var(--noir);
+    margin: 1%;
 }
 .container-fluid h2 {
-   font-size: 2em;
+    font-size: 2em;
 }
-
 .panier {
-   color: var(--noir);
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-size: 1.2em;
-   font-weight: bold;
-   background-color: var(--blanc);
-   border-style: solid;
-   border-width: 1px;
-   border-radius: 5px;
-   border-color: var(--violet);
+    color: var(--noir);
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: var(--blanc);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: var(--violet);
 }
-
 .panier:hover {
-   color: var(--noir);
-   background-color: var(--violet);
+    color: var(--noir);
+    background-color: var(--violet);
 }
-
 .boutons {
-   float: right;
-   margin-top: 7%;
+    float: right;
+    margin-top: 7%;
 }
 
 #footer {
-   display: flex;
-   justify-content: space-around;
-   padding-top: 25px;
-   text-align: center;
-   font-size: 1.2em;
-   font-weight: bold;
-   margin: auto;
-   height: auto;
-   background-color: var(--violetpale);
+    display: flex;
+    justify-content: space-around;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: auto;
+    height: auto;
+    background-color: var(--violetpale);
 }
 
 /* Liste des articles */
 
 article {
-   background-color: var(--violetpale);
-   border-style: solid;
-   border-radius: 50px;
-   border-color: var(--gris);
-   margin: auto;
-   margin-bottom: 1%;
-   padding: 1%;
-   text-align: center;
-   width: 50%;
+    background-color: var(--violetpale);
+    border-style: solid;
+    border-radius: 50px;
+    border-color: var(--gris);
+    margin: auto;
+    margin-bottom: 1%;
+    padding: 1%;
+    text-align: center;
+    width: 75%;
 }
 
-#lien {
-   padding: 6px 50px 6px;
-   font: bold 1.2em 'Raleway';
-   background: var(--blanc);
-   color: var(--noir);
-   border-radius: 50px;
-   border: 2px solid var(--noirclair);
-   box-shadow: 1px 1px 3px var(--grisfonce);
+#lien,
+select {
+    padding: 6px 30px 6px;
+    font: bold 1.2em 'Raleway';
+    background: var(--blanc);
+    color: var(--noir);
+    border-radius: 50px;
+    border: 2px solid var(--noirclair);
+    box-shadow: 1px 1px 3px var(--grisfonce);
 }
 #lien:hover {
-   background-color: var(--grisclair);
-   transition-duration: 0.2s;
+    background-color: var(--grisclair);
+    transition-duration: 0.2s;
 }
 img {
-   color: var(--noirclair);
-   width: 50%;
-   border-radius: 3px;
-   border: 2px solid var(--noirclair);
-   box-shadow: 1px 1px 3px var(--grisfonce);
+    color: var(--noirclair);
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid var(--noirclair);
+    box-shadow: 1px 1px 3px var(--grisfonce);
 }
 #contentBasket,
 #totalBasket {
-   font-size: 1.3em;
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-weight: bold;
-   padding: 5%;
+    font-size: 1.3em;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 5%;
 }
 
 p,
 label {
-   font-size: 1.3em;
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-weight: bold;
+    font-size: 1.3em;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 /* bouton de la fiche du produit*/
@@ -146,185 +146,221 @@ label {
 #liste,
 #voirPanier,
 #stockage {
-   color: var(--noir);
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-size: 1em;
-   font-weight: bold;
-   background-color: var(--blanc);
-   border-style: solid;
-   border-radius: 3px;
-   border-width: 1px;
-   border-color: var(--grisfonce);
-   margin: 2%;
+    color: var(--noir);
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: var(--blanc);
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: var(--grisfonce);
+    margin: 2%;
 }
 #liste:hover,
 #voirPanier:hover,
 #stockage:hover {
-   background-color: var(--grisclair);
-   transition-duration: 0.2s;
+    background-color: var(--grisclair);
+    transition-duration: 0.2s;
 }
 #valider {
-   color: var(--noir);
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-size: 1.2em;
-   font-weight: bold;
-   background-color: var(--blanc);
-   border-style: solid;
-   border-radius: 3px;
-   border-width: 2px;
-   border-color: var(--vert);
-   margin: 2%;
-   padding: 1%;
+    color: var(--noir);
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: var(--blanc);
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 2px;
+    border-color: var(--vert);
+    margin: 2%;
+    padding: 1%;
 }
 #valider:hover {
-   background-color: var(--vertpale);
-   transition-duration: 0.2s;
+    background-color: var(--vertpale);
+    transition-duration: 0.2s;
 }
 #supprime {
-   color: black;
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-size: 0.7em;
-   background-color: var(--blanc);
-   border-style: solid;
-   border-radius: 5px;
-   border-width: 1px;
-   border-color: var(--pourpre);
-   margin: auto;
+    color: black;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: var(--blanc);
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: var(--pourpre);
+    margin: auto;
 }
 #supprime:hover {
-   background-color: var(--rouge);
-   transition-duration: 0.2s;
+    background-color: var(--rouge);
+    transition-duration: 0.2s;
 }
 #peluche {
-   font-size: 1.5em;
-   color: var(--noir);
-   font-weight: bold;
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   margin: auto;
+    font-size: 1.5em;
+    color: var(--noir);
+    font-weight: bold;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    margin: auto;
 }
 
 #ourson {
-   display: flex;
-   flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Panier */
 
 .form-group {
-   width: 20%;
-   margin: auto;
+    width: 20%;
+    margin: auto;
 }
 #produit {
-   margin: auto;
-   width: 50%;
+    margin: auto;
+    width: 50%;
 }
 article h3 {
-   font-size: 1.4em;
-   font-weight: bold;
-   color: var(--noir);
-   margin: 5%;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--noir);
+    margin: 5%;
 }
 
 p {
-   font-size: 1.2em;
-   font-weight: bold;
-   color: var(--noir);
-   margin: 5%;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--noir);
+    margin: 5%;
 }
 #price::after {
-   content: ' €';
+    content: ' €';
 }
+
+#panierVide {
+    font-size: 4.2em;
+    font-weight: bold;
+    color: var(--noir);
+    padding: 115px 0 115px 0px;
+}
+
+input:valid {
+    box-shadow: 0 0 2px 1px green;
+}
+input:invalid {
+    box-shadow: 0 0 2px 1px red;
+}
+
+/* .submit:valid {
+    box-shadow: 0 0 2px 1px green;
+}
+
+.submit:invalid {
+    box-shadow: 0 0 2px 1px red;
+} */
 
 /* Confirmation de commande */
 
 #recap {
-   font-size: 1.2em;
-   font-weight: bold;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .fa-check {
-   color: var(--vert);
-   font-size: 1.2em;
-   font-weight: bold;
+    color: var(--vert);
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .abientot {
-   color: var(--marronclair);
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-size: 1.5em;
-   font-weight: bold;
+    color: var(--marronclair);
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 .gras {
-   color: var(--vert);
-   font-family: 'Raleway', Arial, Helvetica, sans-serif;
-   font-size: 1.2em;
-   font-weight: bold;
+    color: var(--vert);
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 /* Responsivité */
 @media screen and (max-width: 767px) {
-   article {
-      width: 75%;
-   }
-   article h3,
-   p {
-      font-size: 1em;
-   }
-   nav {
-      font-size: 1.2em;
-      font-weight: bold;
-      padding: 5px 0px 20px 0;
-   }
-   .container-fluid {
-      font-size: 1em;
-   }
-   .container-fluid h2 {
-      font-size: 1.7em;
-   }
-   #intro {
-      font-size: 1.3em;
-   }
-   #ourson {
-      display: block;
-      padding-top: 10px;
-   }
-   #articlePanier,
-   #listeArticle {
-      width: 75%;
-      margin-bottom: 5%;
-   }
-   div {
-      padding: 0px 0 10px 0;
-   }
-   footer p {
-      font-size: 1em;
-   }
+    article {
+        width: 75%;
+    }
+    article h3,
+    p {
+        font-size: 1em;
+    }
+    nav {
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 5px 0px 20px 0;
+    }
+    .container-fluid {
+        font-size: 1em;
+    }
+    .container-fluid h2 {
+        font-size: 1.7em;
+    }
+    #intro {
+        font-size: 1.3em;
+    }
+    #ourson {
+        display: block;
+        padding-top: 10px;
+    }
+    #articlePanier,
+    #listeArticle {
+        width: 95%;
+        margin-bottom: 5%;
+    }
+    div {
+        padding: 0px 0 10px 0;
+    }
+    footer p {
+        font-size: 1em;
+    }
+    #panierVide {
+        font-size: 3.2em;
+    }
+    #lien,
+    select {
+        padding: 6px 10px 6px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-   #main {
-      padding: 20px 0 50px 0;
-   }
-   #ourson {
-      padding: 10px 0 10px 0;
-   }
-   nav {
-      font-size: 1.5em;
-      font-weight: bold;
-      padding: 5px 0px 25px 0;
-   }
-}
+    #main {
+        padding: 20px 0 50px 0;
+    }
+    #ourson {
+        padding: 10px 0 10px 0;
+    }
+    nav {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 5px 0px 25px 0;
+    }
+    #panierVide {
+        font-size: 5.2em;
+        font-weight: bold;
+        color: var(--noir);
+        padding: 145px 0 145px 0px;
+    }
 
-@media screen and (min-width: 1024px) {
-   #main {
-      padding: 0px 0px 20px 0;
-   }
-   #ourson {
-      padding: 10px 0 10px 0;
-   }
-   nav {
-      font-size: 1.5em;
-      font-weight: bold;
-      padding: 5px 0px 25px 0;
-   }
+    @media screen and (min-width: 1024px) {
+        #main {
+            padding: 0px 0px 20px 0;
+        }
+        #ourson {
+            padding: 10px 0 10px 0;
+        }
+        nav {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 5px 0px 25px 0;
+        }
+    }
 }

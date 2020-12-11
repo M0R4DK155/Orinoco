@@ -12,7 +12,7 @@ class ProductList extends Page {
 	//Affichage du produit dans une nouvelle page
 	//showProducts = Fonction callback de getDataFromServer
 	showProducts(list) {
-		orinoco.pageManager.domTarget.innerHTML = this.ariane("liste des produits");
+		orinoco.pageManager.domTarget.innerHTML = this.ariane("Liste des produits");
 		for (let i = 0, size = list.length; i < size; i++) {
 			new DetailedProduct(list[i], orinoco.pageManager.domTarget, "orinoco");
 		}

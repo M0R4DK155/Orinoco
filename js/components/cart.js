@@ -64,17 +64,17 @@ class Cart {
 			}
 		}
 		switch (direction) {
-			case "+":
-				this.contentBasket.push(this.contentBasket[index]);
-				break;
-			case "-":
-				if (index > -1) {
-					this.contentBasket.splice(index, 1);
-				}
-				break;
-			default:
-				alert("direction non définie");
-				break;
+		case "+":
+			this.contentBasket.push(this.contentBasket[index]);
+			break;
+		case "-":
+			if (index > -1) {
+				this.contentBasket.splice(index, 1);
+			}
+			break;
+		default:
+			alert("direction non définie");
+			break;
 		}
 		orinoco.dataManager.setLocalData("panier", this.contentBasket);
 		this.render();

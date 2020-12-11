@@ -40,7 +40,7 @@ class ProductPage extends Page { //Le mot-clé extends est utilisé dans les dé
             <select id="choixCouleur">
                 ${this.colors(this.productInfo.colors)}
             </select>
-            <a id="lien" onclick="orinoco.pageManager.page.addToCart()">Ajouter au panier</a>
+            <a id="lien" onclick="orinoco.pageManager.page.addToCart()"><i class="fas fa-cart-arrow-down"></i> Ajouter au panier</a>
         </div>
       </article>
     `;

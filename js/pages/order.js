@@ -19,7 +19,7 @@ class Order extends Page {
 	//Rendu dans le DOM
 	template() {
 		document.getElementById("titre").innerText = "PANIER";
-		if (orinoco.cart.contentBasket.length === 0) return "votre panier est vide";
+		if (orinoco.cart.contentBasket.length === 0) return '<div id="panierVide">Votre panier est vide :(</div>';
 		return `
       <div id="contentBasket">
         <div id="panier">
@@ -33,75 +33,36 @@ class Order extends Page {
       <div class="form-row">
         <div class="form-group col-md-5">
           <label for="firstname">Prénom :</label>
-          <input
-            type="text"
-            name="firstName"
-            class="form-control"
-            id="firstname"
-            placeholder="Votre prénom..."
-            required
-          />
+          <input type="text" name="firstName" class="form-control" id="firstname" placeholder="Votre prénom..." pattern="[a-zA-Zéèïëàç-]+" maxlength="30" required />
           <span id="oublisPrenom"></span><br />
         </div>
         <div class="form-group col-md-5">
           <label for="name">Nom :</label>
-          <input
-            type="text"
-            name="lastName"
-            class="form-control"
-            id="name"
-            placeholder="Votre nom..."
-            required
-          />
+          <input type="text" name="lastName" class="form-control" id="name" placeholder="Votre nom..." pattern="[a-zA-Zéèïëàç-]+" maxlength="30" required />
           <span id="oublisNom"></span><br />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-5">
           <label for="email">Email :</label>
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            id="email"
-            placeholder="Votre email@email.fr"
-            required
-          />
+          <input type="email" name="email" class="form-control" id="email" pattern="[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}" placeholder="Votre email@email.fr" required />
           <span id="oublisEmail"></span><br />
         </div>
         <div class="form-group col-md-5">
           <label for="address">Adresse :</label>
-          <input
-            type="text"
-            name="address"
-            class="form-control"
-            id="address"
-            placeholder="6, Rue du Moulin"
-            required
-          />
+          <input type="text" name="address" class="form-control" id="address" placeholder="6, Rue du Moulin" pattern"[a-zA-Z ,.'-]" required />
           <span id="oublisAdress"></span><br />
         </div>
       </div>
       <div class="form-group col-md-8">
         <label for="city">Ville :</label>
-        <input
-          type="text"
-          name="city"
-          class="form-control"
-          id="city"
-          placeholder="Votre ville..."
-          required
-        />
+        <input type="text" name="city" class="form-control" id="city" placeholder="Votre ville..." pattern"[a-zA-Z ,.'-]" required />
         <span id="oublisVille"></span><br />
       </div>
     
       <button
-        class="panier"
-        id="valider"
-        type="submit"
-        onclick="orinoco.pageManager.page.sendForm(event)"
-      >
-        <span class="fa fa-send">Valider la commande</span>
+        class="panier" id="valider" type="submit" onclick="orinoco.pageManager.page.sendForm(event)">
+        <span class="fa fa-send"> Valider la commande</span>
       </button>
     </form>
       `;
@@ -184,7 +145,7 @@ class Order extends Page {
 	 *
 	 * @return  {HTMLElement}  le noeud HTML
 	 */
-	get getContainer() {
+	get getContainer() { //get nous permet d'utiliser notre variable getContainer comme une fonction (fonctionne tant qu'on a pas d'arguments à passer)
 		if (this.domTarget !== undefined) return this.domTarget;
 		return orinoco.pageManager.domTarget;
 	}
@@ -216,7 +177,7 @@ class Order extends Page {
 			lastName  : this.verifChamps(document.getElementById("name"),  /^[a-zA-Z ,.'-]+$/),
 		};
 
-		if ( this.formIsValid<5) return;
+        if ( this.formIsValid<5) return;
 
 		let products = []; //initialisation de l'objet qui va contenir les id des produits 
 		for (const value of Object.values(this.products)) { //boucle pour recuperer les id 
@@ -249,8 +210,9 @@ class Order extends Page {
 	showOrderID(orderID) {
 		this.getContainer.innerHTML = `
 			<div class="jumbotron" id="ConfirmationDeCommande">
-				<h1 class="display-4">Votre commande a bien été prise en compte.<i class="fas fa-check"></i></h1>
-				<div id="recap">${orderID.orderId}</div>
+                <h1 class="display-4">Votre commande a bien été prise en compte.<i class="fas fa-check"></i></h1>
+                <h2> Orinoco vous remercions de votre confiance </div>
+				<div id="recap">Votre numéro de commande : ${orderID.orderId}</div>
 
 
 				<a class="btn btn-secondary btn-lg retour" href="index.html" onclick="retour()" role="button">Retour à
