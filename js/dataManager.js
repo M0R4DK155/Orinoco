@@ -59,6 +59,7 @@ class DataManager {
 		});
 		response = await response.json();
 		callback(response);
-		localStorage.clear();
+        
+		localStorage.clear(); //Le panier se vide une fois la commande confirmée.
 	}
 }

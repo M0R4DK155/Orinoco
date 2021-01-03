@@ -79,7 +79,7 @@ class Cart {
 		orinoco.dataManager.setLocalData("panier", this.contentBasket);
 		this.render();
 	}
-
+	//Vidage du panier après confirmation de commande
 	clear() {
 		this.contentBasket = [];
 		this.render();

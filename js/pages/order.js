@@ -211,7 +211,7 @@ class Order extends Page {
 		this.getContainer.innerHTML = `
 			<div class="jumbotron" id="ConfirmationDeCommande">
                 <h1 class="display-4">Votre commande a bien été prise en compte.<i class="fas fa-check"></i></h1>
-                <h2> Orinoco vous remercions de votre confiance </div>
+                <h2> Nous vous remercions de votre confiance </div>
 				<div id="recap">Votre numéro de commande : ${orderID.orderId}</div>
 
 
