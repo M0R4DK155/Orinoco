@@ -52,7 +52,7 @@ class DataManager {
 				"Accept": "application/json",
 				"Content-Type": "application/json"
 			},
-			body:  JSON.stringify({
+			body:  JSON.stringify({ //convertit une valeur JavaScript en chaîne JSON
 				"contact": contact,
 				"products": products
 			})

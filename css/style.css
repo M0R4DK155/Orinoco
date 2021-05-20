@@ -78,7 +78,6 @@ nav {
     float: right;
     margin-top: 7%;
 }
-
 #footer {
     display: flex;
     justify-content: space-around;
@@ -92,7 +91,6 @@ nav {
 }
 
 /* Liste des articles */
-
 article {
     background-color: var(--violetpale);
     border-style: solid;
@@ -104,7 +102,6 @@ article {
     text-align: center;
     width: 75%;
 }
-
 #lien,
 select {
     padding: 6px 30px 6px;
@@ -133,7 +130,6 @@ img {
     font-weight: bold;
     padding: 5%;
 }
-
 p,
 label {
     font-size: 1.3em;
@@ -142,7 +138,6 @@ label {
 }
 
 /* bouton de la fiche du produit*/
-
 #liste,
 #voirPanier {
     color: var(--noir);
@@ -179,7 +174,7 @@ label {
     background-color: var(--vertpale);
     transition-duration: 0.2s;
 }
-#supprime {
+#supprimer {
     color: black;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     font-size: 1em;
@@ -191,7 +186,7 @@ label {
     border-color: var(--pourpre);
     margin: auto;
 }
-#supprime:hover {
+#supprimer:hover {
     background-color: var(--rouge);
     transition-duration: 0.2s;
 }
@@ -202,14 +197,12 @@ label {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     margin: auto;
 }
-
 #ourson {
     display: flex;
     flex-wrap: wrap;
 }
 
 /* Panier */
-
 .form-group {
     width: 20%;
     margin: auto;
@@ -224,7 +217,6 @@ article h3 {
     color: var(--noir);
     margin: 5%;
 }
-
 p {
     font-size: 1.2em;
     font-weight: bold;
@@ -234,14 +226,12 @@ p {
 #price::after {
     content: ' €';
 }
-
 #panierVide {
     font-size: 4.2em;
     font-weight: bold;
     color: var(--noir);
     padding: 115px 0 115px 0px;
 }
-
 input:valid {
     box-shadow: 0 0 2px 1px green;
 }
@@ -262,28 +252,16 @@ input:invalid {
 #recap {
     font-size: 1.2em;
     font-weight: bold;
+    padding: 15px;
 }
-
 .fa-check {
     color: var(--vert);
     font-size: 1.2em;
     font-weight: bold;
 }
 
-.abientot {
-    color: var(--marronclair);
-    font-family: 'Raleway', Arial, Helvetica, sans-serif;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-.gras {
-    color: var(--vert);
-    font-family: 'Raleway', Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
 /* Responsivité */
+/* Smartphones */
 @media screen and (max-width: 767px) {
     article {
         width: 75%;
@@ -330,9 +308,10 @@ input:invalid {
     }
 }
 
+/* Format Tablette */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     #main {
-        padding: 20px 0 50px 0;
+        padding: 125px 0 50px 0;
     }
     #ourson {
         padding: 10px 0 10px 0;
@@ -349,6 +328,7 @@ input:invalid {
         padding: 145px 0 145px 0px;
     }
 
+    /* Desktop */
     @media screen and (min-width: 1024px) {
         #main {
             padding: 0px 0px 20px 0;

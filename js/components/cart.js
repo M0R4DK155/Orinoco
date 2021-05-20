@@ -4,8 +4,8 @@
 //Composant panier
 class Cart {
 	constructor(domTarget) {
-		this.DOM = document.createElement("div");
-		this.DOM.className = "boutons";
+		this.DOM = document.createElement("div"); //Nom de la balise ciblée pour créer un nouveau noeud dans le DOM
+		this.DOM.className = "boutons"; 
 		this.DOM.id = "panier";
 		domTarget.appendChild(this.DOM);
 		this.contentBasket = orinoco.dataManager.getLocalData("panier", true); //Récupère le contenu du panier dans le local storage
@@ -22,7 +22,6 @@ class Cart {
                     </button>
                 </div>
                 `;
-
 	}
 
 	//Affichage du nombre de produit dans le panier sous forme d'icone
@@ -79,6 +78,7 @@ class Cart {
 		orinoco.dataManager.setLocalData("panier", this.contentBasket);
 		this.render();
 	}
+    
 	//Vidage du panier après confirmation de commande
 	clear() {
 		this.contentBasket = [];

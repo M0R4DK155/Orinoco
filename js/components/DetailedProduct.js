@@ -5,13 +5,13 @@ class DetailedProduct {
 	constructor(props, domTarget, container) {
 		// console.log(container);
 		for (const [key, value] of Object.entries(props)) { //La méthode Object.entries() renvoie un tableau des propriétés propres énumérables d'un objet dont la clé est une chaîne de caractères, sous la forme de paires [clé, valeur]
-			this[key] = value; //Rempli nos différentes propriétés
+			this[key] = value;                              //Rempli nos différentes propriétés
 		}
 		this.showDetails = false;
 		// console.log(this.showDetails);
-		this.DOM = document.createElement("article"); //Représentation de notre élément dans le DOM
+		this.DOM = document.createElement("article");       //Représentation de notre élément dans le DOM
 		this.DOM.className = "listeArticle"; 
-		domTarget.appendChild(this.DOM);//Ajoute l'enfant "article" dans le DOM
+		domTarget.appendChild(this.DOM);                    //Ajoute l'enfant "article" dans le DOM
 		window[container].products["product" + this._id] = this;
 		this.container = container;
 		this.products = [];
@@ -24,7 +24,7 @@ class DetailedProduct {
 	resumeTemplate() {
 		return `
         <h3 id="peluche">${this.name}</h3>
-                <img src="${this.imageUrl}" alt="" srcset="">
+                <img src="${this.imageUrl}">
                 <div>
                     <h4>Prix : </h4>
                     <p>${this.price / 100}€</p>
@@ -45,13 +45,4 @@ class DetailedProduct {
 			idProduct: this._id
 		});
 	}
-
-	// detailedTemplate() {
-	//     return "-----";
-	// }
-
-	// die() {
-	//     this.DOM.parentNode.removeChild(this.DOM);
-	//     delete (window[this.container].component["product" + this._id]);
-	// }
 }

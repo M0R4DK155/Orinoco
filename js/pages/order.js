@@ -10,7 +10,6 @@ class Order extends Page {
 
 	constructor(pageSpecs = {}) {
 		super(pageSpecs);
-		// console.log(pageSpecs, this)
 		if (this.changeHistory && orinoco.pageManager !== null)
 			orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page
 		this.render();
@@ -90,7 +89,7 @@ class Order extends Page {
                           </p>
                       <h3>Prix: </h3>
                           <p id="price">${data.price * data.qty}</p>
-                              <button id="supprime" onclick="orinoco.pageManager.page.deleteToCart('${data.id}')"><i class="fas fa-trash"></i> Supprimer le produit</button>
+                              <button id="supprimer" onclick="orinoco.pageManager.page.deleteToCart('${data.id}')"><i class="fas fa-trash"></i> Supprimer le produit</button>
                   </div>
           </article>
   `;
@@ -141,7 +140,7 @@ class Order extends Page {
 	}
 
 	/**
-	 * récupèrele noeud DOM où l'on va injecter le contenu
+	 * récupère le noeud DOM où l'on va injecter le contenu
 	 *
 	 * @return  {HTMLElement}  le noeud HTML
 	 */
@@ -159,7 +158,7 @@ class Order extends Page {
 		return total;
 	}
 
-	//Création de l'objet contact et du tableau de produits pour la requete à envoyer au serveur
+	//Création de l'objet contact et du tableau de produits pour la requête à envoyer au serveur
 	sendForm(event) {
 		console.log("event:", event);
 
@@ -177,7 +176,7 @@ class Order extends Page {
 			lastName  : this.verifChamps(document.getElementById("name"),  /^[a-zA-Z ,.'-]+$/),
 		};
 
-        if ( this.formIsValid<5) return;
+        if (this.formIsValid<5) return; 
 
 		let products = []; //initialisation de l'objet qui va contenir les id des produits 
 		for (const value of Object.values(this.products)) { //boucle pour recuperer les id 

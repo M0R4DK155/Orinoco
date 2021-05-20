@@ -63,8 +63,6 @@ class ProductPage extends Page { //Le mot-clé extends est utilisé dans les dé
 			price: this.productInfo.price / 100,
 			imageUrl: this.productInfo.imageUrl,
 		});
-		alert("Vous avez ajouté un produit au panier");
+		alert("Article ajouté avec succès ! ");
 	}
-
-
 }
