@@ -49,7 +49,7 @@ class ProductPage extends Page { //Le mot-clé extends est utilisé dans les dé
 	//Option de personnalisation - Couleur de la peluche
 	colors(list) {
 		let content = "";
-		for (let i = list.length - 1; i > 0; i--) {
+		for (let i = list.length-1; i >= 0; i--) {
 			content += `<option value="${list[i]}">${list[i]}</option>`;
 		}
 		return content;
