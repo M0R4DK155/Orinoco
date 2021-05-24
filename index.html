@@ -2,124 +2,66 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Orinoco | OriKids, l'expert de la peluche made in France.">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="Orinoco | OriKids, l'expert de la peluche made in France." />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <script src="https://kit.fontawesome.com/a1f0da57c8.js" crossorigin="anonymous"></script>
-    <link rel="favicon" href="img/favicon.ico">
+    <link rel="favicon" href="img/favicon.ico" />
     <title>OriKids - Accueil</title>
 
     <!-- elements structurants -->
-    <script src="js/components.js"></script>
+    <script src="js/lifecycle.js"></script>
+    <script src="js/component.js"></script>
     <script src="js/pages/page.js"></script>
     <script src="js/pages/pageManager.js"></script>
-    <script src="js/datamanager.js"></script>
+    <script src="js/dataManager.js"></script>
 
     <!-- composants -->
-    <script src="js/components/panier.js"></script>
-    <script src="js/components/carteProduit.js"></script>
+    <script src="js/components/cart.js"></script>
+    <script src="js/components/detailedProduct.js"></script>
 
     <!-- pages -->
     <script src="js/pages/productPage.js"></script>
     <script src="js/pages/productList.js"></script>
-
+    <script src="js/pages/order.js"></script>
 
     <!-- on initialise la page -->
     <script src="js/index.js" defer></script>
-
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header start -->
     <header id="header">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" id="cartContainer">
                     <a href="index.html">
-                        <img src="img/Logo_Orinoco.png" id="logo" alt="Logo">
+                        <img src="img/Logo_Orinoco.png" id="logo" alt="Logo_header" />
                     </a>
-                    <div class="boutons"></div>
-
                 </div>
             </div>
         </div>
-        <p>PRODUIT</p>
-
+        <p id="titre">ACCUEIL</p>
     </header>
-
+    <!-- Header end-->
     <section id="content">
         <div class="container-fluid text-center">
-            <h2>Notre séléction de peluches</h2>
+            <h1>Notre sélection de peluches</h1>
             <p id="intro">Fait-main et 100% made in France</p>
         </div>
     </section>
-    <!-------------------- On injecte nos produits ici -------------------->
+    <!-- On injecte nos produits ici -->
     <main id="main">
-        <!-- Fil d'Ariane -->
-        <nav aria-label="breadcrumb">
-            <!-- <ol class="ariane">
-                <li class="breadcrumb-item"><a href="#">OriKids</a></li>
-                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Page</li>
-            </ol> -->
-        </nav>
-
-        <div id="ourson">
-            <article id="listeArticle">
-                <h3 id="peluche">Norbert</h3>
-                <img src="http://localhost:3000/images/teddy_1.jpg" alt="teddy_1">
-                <div>
-                    <h4>Prix : </h4>
-                    <p>€</p>
-                    <a id="lien" href="produit.html">Voir le produit</a>
-                </div>
-            </article>
-            <article id="listeArticle">
-                <h3 id="peluche">Arnold</h3>
-                <img src="http://localhost:3000/images/teddy_2.jpg" alt="teddy_2">
-                <div>
-                    <h4>Prix : </h4>
-                    <p>€</p>
-                    <a id="lien" href="">Voir le produit</a>
-                </div>
-            </article>
-            <article id="listeArticle">
-                <h3 id="peluche">Garfunkel</h3>
-                <img src="http://localhost:3000/images/teddy_5.jpg" alt="teddy_5">
-                <div>
-                    <h4>Prix : </h4>
-                    <p>€</p>
-                    <a id="lien" href="">Voir le produit</a>
-                </div>
-            </article>
-            <article id="listeArticle">
-                <h3 id="peluche">Gustav</h3>
-                <img src="http://localhost:3000/images/teddy_4.jpg" alt="teddy_4">
-                <div>
-                    <h4>Prix : </h4>
-                    <p>€</p>
-                    <a id="lien" href="">Voir le produit</a>
-                </div>
-            </article>
-            <article id="listeArticle">
-                <h3 id="peluche">Lenny and Carl</h3>
-                <img src="http://localhost:3000/images/teddy_3.jpg" alt="teddy_3">
-                <div>
-                    <h4>Prix : </h4>
-                    <p>€</p>
-                    <a id="lien" href="">Voir le produit</a>
-                </div>
-            </article>
-        </div>
+        <div id="ourson"></div>
     </main>
-
+    <!-- Footer start -->
     <footer id="footer">
         <p>
             <a href="#">mentions légales</a>
@@ -128,7 +70,7 @@
             <a href="mailto:contact@orinoco.com" target="_blank">contactez-nous</a>
         </p>
     </footer>
-
+    <!-- Footer end -->
 </body>
 
 </html>
