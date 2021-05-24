@@ -1,27 +1,36 @@
 /* eslint-disable no-unused-vars */
+
 class DataManager {
 	constructor(src) {
 		this.src = src; //On définit où il va chercher les données (src=localhost)
 		this.products = {};
 	}
-
     
 	//Requête fetch pour récuperer les données du serveur 
 	async getDataFromServer(callback) {
-		const data = await fetch(this.src);
-		const products = await data.json();
-		for (let i = 0, size = products.length; i < size; i++) {
-			this.products[products[i]._id] = products[i];
+		try{
+			const data = await fetch(this.src);
+			const products = await data.json();
+			for (let i = 0, size = products.length; i < size; i++) {
+				this.products[products[i]._id] = products[i];
+			}
+			callback(products);
 		}
-		callback(products);
+		catch(err){
+			alert("le serveur n'est pas disponible");
+		}
 	}
 
 	//Requête fetch pour récuperer les infos d'un produit (on sort le produit de notre boucle du dessus (Ligne 12))
 	async getDataProductFromServer(idProduct, callback) {
-		const data = await fetch(this.src + idProduct);
-		const product = await data.json();
-		this.products[product._id] = product;
-		callback(product);
+		try{
+			const data = await fetch(this.src + idProduct);
+			const product = await data.json();
+			this.products[product._id] = product;
+			callback(product);
+		}catch(err){
+			alert("le serveur n'est pas disponible");
+		}
 	}
 
 	/**
@@ -46,21 +55,26 @@ class DataManager {
 
 	//Envoi du formulaire
 	async sendForm(contact, products, callback) {
-		let response = await fetch(this.src + "order", {
-			method: "post",
-			headers: {
-				"Accept": "application/json",
-				"Content-Type": "application/json"
-			},
-			body:  JSON.stringify({ //convertit une valeur JavaScript en chaîne JSON
-				"contact": contact,
-				"products": products
-			})
-		});
-		response = await response.json();
-		callback(response);
+		try{
+			let response = await fetch(this.src + "order", {
+				method: "post",
+				headers: {
+					"Accept": "application/json",
+					"Content-Type": "application/json"
+				},
+				body:  JSON.stringify({ //convertit une valeur JavaScript en chaîne JSON
+					"contact": contact,
+					"products": products
+				})
+			});
+			response = await response.json();
+			callback(response);
         
-		localStorage.clear(); //Le panier se vide une fois la commande confirmée.
+			localStorage.clear(); //Le panier se vide une fois la commande confirmée.
+		}
+		catch(err){
+			alert("le serveur n'est pas disponible");
+		}
 	}
 }
 

@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+
 //Fiche détaillée du produit
 class DetailedProduct {
 	constructor(props, domTarget, container) {

@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 //Gestion de la navigation vers les différentes pages
+
 class PageManager {
 	constructor(domTarget) {
 		this.domTarget = domTarget;
