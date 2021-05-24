@@ -68,14 +68,16 @@ class Order extends Page {
 	}
 
 	//Affichage dynamique des produits du panier dans la page
+    //Permet d'ajouter un produit
 	addProductsInResume() {
 		let productListHtml = "";
 		for (const value of Object.values(this.products)) {
-			productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit
+			productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit dans contenBasket
 		}
 		return productListHtml;
 	}
 
+    // Modèle du contenu du panier 
 	templateProductLine(data) {
 		return `
           <article class="articlePanier">
