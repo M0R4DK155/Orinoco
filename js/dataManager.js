@@ -3,9 +3,9 @@ class DataManager {
 	constructor(src) {
 		this.src = src; //On définit où il va chercher les données (src=localhost)
 		this.products = {};
-		// console.log(this.products);
 	}
 
+    
 	//Requête fetch pour récuperer les données du serveur 
 	async getDataFromServer(callback) {
 		const data = await fetch(this.src);
@@ -63,3 +63,4 @@ class DataManager {
 		localStorage.clear(); //Le panier se vide une fois la commande confirmée.
 	}
 }
+

@@ -37,7 +37,7 @@ class Order extends Page {
         </div>
         <div class="form-group col-md-5">
           <label for="name">Nom :</label>
-          <input type="text" name="lastName" class="form-control" id="name" placeholder="Votre nom..." pattern="[a-zA-Zéèïëàç-]+" maxlength="30" required />
+          <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Votre nom..." pattern="[a-zA-Zéèïëàç-]+" maxlength="30" required />
           <span id="oublisNom"></span><br />
         </div>
       </div>
@@ -173,7 +173,7 @@ class Order extends Page {
 			city      : this.verifChamps(document.getElementById("city"), /^^[a-zA-Z ,.'-]+$/ ),
 			email     : this.verifChamps(document.getElementById("email"), /^[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}$/ ),
 			firstName : this.verifChamps(document.getElementById("firstname"), /^[a-zA-Z ,.'-]+$/),
-			lastName  : this.verifChamps(document.getElementById("name"),  /^[a-zA-Z ,.'-]+$/),
+			lastName  : this.verifChamps(document.getElementById("lastName"),  /^[a-zA-Z ,.'-]+$/),
 		};
 
         if (this.formIsValid<5) return; 
