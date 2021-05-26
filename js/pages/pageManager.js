@@ -1,33 +1,42 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+
 //Gestion de la navigation vers les différentes pages
 
 class PageManager {
-	constructor(domTarget) {
+	constructor(domTarget) { //Endroit où on va mettre la page (class listeArticle)
 		this.domTarget = domTarget;
 		this.page = null;
 		this.fonctionAuChangementDePage();
 		this.definePage({ changeHistory: false });
 	}
     
-	//Fonction changement de page - URL
+	/**
+     * Fonction changement de page - URL (manipulation de l'historique)
+     * @param   {String}                            title    le titre de la page
+     * @param   {String}                            url      l'adresse de la page
+     * @param   {ProductList | Order | ProductPage} newPage  l'itération de la page, nom de la page
+     * @returns {void}                                       met à jour la page et la barre d'adresse
+     */
 	changePage(title, url, newPage) {
-		document.title = title;
-		history.pushState({}, title, "?" + url); 
+		document.title = title; //Titre de la page dans l'onglet du navigateur
+		history.pushState({}, title, "?" + url); //Affichage de l'URL dans la barre d'adresse (pushState = méthode native JS, ajoute une entrée à la pile d'historique de session du navigateur. - Voir doc MDN)
 		this.page = newPage;
 		orinoco.products = {};
 		this.domTarget.innerHTML = "";
 	}
 
 	/**
-     * change la page à afficher
+     * Change la page à afficher
+     * @param   {Object} todo
      *
-     * @return  {void}         appelle la page à afficher
+     * @return  {ProductList | Order | ProductPage}         Appelle la page à afficher
      */
 	definePage(todo) {
+		console.log(todo);
 		if (todo.changeHistory === undefined) todo.changeHistory = true;
 		if (todo.page === undefined) {
-			todo.page = window.location.search.slice(1);//La méthode slice() permet de "trancher un morceau particulier d'une chaine de caractère, dans notre cas le ?. Méthode plus ou moins similaire à .substr.
+			todo.page = window.location.search.slice(1); //La méthode slice() permet de "trancher un morceau particulier d'une chaine de caractère et la retourne comme chaine de caractère, dans notre cas on retire le ? de l'URL dans la barre d'adresse(1 = indice de début du tranchage).
 		}
 		if (todo.page === "") return new ProductList({ changeHistory: false });
 		if (todo.page.slice(0, 6) === "panier") return new Order(

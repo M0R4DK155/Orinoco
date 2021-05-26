@@ -3,7 +3,7 @@
 // Page de base - Routeur par défaut
 var orinoco = {                                                         //Variable globale
 	cart: null,                                                         //Affichage du panier
-	dataManager: new DataManager("http://localhost:3000/api/teddies/"), // Récupération et gestion des données du serveur
+	dataManager: new DataManager("http://localhost:3000/api/teddies/"), //Récupération et gestion des données du serveur
 	pageManager: null,                                                  //Gestion navigation vers les différentes pages + gestion historique
 	products: {}
 };

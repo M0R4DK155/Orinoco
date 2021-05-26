@@ -1,19 +1,25 @@
 /* eslint-disable no-unused-vars */
-/* global orinoco */
+/* global orinoco Component */
 
 //Composant panier
 class Cart {
+
+    /**
+     * contenu du panier
+     * @type {Array}
+     */
+    contentBasket;
 	constructor(domTarget) {
 		this.DOM = document.createElement("div"); //Nom de la balise ciblée pour créer un nouveau noeud dans le DOM
-		this.DOM.className = "boutons"; 
-		this.DOM.id = "panier";
-		domTarget.appendChild(this.DOM);
-		this.contentBasket = orinoco.dataManager.getLocalData("panier", true); //Récupère le contenu du panier dans le local storage
-		if (this.contentBasket === null) this.contentBasket = []; //Si le panier est vide, il retourne un tableau
+		this.DOM.className = "boutons"; //Ciblage de la classe 
+		this.DOM.id = "panier"; //Ciblage de l'id
+		domTarget.appendChild(this.DOM); //Ajoute l'élement boutons dans DOM
+		const localBasket = orinoco.dataManager.getLocalData("panier", true); //Récupère le contenu du panier dans le local storage
+		this.contentBasket = localBasket === null ? [] : localBasket; //Si le panier est vide (null), il retourne un tableau
 		this.render();
 	}
 
-	//Affichage dynamique du panier
+	//Affichage dynamique du panier et son contenu dans le header
 	render() {
 		this.DOM.innerHTML = `
                     <button class="panier" 
@@ -64,11 +70,11 @@ class Cart {
 		}
 		switch (direction) {
 		case "+":
-			this.contentBasket.push(this.contentBasket[index]);
+			this.contentBasket.push(this.contentBasket[index]); //On ajoute un élément avec la méthode push() lors du clic sur le bouton +
 			break;
 		case "-":
 			if (index > -1) {
-				this.contentBasket.splice(index, 1);
+				this.contentBasket.splice(index, 1); //La méthode splice permet de retirer, ajouter ou supprimer un élément (on retire 1 à partir de l'index dans notre cas)
 			}
 			break;
 		default:

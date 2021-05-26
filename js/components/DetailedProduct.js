@@ -4,21 +4,17 @@
 //Fiche détaillée du produit
 class DetailedProduct {
 	constructor(props, domTarget, container) {
-		// console.log(container);
-		for (const [key, value] of Object.entries(props)) { //La méthode Object.entries() renvoie un tableau des propriétés propres énumérables d'un objet dont la clé est une chaîne de caractères, sous la forme de paires [clé, valeur]
-			this[key] = value;                              //Rempli nos différentes propriétés
+		for (const [key, value] of Object.entries(props)) { //Object.entries() crée un tableau de tableaux. Chaque tableau interne a deux éléments. Le premier est la clé et le deuxième est la valeur.
+			this[key] = value; //Rempli nos différentes propriétés.
 		}
 		this.showDetails = false;
-		// console.log(this.showDetails);
-		this.DOM = document.createElement("article");       //Représentation de notre élément dans le DOM
-		this.DOM.className = "listeArticle"; 
-		domTarget.appendChild(this.DOM);                    //Ajoute l'enfant "article" dans le DOM
+		this.DOM = document.createElement("article"); //Nom de la balise ciblée pour créer un nouveau noeud dans le DOM, représentation de notre élément dans le DOM
+		this.DOM.className = "listeArticle"; // Ciblage de la classe
+		domTarget.appendChild(this.DOM); //Ajoute l'élément "article" dans le DOM
 		window[container].products["product" + this._id] = this;
 		this.container = container;
 		this.products = [];
 		this.render();
-
-		// console.log(this)
 	}
     
 	// Affichage dynamique du produit sélectionné sous forme de fiche

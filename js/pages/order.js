@@ -17,8 +17,8 @@ class Order extends Page {
 
 	//Rendu dans le DOM
 	template() {
-		document.getElementById("titre").innerText = "PANIER";
-		if (orinoco.cart.contentBasket.length === 0) return '<div id="panierVide">Votre panier est vide :(</div>';
+		document.getElementById("titre").innerText = "PANIER"; // Titre de la page dans la bannière
+		if (orinoco.cart.contentBasket.length === 0) return '<div id="panierVide">Votre panier est vide :(</div>'; // Affichage d'un message si le panier est vide
 		return `
       <div id="contentBasket">
         <div id="panier">
@@ -70,9 +70,9 @@ class Order extends Page {
 	//Affichage dynamique des produits du panier dans la page
     //Permet d'ajouter un produit
 	addProductsInResume() {
-		let productListHtml = "";
-		for (const value of Object.values(this.products)) {
-			productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit dans contenBasket
+		let productListHtml = ""; // On initialise une liste vide
+		for (const value of Object.values(this.products)) { // La méthode Object.values() crée un tableau contenant les valeurs de chaque propriété de products
+			productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit dans contentBasket
 		}
 		return productListHtml;
 	}
@@ -112,7 +112,7 @@ class Order extends Page {
 				factorisedProductList[products[i].id].qty++;
 				continue;
 			}
-			factorisedProductList[products[i].id] = { ...products[i], qty: 1 };
+			factorisedProductList[products[i].id] = { ...products[i], qty: 1 }; // ... Opérateur spread (ES6/ES2015) Cette syntaxe permet de représenter un nombre indéfini d'arguments sous forme d'un tableau. (Rest parameters)
 		}
 		return factorisedProductList;
 	}
@@ -131,7 +131,7 @@ class Order extends Page {
 	 * @return  {void}
 	 */
 	deleteToCart(product) {
-		alert("Vous avez supprimé un produit au panier");
+		alert("Vous avez supprimé un produit du panier");
 		orinoco.cart.delete(product);
 		this.render();
 	}
@@ -146,7 +146,7 @@ class Order extends Page {
 	 *
 	 * @return  {HTMLElement}  le noeud HTML
 	 */
-	get getContainer() { //get nous permet d'utiliser notre variable getContainer comme une fonction (fonctionne tant qu'on a pas d'arguments à passer)
+	get getContainer() { // La syntaxe get (ES6/ES2015) nous permet d'utiliser notre variable getContainer comme une fonction (fonctionne tant qu'on a pas d'arguments à passer)
 		if (this.domTarget !== undefined) return this.domTarget;
 		return orinoco.pageManager.domTarget;
 	}
@@ -192,9 +192,9 @@ class Order extends Page {
 	 * [verifChamp description]
 	 *
 	 * @param   {HTMLElement}  noeudDom  [donnee description]
-	 * @param   {RegExp}       regex   [regex description]
+	 * @param   {RegExp}       regex     [regex description]
 	 *
-	 * @return  {String|null}          [return description]
+	 * @return  {String|null}            [return description]
 	 */
 	verifChamps(noeudDom, regex){
 		const value = noeudDom.value;
@@ -215,7 +215,6 @@ class Order extends Page {
                 <h2> Nous vous remercions de votre confiance </div>
 				<div id="recap">Votre numéro de commande : ${orderID.orderId}</div>
 
-
 				<a class="btn btn-secondary btn-lg retour" href="index.html" onclick="retour()" role="button">Retour à
 					l'accueil</a>
 			</div>
@@ -223,3 +222,18 @@ class Order extends Page {
 		orinoco.cart.clear();
 	}
 }
+
+// const inputs = document.querySelectorAll("input");
+
+// inputs.forEach(input => {
+//     input.onblur = function () {
+//         valid(this);
+//     }
+// });
+
+// function valid(input){
+//     let msg ="";
+//     if (input.value.length >=1) msg+=("La saisie est trop courte");
+//     if (!input.checkValidity()) msg +=("Les données ne sont pas correctes");
+//     alert(msg);
+// }
