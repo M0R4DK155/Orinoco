@@ -3,21 +3,21 @@
 /* global orinoco */
 "use strict";
 
-//Création de la page panier
+//Création de la page panier.
 class Order extends Page {
 
 	formIsValid=0;
 
 	constructor(pageSpecs = {}) {
-		super(pageSpecs);
+		super(pageSpecs); //On utilise super afin d'appeler le constructor (pageSpecs) de la class Page.
 		if (this.changeHistory && orinoco.pageManager !== null)
-			orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page
+			orinoco.pageManager.changePage("oriKids : votre panier", "panier", this); //Historique changement de page et titre de la page dans l'onglet de navigation.
 		this.render();
 	}
 
 	//Rendu dans le DOM
 	template() {
-		document.getElementById("titre").innerText = "PANIER"; // Titre de la page dans la bannière
+		document.getElementById("titre").innerText = "PANIER"; // Titre de la page dans la bannière.
 		if (orinoco.cart.contentBasket.length === 0) return '<div id="panierVide">Votre panier est vide :(</div>'; // Affichage d'un message si le panier est vide
 		return `
       <div id="contentBasket">
@@ -67,11 +67,11 @@ class Order extends Page {
       `;
 	}
 
-	//Affichage dynamique des produits du panier dans la page
-    //Permet d'ajouter un produit
+	//Affichage dynamique des produits du panier dans la page.
+    //Permet d'ajouter un produit.
 	addProductsInResume() {
 		let productListHtml = ""; // On initialise une liste vide
-		for (const value of Object.values(this.products)) { // La méthode Object.values() crée un tableau contenant les valeurs de chaque propriété de products
+		for (const value of Object.values(this.products)) { // On crée un tableau avec la méthode Object.values() contenant les valeurs de chaque propriété de products. [valeur, valeur, valeur]
 			productListHtml += this.templateProductLine(value); //Ajoute une ligne de produit dans contentBasket
 		}
 		return productListHtml;
@@ -154,16 +154,14 @@ class Order extends Page {
 	//Calcul du montant total du panier
 	getTotal() {
 		let total = 0;
-		for (const value of Object.values(this.products)) {
+		for (const value of Object.values(this.products)) { // On crée un tableau avec la méthode Object.values() contenant les valeurs de chaque propriété de products. [valeur, valeur, valeur]
 			total += value.qty * value.price;
 		}
 		return total;
 	}
 
-	//Création de l'objet contact et du tableau de produits pour la requête à envoyer au serveur
+	//Création de l'objet contact et du tableau de produits pour la requête à envoyer au serveur.
 	sendForm(event) {
-		console.log("event:", event);
-
 		event.preventDefault();
 		event.stopPropagation();
 
@@ -180,12 +178,12 @@ class Order extends Page {
 
         if (this.formIsValid<5) return; 
 
-		let products = []; //initialisation de l'objet qui va contenir les id des produits 
-		for (const value of Object.values(this.products)) { //boucle pour recuperer les id 
-			products.push(value.id); //envoie des id dans la variable products
+		let products = []; //Initialisation de l'objet qui va contenir les id des produits.
+		for (const value of Object.values(this.products)) { //Boucle pour récuperer les id. // On crée un tableau avec la méthode Object.values() contenant les valeurs de chaque propriété de products. [valeur, valeur, valeur]
+			products.push(value.id); //Envoi des id dans la variable products
 		}
 
-		orinoco.dataManager.sendForm(contact, products, this.showOrderID.bind(this));
+		orinoco.dataManager.sendForm(contact, products, this.showOrderID.bind(this)); //Récupération de l'ID de la commande.
 	}
 
 	/**
@@ -207,7 +205,7 @@ class Order extends Page {
 		return value;
 	}
 
-	//Fonction callback de sendForm
+	//Fonction callback de sendForm - ID de commande
 	showOrderID(orderID) {
 		this.getContainer.innerHTML = `
 			<div class="jumbotron" id="ConfirmationDeCommande">
@@ -222,18 +220,3 @@ class Order extends Page {
 		orinoco.cart.clear();
 	}
 }
-
-// const inputs = document.querySelectorAll("input");
-
-// inputs.forEach(input => {
-//     input.onblur = function () {
-//         valid(this);
-//     }
-// });
-
-// function valid(input){
-//     let msg ="";
-//     if (input.value.length >=1) msg+=("La saisie est trop courte");
-//     if (!input.checkValidity()) msg +=("Les données ne sont pas correctes");
-//     alert(msg);
-// }

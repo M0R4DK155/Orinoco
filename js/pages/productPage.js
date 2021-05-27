@@ -3,7 +3,8 @@
 /* global orinoco */
 
 //Affichage dynamique des produits
-class ProductPage extends Page { //Le mot-clé extends est utilisé dans les déclarations et expressions de classes afin de signifier qu'un type représenté par une classe hérite d'un autre type.
+//Le mot-clé extends est utilisé dans les déclarations et expressions de classes afin de signifier qu'un type représenté par une classe hérite d'un autre type.
+class ProductPage extends Page { 
 	
     /**
      * id du produit
@@ -32,7 +33,7 @@ class ProductPage extends Page { //Le mot-clé extends est utilisé dans les dé
 	}
 
 	//Fonction pour afficher le produit sélectionné au clic avec URL du produit dans la barre de navigation ( nom du produit est un + pour le référencement)
-	showProduct() {
+	showProduct() { 
 		orinoco.pageManager.changePage("oriKids : " + this.productInfo.name, "product" + this.productInfo._id, this); //On appelle notre système de page (URL dans la barre d'adresse et titre dans l'onglet)
 		orinoco.pageManager.domTarget.innerHTML = this.template();
 	}

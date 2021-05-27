@@ -10,8 +10,8 @@ class DataManager {
 	//Requête fetch pour récuperer les données du serveur.
 	async getDataFromServer(callback) {
 		try{
-			const data = await fetch(this.src); //On invoque la méthode Fetch en lui passant l'URL de la ressource que nous voulons récupérer.
-			const products = await data.json(); // en récupère nos données au format json.
+			const data = await fetch(this.src); //On invoque la méthode Fetch en lui passant l'URL de la ressource que nous voulons récupérer, retourne une promesse on lui demande d'attendre (await). Une fois qu'il les a, on stocke dans data
+			const products = await data.json(); // data est recu sous forme de promesse, donc on convertit les données au format json.
 			for (let i = 0, size = products.length; i < size; i++) { //Boucle pour récupérer tous nos produits.
 				this.products[products[i]._id] = products[i];
 			}

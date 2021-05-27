@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+// Règles pour les pages - Template principal (référence à l'Atomic Design).
 class Page {
 	constructor(pageSpecs) {
 		for (const [key, value] of Object.entries(pageSpecs)) { //Object.entries () crée un tableau de tableaux. Chaque tableau interne a deux éléments. Le premier est la clé et le deuxième est la valeur.
